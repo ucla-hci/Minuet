@@ -20,7 +20,7 @@ public class VoiceMQTTSub implements MqttCallback{
     private MqttConnectOptions options;
     private List<LocData> locDatas;
     private boolean isGettingData;
-
+    private String TRIGGER_TOPIC = "data";
     private ExecutorService executorService;
     private Future<List<SpeechRecognitionResult>> future;
     public VoiceMQTTSub(VitalWorld world) throws MqttException {
@@ -38,7 +38,7 @@ public class VoiceMQTTSub implements MqttCallback{
         client.setCallback(this);
         client.connect(options);
 
-        client.subscribe("data");
+        client.subscribe(TRIGGER_TOPIC);
 
     }
 

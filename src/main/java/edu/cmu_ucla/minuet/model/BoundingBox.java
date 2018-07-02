@@ -14,10 +14,10 @@ public class BoundingBox implements BoundingObject {
     private double height;
 
     public BoundingBox(Vector3D topCenter, Vector3D topLeft, Vector3D topRight, Vector3D down) {
-        topCenter = topCenter;
-        topLeft = topLeft;
-        topRight = topRight;
-        down = down;
+        this.topCenter = topCenter;
+        this.topLeft = topLeft;
+        this.topRight = topRight;
+        this.down = down;
         Vector3D diag =topRight.add(down.subtract(topCenter));
         center = diag.subtract(diag.subtract(topLeft).scalarMultiply(0.5));
         this.length = Vector3D.distance(topCenter,topRight);

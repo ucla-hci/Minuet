@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
-import static com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType.VOICE_COMMAND;
 
 public class SpeechRecognization {
 
@@ -20,15 +20,17 @@ public class SpeechRecognization {
             Path path = Paths.get(filepath);
             byte[] data = Files.readAllBytes(path);
             ByteString audioBytes = ByteString.copyFrom(data);
-
+            List<String> corpus = new ArrayList<>(Arrays.asList("this","turn on","that","turn off"));
             RecognitionConfig config = RecognitionConfig.newBuilder()
                     .setEncoding(AudioEncoding.LINEAR16)
                     .setSampleRateHertz(16000)
                     .setLanguageCode("en-US")
-                    .setModel("command_and_search")
-                    .setMetadata(RecognitionMetadata.newBuilder().setInteractionType(VOICE_COMMAND).build())
+                    .setModel("default")
+//                    .setSpeechContexts(5,SpeechContext.newBuilder().setPhrases(0,"this"))
+                    .addSpeechContexts(SpeechContext.newBuilder().addPhrases("this").addAllPhrases(corpus))
+//                    .setMetadata(RecognitionMetadata.newBuilder().setInteractionType(VOICE_COMMAND).build())
                     .setEnableWordTimeOffsets(true)
-//                    .setUseEnhanced(true)
+                    .setUseEnhanced(true)
                     .build();
             RecognitionAudio audio = RecognitionAudio.newBuilder()
                     .setContent(audioBytes)

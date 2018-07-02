@@ -16,8 +16,8 @@ public class SerialComTest {
 
         VitalWorld world = new VitalWorld();
         User user = new User("testUser",0,0,0,new Vector3D(0,0,0));
-        VitalObject object = new VitalObject(new BoundingSphere(new Vector3D(3300,2890,1700),1500),"sonoffSwitch","cmnd/sonoff1/POWER");
-        VitalObject object2 = new VitalObject(new BoundingSphere(new Vector3D(2000,3000,1000),1500),"tv","cmnd/sonoff3/POWER");
+        VitalObject object = new VitalObject(new BoundingSphere(new Vector3D(3300,2890,1900),1000),"sonoffSwitch","cmnd/sonoff1/POWER");
+        VitalObject object2 = new VitalObject(new BoundingSphere(new Vector3D(1900,2700,1300),1000),"tv","cmnd/sonoff3/POWER");
 
         world.addUser(user);
         world.addObject(object);

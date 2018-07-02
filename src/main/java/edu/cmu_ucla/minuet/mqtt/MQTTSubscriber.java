@@ -7,12 +7,13 @@ public class MQTTSubscriber implements MqttCallback {
     MqttClient client;
     VitalWorld world;
     MqttConnectOptions options;
+
     public MQTTSubscriber(VitalWorld world) throws MqttException {
 
 
-         this.world = world;
-        client=new MqttClient("tcp://192.168.1.8:1883", "client");
-         options = new MqttConnectOptions();
+        this.world = world;
+        client = new MqttClient("tcp://192.168.1.8:1883", "client");
+        options = new MqttConnectOptions();
         options.setUserName("admin");
         options.setPassword("19930903".toCharArray());
         client.setCallback(this);
@@ -26,18 +27,16 @@ public class MQTTSubscriber implements MqttCallback {
     public void connectionLost(Throwable cause) {
         try {
             client.connect(options);
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Override
     public void messageArrived(String topic, MqttMessage message) throws Exception {
-        System.out.println("get someting");
-
         String newData = new String(message.getPayload());
-        newData+=" testUser";
-        System.out.println("DATA received:"+newData);
+        newData += " testUser";
+        System.out.println("DATA received:" + newData);
         world.revceiveData(newData);
 
     }

@@ -13,26 +13,23 @@ import java.util.List;
 import java.util.Set;
 
 public class VitalWorld {
-    private double PRECISION = 5;
     private final static double STAND_Z = 1550;
-
     private Set<User> userSet = new HashSet<>();
     private Set<VitalObject> vitalObjects = new HashSet<>();
-    private MQTT mqtt;
-    private List<SpeechRecognitionResult> recognitionResults = new ArrayList<>();
+    private MQTT mqtt= new MQTT();
     private List<LocData> currLocData = new ArrayList<>();
+    private Set<VitalObject> currSelectedObject = new HashSet<>();
+    private CommandProcessor commandProcessor = new CommandProcessor();
 
     /**
      *
      */
     public VitalWorld() throws MqttException {
-        this.mqtt = new MQTT();
+
 
     }
 
-    public synchronized List<LocData> getCurrLocData() {
-        return currLocData;
-    }
+
 
     public void setAudioResult(List<SpeechRecognitionResult> results) {
         for (SpeechRecognitionResult result : results) {
