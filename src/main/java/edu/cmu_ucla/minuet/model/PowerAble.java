@@ -4,11 +4,11 @@ public class PowerAble implements VitalObjectCommand {
     private final static String COMMAND_NAME = "POWER";
 
     @Override
-    public String execute(int a) {
-       if (a == 0){
+    public String execute(double a) {
+       if ((int)a == 0){
            return "OFF";
        }
-       else if (a == 1){
+       else if ((int)a == 1){
            return "ON";
        }
        else {return "error";}

@@ -16,20 +16,56 @@ public class VitalWorld {
     private final static double STAND_Z = 1550;
     private Set<User> userSet = new HashSet<>();
     private Set<VitalObject> vitalObjects = new HashSet<>();
-    private MQTT mqtt= new MQTT();
+    private MQTT mqtt = new MQTT();
     private List<LocData> currLocData = new ArrayList<>();
     private Set<VitalObject> currSelectedObject = new HashSet<>();
+    private List<String> audioAna = new ArrayList<>();
     private CommandProcessor commandProcessor = new CommandProcessor();
 
     /**
      *
      */
     public VitalWorld() throws MqttException {
-
+//        Callable<String> callable = new Callable<String>() {
+//            @Override
+//            public String call() throws Exception {
+//                return "hello";
+//            }
+//        };
+//        ExecutorService executorService = Executors.newCachedThreadPool();
+//        Future<String> future = executorService.submit(callable);
+//        future.cancel(true);
 
     }
 
+    //user should hold all of his LOCdata
+    public void selection() {
+        for (LocData locData : currLocData) {
+            Vector3D pointingVec = new Vector3D(
+                    (Math.sin(Math.toRadians(360 - locData.getYaw())) * Math.cos(Math.toRadians(locData.getPitch()))),
+                    (-Math.cos(Math.toRadians(360 - locData.getYaw())) * Math.cos(Math.toRadians(locData.getPitch()))),
+                    (Math.sin(Math.toRadians(locData.getPitch()))));
+            for (VitalObject object : vitalObjects) {
+                if (object.checkBePointed(locData.getPos(), pointingVec)) {
+                    this.currSelectedObject.add(object);
+                }
+            }
+        }
+    }
 
+    public void checkInteraction2() {
+        ObjectCommandPacket curPacket;
+        for (VitalObject selectedObject : currSelectedObject) {
+            curPacket = selectedObject.checkNExeCommand(this.commandProcessor.inspectTheString(audioAna));
+            try {
+                if (curPacket != null)
+                this.mqtt.sendMessage(curPacket.getTopic(), curPacket.getCommand());
+
+            } catch (MqttException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public void setAudioResult(List<SpeechRecognitionResult> results) {
         for (SpeechRecognitionResult result : results) {
@@ -43,9 +79,9 @@ public class VitalWorld {
                     //////!!!!!!!!!!!!!!!!!!!!!!!change it later
                     for (User user : this.userSet) {
 
-                            LocData curLoc = this.currLocData.get(index);
-                            user.updataData(curLoc.getPitch(), curLoc.getRoll(), curLoc.getYaw(), curLoc.getPos());
-                            checkInteraction(user);
+                        LocData curLoc = this.currLocData.get(index);
+                        user.updataData(curLoc.getPitch(), curLoc.getRoll(), curLoc.getYaw(), curLoc.getPos());
+                        checkInteraction(user);
 
                     }
 
@@ -58,9 +94,8 @@ public class VitalWorld {
     }
 
 
-
     public void passTheLocs(List<LocData> data) {
-            this.currLocData = data;
+        this.currLocData = data;
     }
 
     public void addObject(VitalObject s) {
