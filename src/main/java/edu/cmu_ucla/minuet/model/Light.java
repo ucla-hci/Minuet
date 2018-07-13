@@ -24,7 +24,12 @@ public class Light extends VitalObject {
 
     @Override
     public String[] execuate(String gesture) {
-        return new String[0];
+        String[] topicNMes = new String[2];
+        if(gesture.equals("upSwap")){
+            topicNMes[0] = getTopic();
+            topicNMes[1]="toggle";
+        }
+        return topicNMes;
     }
 
     public Light(BoundingObject boundingObject, String name, String topic) {

@@ -4,24 +4,24 @@ import edu.cmu_ucla.minuet.model.Struct;
 import edu.cmu_ucla.minuet.model.VitalWorld;
 import org.eclipse.paho.client.mqttv3.*;
 import weka.classifiers.AbstractClassifier;
-import weka.classifiers.functions.MultilayerPerceptron;
+import weka.classifiers.functions.SMO;
 import weka.core.SerializationHelper;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.List;
 
 public class SystemSubscriber implements MqttCallback {
-    private Queue<Struct> curIMUDatas = new ArrayBlockingQueue<>(15);
+    private List<Struct> curIMUDatas = new ArrayList<>(15);
     private final VitalWorld world;
     private AbstractClassifier model;
 
     public SystemSubscriber(VitalWorld world) throws MqttException, FileNotFoundException, Exception {
-        model = (MultilayerPerceptron) SerializationHelper.read(new FileInputStream("weka/NNwithNoInter.model"));
+        model = (SMO) SerializationHelper.read(new FileInputStream("weka/SVM.model"));
         this.world = world;
         MqttClient client = new MqttClient("tcp://192.168.1.8:1883", "systemSubscriber");
         MqttConnectOptions options = new MqttConnectOptions();
@@ -53,38 +53,41 @@ public class SystemSubscriber implements MqttCallback {
     @Override
     public void messageArrived(String topic, MqttMessage message) throws Exception {
         String newData = new String(message.getPayload());
+        newData = newData.trim();
         String[] splitedString = newData.split("\\s+");
 
         if (topic.equals("locData")) {
             newData += " testUser";
             world.revceiveData(newData);
         } else if (topic.equals("speechResult")) {
-            System.out.println("Speech got: "+newData);
-            synchronized (world.getCurFrame()) {
-                if (world.getCurFrame() != null && world.getCurFrame().getCurCommand().isEmpty()) {
-                    world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(splitedString)));
-                }
+            System.out.println("Speech got: " + newData);
+
+            if (world.getCurFrame() != null && world.getCurFrame().getCurCommand().isEmpty()) {
+                world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(splitedString)));
+
+
             }
 
         } else if (topic.equals("data")) {
-            synchronized (world.getCurFrame()) {
-                if (world.getCurFrame() != null && world.getCurFrame().getCurGesture().equals("")) {
-                    Struct curStruct = new Struct(Double.parseDouble(splitedString[0]),
-                            Double.parseDouble(splitedString[1]),
-                            Double.parseDouble(splitedString[2]),
-                            Double.parseDouble(splitedString[3]),
-                            Double.parseDouble(splitedString[4]),
-                            Double.parseDouble(splitedString[5]));
-                    if (curIMUDatas.size() == 15) {
-                        curIMUDatas.poll();
-                    }
-                    curIMUDatas.add(curStruct);
-                    if (curIMUDatas.size() == 15) {
-                        synchronized (this) {
-                            checkGesture();
-                        }
+
+            if (world.getCurFrame() != null && world.getCurFrame().getCurGesture().equals("")) {
+                    System.out.println("enter gesture recognition");
+                Struct curStruct = new Struct(Double.parseDouble(splitedString[0]),
+                        Double.parseDouble(splitedString[1]),
+                        Double.parseDouble(splitedString[2]),
+                        Double.parseDouble(splitedString[3]),
+                        Double.parseDouble(splitedString[4]),
+                        Double.parseDouble(splitedString[5]));
+                if (curIMUDatas.size() == 15) {
+                    curIMUDatas.remove(0);
+                }
+                curIMUDatas.add(curStruct);
+                if (curIMUDatas.size() == 15) {
+                    synchronized (this) {
+                        checkGesture();
                     }
                 }
+
             }
         }
     }
@@ -96,6 +99,11 @@ public class SystemSubscriber implements MqttCallback {
 
     private void checkGesture() {
         String gesture = ClassifierUtil.Classify(model, curIMUDatas);
+
+        if (!gesture.equals("noInteraction")) {
+            System.out.println("Gesture get: " + gesture);
             world.getCurFrame().setCurGesture(gesture);
+            curIMUDatas.clear();
+        }
     }
 }

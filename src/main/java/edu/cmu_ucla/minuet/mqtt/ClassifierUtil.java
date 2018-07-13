@@ -10,13 +10,10 @@ import weka.core.Instances;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Queue;
 
 public class ClassifierUtil {
-    public ClassifierUtil(AbstractClassifier model, Queue<Struct> data) {
 
-    }
-    public static String Classify(AbstractClassifier model, Queue<Struct> data){
+    public static String Classify(AbstractClassifier model, List<Struct> data){
         Attribute ax0 = new Attribute("ax0");
         Attribute ay0 = new Attribute("ay0");
         Attribute az0 = new Attribute("az0");
@@ -95,7 +92,7 @@ public class ClassifierUtil {
         Attribute gz10 = new Attribute("gz10");
 
         Attribute ax11 = new Attribute("ax11");
-        Attribute ay11 = new Attribute("ax11");
+        Attribute ay11 = new Attribute("ay11");
         Attribute az11 = new Attribute("az11");
         Attribute gx11 = new Attribute("gx11");
         Attribute gy11 = new Attribute("gy11");
@@ -153,7 +150,7 @@ public class ClassifierUtil {
         Instances dataset = new Instances("predictionData", fvWekaAttributes, 0);
         double[] attValues = new double[90];
         for(int i =0; i<data.size();i++){
-            Struct tmpStruct = data.poll();
+            Struct tmpStruct = data.get(i);
             if(tmpStruct!=null){
             attValues[i*6]=tmpStruct.ax;
             attValues[i*6+1]=tmpStruct.ay;
@@ -163,13 +160,41 @@ public class ClassifierUtil {
             attValues[i*6+5]=tmpStruct.gz;}
         }
 
+
         Instance i1 = new DenseInstance(1.0, attValues);
         dataset.add(i1);
         dataset.setClassIndex(dataset.numAttributes()-1);
         try {
            double a =  model.classifyInstance(dataset.instance(0));
-           dataset.get(0).setClassValue(a);
-           return dataset.get(0).stringValue(label);
+
+            String returnString = "";
+            switch (Double.toString(a)){
+                case "0.0":
+                    returnString = "circleCW";
+                    break;
+                case "1.0":
+                    returnString = "rightSwap";
+                    break;
+                case "2.0":
+                    returnString = "leftSwap";
+                    break;
+                case "3.0":
+                    returnString = "upSwap";
+                    break;
+                case "4.0":
+                    returnString = "downSwap";
+                    break;
+                case "5.0":
+                    returnString = "circleCCW";
+                    break;
+                case "6.0":
+                    returnString = "noInteraction";
+
+            }
+//            System.out.println(returnString);
+
+           return returnString;
+
         } catch (Exception e) {
             e.printStackTrace();
         }

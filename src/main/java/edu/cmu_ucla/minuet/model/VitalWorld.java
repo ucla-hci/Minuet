@@ -5,9 +5,6 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.*;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 public class VitalWorld {
     private final static double STAND_Z = 1550;
@@ -134,7 +131,7 @@ public class VitalWorld {
     public void revceiveData(String data) {
         System.out.println("received:" + data);
         String[] splitedString = data.split("\\s+");
-
+        System.out.println(Thread.currentThread().getName());
         if (splitedString.length == 7) {
             double yaw = (double) Math.floorMod((int) (Double.parseDouble(splitedString[3]) - 25), 360);
             double pitch = Double.parseDouble(splitedString[4]);
@@ -145,21 +142,22 @@ public class VitalWorld {
 
             for (VitalObject object : vitalObjects) {
                 if (curFrame==null && object.checkBePointed(userMap.get(userName).getPos(), userMap.get(userName).getPointVec())) {
-                     curFrame = new CommandFrame(object, this);
-//                     final CommandFrame  frame = new CommandFrame(object,this);
-//                     curFrame = frame;
-                    ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
-                    final Runnable cancellation = new Runnable() {
-                        @Override
-                        public void run() {
-                            synchronized (this) {
-                                if (curFrame!= null &&!curFrame.isExecAble()) {
-                                    curFrame = null;
-                                }
-                            }
-                        }
-                    };
-                    scheduledExecutorService.schedule(cancellation, 20, TimeUnit.SECONDS);
+                    synchronized (this) {
+                        curFrame = new CommandFrame(object, this);
+                    }
+                    System.out.println("sssss");
+//                    ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
+//                    final Runnable cancellation = new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            synchronized (this) {
+//                                if (curFrame!= null &&!curFrame.isExecAble()) {
+//                                    curFrame = null;
+//                                }
+//                            }
+//                        }
+//                    };
+//                    scheduledExecutorService.schedule(cancellation, 20, TimeUnit.SECONDS);
 
                     break;
                 }
@@ -188,8 +186,13 @@ public class VitalWorld {
 //        }
 //    }
 
-    public CommandFrame getCurFrame() {
-        return curFrame;
+    public  CommandFrame getCurFrame() {
+
+        synchronized (this) {
+//            System.out.println("getFrame: "+Thread.currentThread().getName());
+//            System.out.println("getFrame the frame is :" + curFrame);
+            return curFrame;
+        }
     }
 
         public void revceiveSpeechData (String data){
@@ -202,10 +205,12 @@ public class VitalWorld {
         }
 
     public void execuFrame() {
-        this.curFrame.execuate(this.mqtt);
+        System.out.println("execuFrame: "+Thread.currentThread().getName());
 
-        synchronized (curFrame) {
+        synchronized (this) {
+            this.curFrame.execuate(this.mqtt);
             this.curFrame=null;
         }
+        System.out.println("curFrame is :"+this.curFrame);
     }
 }
