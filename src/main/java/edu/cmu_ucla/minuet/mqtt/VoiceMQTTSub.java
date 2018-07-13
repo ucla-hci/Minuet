@@ -71,8 +71,8 @@ public class VoiceMQTTSub implements MqttCallback{
         else if(newData.equals("end")){
             System.out.println("streaming data end!!");
 
-                world.passTheLocs(locDatas);
-                world.setAudioResult(this.future.get());
+//                world.passTheLocs(locDatas);
+//                world.setAudioResult(this.future.get());
 
             locDatas.clear();
             isGettingData = false;

@@ -23,9 +23,8 @@ public class MQTT {
         MqttMessage mqttMessage = new MqttMessage();
         mqttMessage.setPayload("toggle".getBytes());
         client.publish(object.getTopic(),mqttMessage);
-
-
     }
+
     public void sendMessage(String topic,String message) throws MqttException{
         MqttMessage mqttMessage = new MqttMessage();
         mqttMessage.setPayload(message.getBytes());

@@ -91,7 +91,10 @@ public class Recognizer {
     }
 
     void loadTemplatesSimple() {
-
+        Templates.addElement(loadTemplate("rightSwap", TemplateData.rightSwap));
+        Templates.addElement(loadTemplate("leftSwap", TemplateData.leftSwap));
+        Templates.addElement(loadTemplate("rightSwap", TemplateData.rightSwap1));
+        Templates.addElement(loadTemplate("leftSwap", TemplateData.leftSwap1));
     }
 //
     void loadTemplatesCircles(){

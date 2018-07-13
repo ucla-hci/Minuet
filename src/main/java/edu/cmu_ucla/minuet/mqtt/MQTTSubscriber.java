@@ -3,24 +3,37 @@ package edu.cmu_ucla.minuet.mqtt;
 import edu.cmu_ucla.minuet.model.VitalWorld;
 import org.eclipse.paho.client.mqttv3.*;
 
-public class MQTTSubscriber implements MqttCallback {
-    MqttClient client;
-    VitalWorld world;
-    MqttConnectOptions options;
+import java.io.IOException;
 
+public class MQTTSubscriber implements MqttCallback {
+    private MqttClient client;
+    private VitalWorld world;
+    private MqttConnectOptions options;
+    private Thread audioThread;
     public MQTTSubscriber(VitalWorld world) throws MqttException {
 
 
         this.world = world;
-        client = new MqttClient("tcp://192.168.1.8:1883", "client");
+        client = new MqttClient("tcp://192.168.1.8:1883", "system");
         options = new MqttConnectOptions();
         options.setUserName("admin");
         options.setPassword("19930903".toCharArray());
         client.setCallback(this);
         client.connect(options);
+        String[] strings = {"locData","speechResult"};
+        client.subscribe(strings);
+//        client.subscribe("speechResult");
+         audioThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Process p = Runtime.getRuntime().exec("python /Users/runchangkang/Documents/Minuet/pySpeech/liveTest.py");
 
-        client.subscribe("data");
-
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     @Override
@@ -35,10 +48,22 @@ public class MQTTSubscriber implements MqttCallback {
     @Override
     public void messageArrived(String topic, MqttMessage message) throws Exception {
         String newData = new String(message.getPayload());
+//        System.out.println(newData);
+        if (topic.equals("locData")){
         newData += " testUser";
-        System.out.println("DATA received:" + newData);
-        world.revceiveData(newData);
+        System.out.println("LOCDATA received:" + newData);
+        synchronized (world){
+        world.revceiveData(newData);}
+//        audioThread.start();
+            Process p = Runtime.getRuntime().exec("python /Users/runchangkang/Documents/Minuet/pySpeech/liveTest.py");
 
+        }
+         if (topic.equals("speechResult")){
+            System.out.println("SpeechDataReceived: "+newData);
+            synchronized (world){
+                world.revceiveSpeechData(newData);}
+
+        }
     }
 
     @Override

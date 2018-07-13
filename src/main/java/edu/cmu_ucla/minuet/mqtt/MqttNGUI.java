@@ -70,6 +70,8 @@ public class MqttNGUI extends JFrame {
                     double movingResult = Math.sqrt(Math.pow(x, 2.0) + Math.pow(y, 2.0) + Math.pow(z, 2.0));
                     double result = y;
                     double result0 = z;
+//                    double result = y;
+//                    double result0 = az;
 
                     checkIsMoving(movingResult);
                     if (dataQueue.size() == 15) {
@@ -95,11 +97,26 @@ public class MqttNGUI extends JFrame {
                         if (isRecognizing) {
                             if (dataQueue.size() == 15) {
                                 Result newResult = this.recognizer.Recognize(dataQueue);
-                                if (newResult.Score >= 0.71) {
-                                    this.client.publish("trigger", new MqttMessage("send".getBytes()));
+                                if (newResult.Score >= 0.75) {
+//                                    if (newResult.Score >= 0.8) {
+
+                                    Thread pubThread = new Thread(new Runnable() {
+                                        @Override
+                                        public void run() {
+
+                                            try {
+                                                client.publish("trigger", new MqttMessage("0".getBytes()));
+                                            } catch (MqttException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    });
+                                    pubThread.start();
+
                                     System.out.println(newResult.Name);
                                     System.out.println(newResult.Score);
                                     dataQueue.clear();
+
                                 }
                             }
                         }

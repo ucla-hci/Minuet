@@ -1,8 +1,6 @@
 package edu.cmu_ucla.minute.test;
 
-import edu.cmu_ucla.minuet.model.BoundingSphere;
 import edu.cmu_ucla.minuet.model.User;
-import edu.cmu_ucla.minuet.model.VitalObject;
 import edu.cmu_ucla.minuet.model.VitalWorld;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.junit.Before;
@@ -15,9 +13,9 @@ public class VitalWorldTest {
     public void setUp() throws Exception {
         VitalWorld vitalWorld = new VitalWorld();
         User user = new User("testUser",0,0,0,new Vector3D(0,0,0));
-        VitalObject object = new VitalObject(new BoundingSphere(new Vector3D(3300,2890,1700),1000),"sonoffSwitch","cmnd/sonoff1/POWER");
-        vitalWorld.addUser(user);
-        vitalWorld.addObject(object);
+//        VitalObject object = new VitalObject(new BoundingSphere(new Vector3D(3300,2890,1700),1000),"sonoffSwitch","cmnd/sonoff1/POWER");
+//        vitalWorld.addUser(user);
+//        vitalWorld.addObject(object);
 // User user = new User("user1",-2.912,0,-93.281,new Vector3D(15,58,0));
 
 //        user.setYaw(-93.281);

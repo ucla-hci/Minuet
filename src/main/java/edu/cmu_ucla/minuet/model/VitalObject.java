@@ -2,43 +2,99 @@ package edu.cmu_ucla.minuet.model;
 
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class VitalObject {
+public abstract class VitalObject {
     private String name;
     private String topic;
     private BoundingObject boundingObject;
     private Set<VitalObjectCommand> commandList = new HashSet<>();
+    private Set<String> keyWords = new HashSet<>();
+    private Set<String> execuableWords = new HashSet<>();
+    private Set<String> supportedGestures = new HashSet<>();
+    private Map<String, String> keywordNGesture = new HashMap<>();
 
 
-    public VitalObject(BoundingObject boundingObject, String name, String topic){
+    public VitalObject(BoundingObject boundingObject, String name, String topic) {
         this.boundingObject = boundingObject;
         this.name = name;
         this.topic = topic;
 
     }
-    public void addCommand(VitalObjectCommand a){this.commandList.add(a);}
+
+    public void addKeyWord(String[] s) {
+        this.keyWords.addAll(Arrays.asList(s));
+    }
+
+    public void supportedGestures(String[] s) {
+        this.supportedGestures.addAll(Arrays.asList(s));
+    }
+
+    public void addExecuableWord(String[] s) {
+        this.execuableWords.addAll(Arrays.asList(s));
+    }
+
+    public boolean canExecuCommand(Set<String> command) {
+        if (!command.isEmpty() && execuableWords.containsAll(command)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean canExcuCommandWithGesture(Set<String> command, String gesture) {
+        if (!command.isEmpty() && !gesture.equals("")) {
+            for (String s : command) {
+                if (keywordNGesture.containsKey(s) && keywordNGesture.get(s).equals(gesture)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean canExcuGesture(String gesture){
+        if(supportedGestures.contains(gesture)){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean hasCommand(Set<String> command) {
+        return keyWords.contains(command);
+    }
+
+
+    public void addCommand(VitalObjectCommand a) {
+        this.commandList.add(a);
+    }
+
     /////CHECK!
-    public ObjectCommandPacket checkNExeCommand(ProcessorReturn processorReturn){
-        for(VitalObjectCommand objectChar : this.commandList){
-            if(objectChar.getCommandTopic().equals(processorReturn.getTopic())){
-                return new ObjectCommandPacket(this.topic+"/"+objectChar.getCommandTopic(), objectChar.execute(processorReturn.getA()));
+    public ObjectCommandPacket checkNExeCommand(ProcessorReturn processorReturn) {
+        for (VitalObjectCommand objectChar : this.commandList) {
+            if (objectChar.getCommandTopic().equals(processorReturn.getTopic())) {
+                return new ObjectCommandPacket(this.topic + "/" + objectChar.getCommandTopic(), objectChar.execute(processorReturn.getA()));
 
             }
         }
-         return null;
+        return null;
     }
-    public String getTopic() {return topic;}
+
+    public String getTopic() {
+        return topic;
+    }
+
     public String getName() {
         return name;
     }
 
-    public boolean checkBePointed(Vector3D target, Vector3D pointingVec){
-        return boundingObject.calculate(target,pointingVec);
+    public boolean checkBePointed(Vector3D target, Vector3D pointingVec) {
+        return boundingObject.calculate(target, pointingVec);
     }
+
     public BoundingObject getBoundingObject() {
         return boundingObject;
     }
-
+    public abstract String[] execuate(Set<String> command);
+    public abstract String[] execuate(Set<String> command,String gesture);
+    public abstract String[] execuate(String gesture);
 }
