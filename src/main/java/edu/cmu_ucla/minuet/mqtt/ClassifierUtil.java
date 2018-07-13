@@ -170,19 +170,19 @@ public class ClassifierUtil {
             String returnString = "";
             switch (Double.toString(a)){
                 case "0.0":
-                    returnString = "circleCW";
+                    returnString = "leftSwap";
                     break;
                 case "1.0":
                     returnString = "rightSwap";
                     break;
                 case "2.0":
-                    returnString = "leftSwap";
-                    break;
-                case "3.0":
                     returnString = "upSwap";
                     break;
-                case "4.0":
+                case "3.0":
                     returnString = "downSwap";
+                    break;
+                case "4.0":
+                    returnString = "circleCW";
                     break;
                 case "5.0":
                     returnString = "circleCCW";

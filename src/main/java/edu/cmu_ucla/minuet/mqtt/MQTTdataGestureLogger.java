@@ -130,7 +130,7 @@ public class MQTTdataGestureLogger extends JFrame {
         private Map<String,List<Vector<Struct>>> dataMap;
         public DataToFile(Map<String,List<Vector<Struct>>> dataMap) throws IOException {
             this.dataMap = dataMap;
-            FileWriter writer = new FileWriter("src/resources/train2.csv");
+            FileWriter writer = new FileWriter("src/resources/train4.csv");
             for (String s: dataMap.keySet()){
                 for(Vector<Struct> vs : dataMap.get(s)){
                    for(Struct cs : vs){

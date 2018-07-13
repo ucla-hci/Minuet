@@ -71,7 +71,7 @@ public class SystemSubscriber implements MqttCallback {
         } else if (topic.equals("data")) {
 
             if (world.getCurFrame() != null && world.getCurFrame().getCurGesture().equals("")) {
-                    System.out.println("enter gesture recognition");
+//                    System.out.println("enter gesture recognition");
                 Struct curStruct = new Struct(Double.parseDouble(splitedString[0]),
                         Double.parseDouble(splitedString[1]),
                         Double.parseDouble(splitedString[2]),
@@ -83,9 +83,9 @@ public class SystemSubscriber implements MqttCallback {
                 }
                 curIMUDatas.add(curStruct);
                 if (curIMUDatas.size() == 15) {
-                    synchronized (this) {
+//                    synchronized (this) {
                         checkGesture();
-                    }
+//                    }
                 }
 
             }
