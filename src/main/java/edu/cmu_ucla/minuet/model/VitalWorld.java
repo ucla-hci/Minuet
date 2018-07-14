@@ -205,12 +205,12 @@ public class VitalWorld {
         }
 
     public void execuFrame() {
-        System.out.println("execuFrame: "+Thread.currentThread().getName());
+//        System.out.println("execuFrame: "+Thread.currentThread().getName());
 
         synchronized (this) {
             this.curFrame.execuate(this.mqtt);
             this.curFrame=null;
         }
-        System.out.println("curFrame is :"+this.curFrame);
+//        System.out.println("curFrame is :"+this.curFrame);
     }
 }
