@@ -143,6 +143,17 @@ public class VitalWorld {
             for (VitalObject object : vitalObjects) {
                 if (curFrame==null && object.checkBePointed(userMap.get(userName).getPos(), userMap.get(userName).getPointVec())) {
                     synchronized (this) {
+                        Thread sendThread = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    mqtt.sendMessage("trigger","1");
+                                } catch (MqttException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                        sendThread.start();
                         curFrame = new CommandFrame(object, this);
                     }
                     System.out.println("sssss");
@@ -151,18 +162,38 @@ public class VitalWorld {
 //                        @Override
 //                        public void run() {
 //                            synchronized (this) {
+//                                System.out.println("time out ");
 //                                if (curFrame!= null &&!curFrame.isExecAble()) {
 //                                    curFrame = null;
 //                                }
 //                            }
 //                        }
 //                    };
-//                    scheduledExecutorService.schedule(cancellation, 20, TimeUnit.SECONDS);
+//                    scheduledExecutorService.schedule(cancellation, 5, TimeUnit.SECONDS);
 
                     break;
                 }
             }
         }
+    }
+    public void killCurFrame(){
+        synchronized (this){
+            if(curFrame != null){
+                curFrame.kill();
+                curFrame = null;
+            }
+        }
+        Thread sendThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mqtt.sendMessage("trigger","0");
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        sendThread.start();
     }
 //    public void revceiveData(String data) {
 //        System.out.println("received:" + data);
@@ -209,7 +240,19 @@ public class VitalWorld {
 
         synchronized (this) {
             this.curFrame.execuate(this.mqtt);
+            curFrame.kill();
             this.curFrame=null;
+            Thread sendThread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        mqtt.sendMessage("trigger","0");
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            sendThread.start();
         }
 //        System.out.println("curFrame is :"+this.curFrame);
     }

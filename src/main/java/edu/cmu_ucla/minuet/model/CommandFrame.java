@@ -5,6 +5,9 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class CommandFrame {
     private boolean isExecAble = false;
@@ -13,13 +16,32 @@ public class CommandFrame {
     private VitalObject curObject;
     private final VitalWorld world;
     private int execuType = 0;
+    private boolean isDead = false;
 
     public CommandFrame(VitalObject object, VitalWorld world) {
         this.curObject = object;
 
         this.world = world;
-    }
 
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
+        final Runnable cancellation = new Runnable() {
+            @Override
+            public void run() {
+                synchronized (this) {
+
+                    if (!isDead&&!isExecAble) {
+                        System.out.println("time out ");
+                        world.killCurFrame();
+                    }
+                }
+            }
+        };
+        scheduledExecutorService.schedule(cancellation, 10, TimeUnit.SECONDS);
+
+    }
+    public void kill(){
+        this.isDead = true;
+    }
     private void checkExcuable() {
 
         if (curObject.canExecuCommand(curCommand)) {

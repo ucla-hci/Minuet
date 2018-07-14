@@ -65,13 +65,12 @@ public class SystemSubscriber implements MqttCallback {
             if (world.getCurFrame() != null && world.getCurFrame().getCurCommand().isEmpty()) {
                 world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(splitedString)));
 
-
             }
 
         } else if (topic.equals("data")) {
 
             if (world.getCurFrame() != null && world.getCurFrame().getCurGesture().equals("")) {
-//                    System.out.println("enter gesture recognition");
+
                 Struct curStruct = new Struct(Double.parseDouble(splitedString[0]),
                         Double.parseDouble(splitedString[1]),
                         Double.parseDouble(splitedString[2]),
