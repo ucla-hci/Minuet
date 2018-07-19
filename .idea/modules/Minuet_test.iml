@@ -21,6 +21,7 @@
     <orderEntry type="library" name="Gradle: org.knowm.xchart:xchart:3.5.2" level="project" />
     <orderEntry type="library" name="Gradle: com.opencsv:opencsv:3.7" level="project" />
     <orderEntry type="library" name="Gradle: se.michaelthelin.spotify:spotify-web-api-java:2.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.1stleg:jnativehook:2.0.2" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: com.google.cloud:google-cloud-core-grpc:1.31.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.cloud:google-cloud-core:1.31.0" level="project" />

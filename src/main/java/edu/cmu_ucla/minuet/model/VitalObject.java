@@ -8,7 +8,6 @@ public abstract class VitalObject {
     private String name;
     private String topic;
     private BoundingObject boundingObject;
-    private Set<VitalObjectCommand> commandList = new HashSet<>();
     private Set<String> keyWords = new HashSet<>();
     private Set<String> execuableWords = new HashSet<>();
     private Set<String> supportedGestures = new HashSet<>();
@@ -36,6 +35,7 @@ public abstract class VitalObject {
 
     public boolean canExecuCommand(Set<String> command) {
         if (!command.isEmpty() && execuableWords.containsAll(command)) {
+
             return true;
         }
         return false;
@@ -60,24 +60,10 @@ public abstract class VitalObject {
     }
 
     public boolean hasCommand(Set<String> command) {
-        return keyWords.contains(command);
+        return keyWords.containsAll(command);
     }
 
 
-    public void addCommand(VitalObjectCommand a) {
-        this.commandList.add(a);
-    }
-
-    /////CHECK!
-    public ObjectCommandPacket checkNExeCommand(ProcessorReturn processorReturn) {
-        for (VitalObjectCommand objectChar : this.commandList) {
-            if (objectChar.getCommandTopic().equals(processorReturn.getTopic())) {
-                return new ObjectCommandPacket(this.topic + "/" + objectChar.getCommandTopic(), objectChar.execute(processorReturn.getA()));
-
-            }
-        }
-        return null;
-    }
 
     public String getTopic() {
         return topic;
