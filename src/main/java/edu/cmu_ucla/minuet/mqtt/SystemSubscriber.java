@@ -57,7 +57,9 @@ public class SystemSubscriber implements MqttCallback {
         String[] splitedString = newData.split("\\s+");
 
         if (topic.equals("locData")) {
+            System.out.println("loc got: " + newData);
             newData += " testUser";
+            world.directReceiveData(newData);
             world.revceiveData(newData);
         } else if (topic.equals("speechResult")) {
             System.out.println("Speech got: " + newData);

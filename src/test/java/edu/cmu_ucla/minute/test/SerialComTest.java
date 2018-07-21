@@ -19,24 +19,20 @@ public class SerialComTest {
 //        VitalObject object3 = new VitalObject(new BoundingSphere(new Vector3D(0,3650,1000),1000),"musicPlayer","cmnd/musicPlayer");
         Light light = new Light(new BoundingSphere(new Vector3D(3300,2890,1900),1000),"sonoffSwitch","cmnd/sonoff1/POWER");
         MusicPlayer musicPlayer = new MusicPlayer(new BoundingSphere(new Vector3D(0,3650,1000),1000),"musicPlayer","cmnd/MusicPlayer");
+//        Roomba roomba = new Roomba((new BoundingSphere(new Vector3D(1000,1000,0),1000)),"Roomba","roomba");
         world.addUser(user);
         world.addObject(light);
         world.addObject(musicPlayer);
-//        world.addObject(object);
-//        world.addObject(object2);
-//        world.addObject(object3);
-//        MQTTSubscriber subscriber = new MQTTSubscriber(world);
-        SystemSubscriber systemSubscriber = new SystemSubscriber(world);
-//        VoiceMQTTSub sub = new VoiceMQTTSub(world);
-//        Thread trigger = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                MqttNGUI mqttNGUI = new MqttNGUI("DEMO");
-//            }
-//        });
-//        trigger.start();
+//        world.addObject(roomba);
 
-//            edu.cmu_ucla.minuet.SerialComm.NewSerialCom serialCom = new edu.cmu_ucla.minuet.SerialComm.NewSerialCom(world);
+        Artifacts monaLisa = new Artifacts(new BoundingSphere(new Vector3D(5400,3650,1200),1000),"Mona_Lisa","museum");
+        Artifacts theBurthOfVenus = new Artifacts(new BoundingSphere(new Vector3D(5400,2000,1200),1000),"The_Birth_of_Venus","museum");
+        Artifacts theStarryNight = new Artifacts(new BoundingSphere(new Vector3D(3300,0,1200),1000),"The_Starry_Night","museum");
+        world.addArtifact(monaLisa);
+        world.addArtifact(theBurthOfVenus);
+        world.addArtifact(theStarryNight);
+        SystemSubscriber systemSubscriber = new SystemSubscriber(world);
+
     }
 
     @Test

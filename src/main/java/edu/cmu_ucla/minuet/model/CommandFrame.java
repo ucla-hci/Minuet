@@ -18,6 +18,13 @@ public class CommandFrame {
     private int execuType = 0;
     private boolean isDead = false;
 
+
+    public void setSecLoc(LocData secLoc) {
+        this.secLoc = secLoc;
+    }
+
+    private LocData secLoc = null;
+
     public CommandFrame(VitalObject object, VitalWorld world) {
         this.curObject = object;
 
@@ -64,10 +71,6 @@ public class CommandFrame {
 
 
     public void setCurCommand(Set<String> curCommand) {
-        System.out.println("set command start");
-        System.out.println("curCommand" + curCommand);
-        System.out.println("hasCommand" + curObject.hasCommand(curCommand));
-        System.out.println("canExecuCommand" + curObject.canExecuCommand(curCommand));
 
         if (curObject.hasCommand(curCommand) || curObject.canExecuCommand(curCommand)) {
             System.out.println("set command entered");
@@ -117,6 +120,10 @@ public class CommandFrame {
         }
         if (retirmData.length == 2) {
             try {
+                if(curObject.getClass().isInstance(Roomba.class)&&retirmData[1].equals("g")&&secLoc!=null){
+
+                    retirmData[1]=retirmData[1]+" "+secLoc.getPos().getX()+" "+secLoc.getPos().getY();
+                }
                 mqtt.sendMessage(retirmData[0], retirmData[1]);
             } catch (MqttException e) {
                 e.printStackTrace();

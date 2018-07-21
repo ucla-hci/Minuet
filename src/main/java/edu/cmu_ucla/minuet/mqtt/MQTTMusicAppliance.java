@@ -81,4 +81,12 @@ public class MQTTMusicAppliance implements MqttCallback {
     public void deliveryComplete(IMqttDeliveryToken token) {
 
     }
+
+    public static void main(String[] args) {
+        try {
+            MQTTMusicAppliance m = new MQTTMusicAppliance();
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+    }
 }
