@@ -3,16 +3,23 @@
 // 3d visualization for project minuet, v1.0
 //
 // by xiangchen@acm.org, 07/2018
+// by runchank@andrew.cmu.edu  07/2018
 //
+
 // 🚨 🚨 🚨 🚨 🚨 🚨 🚨  NOTE! 🚨 🚨 🚨 🚨 🚨 🚨 🚨
 // - in three.js, y is vertical, z is horizontal, x remains the same
 //
 // TO IMPROVE:
 // - interpolation to make the animation smoother
 //	........................................................................................................
+// July2018 - Richard - added the MQTT section for incoming data stream
+
 
 var XAC = XAC || {};
 var MINUET = MINUET || {};
+var host = "192.168.1.8";
+var port = 9001;
+
 
 //
 //  ready function to initialize the vis
@@ -20,44 +27,113 @@ var MINUET = MINUET || {};
 $(document).ready(function() {
   // load configuration and data
   YAML.load("config.yml", function(config) {
+
+
     Object.assign(MINUET, config);
 
     MINUET.setupScene(MINUET.room.lx, MINUET.room.ly, MINUET.room.lz);
     XAC.createUI();
+    var mqtt;
 
-    // load log data
-    YAML.load("visual_data.yml", function(dataLogs) {
-      MINUET.dataLogs = [];
+    MINUET.dataLogs;
 
-      // compute positions and orientations
-      for (entry of dataLogs) {
-        MINUET.dataLogs.push({
-          position: new THREE.Vector3(entry.x, MINUET.hardcodedZ, entry.y),
-          orientation: new THREE.Vector3(
-            Math.sin(((360 - entry.yaw) * Math.PI) / 180) *
-              Math.cos((entry.pitch * Math.PI) / 180),
-            Math.sin((entry.pitch * Math.PI) / 180),
-            -Math.cos(((360 - entry.yaw) * Math.PI) / 180) *
-              Math.cos((entry.pitch * Math.PI) / 180)
-          )
-        });
-      }
+    MINUET.updateCurPoint("0 0 0 0 0 0");
 
-      // visualize the user and anchors
-      MINUET.user = addABall(MINUET.dataLogs[0].position, 0xff0000, 150);
-      for (anchor of MINUET.anchors) {
-        var posAnchor = new THREE.Vector3(anchor.x, anchor.z, anchor.y);
-        addABall(posAnchor, 0x0000ff, 150);
-      }
+          // visualize the user and anchors
+    MINUET.user = addABall(MINUET.dataLogs.position, 0xff0000, 150);
+    for (anchor of MINUET.anchors) {
+      var posAnchor = new THREE.Vector3(anchor.x, anchor.z, anchor.y);
+      addABall(posAnchor, 0x0000ff, 150);
+    }
+          
 
-      // for debugging, press any key to start the animation
-      $(document).on("keydown", function(event) {
-        MINUET.idxData = 0;
-        MINUET.animate();
-      });
+
+
+          function onFailure(message) {
+            console.log("Connection Attempt to Host "+host+"Failed");
+            setTimeout(MQTTconnect, 2000);
+          }
+
+
+          function onMessageArrived(msg){
+            out_msg="Message received "+msg.payloadString;
+
+            console.log(out_msg);
+            MINUET.updateCurPoint(msg.payloadString);
+            MINUET.animate();
+
+          }
+
+          function onConnect() {
+            console.log("Connected ");
+            mqtt.subscribe("locData");
+            message = new Paho.MQTT.Message("mqtt Start");
+            message.destinationName = "jsStatus";
+            mqtt.send(message);
+          }
+
+
+          function MQTTconnect() {
+            console.log("connecting to "+ host +" "+ port);
+            mqtt = new Paho.MQTT.Client("192.168.1.8",9001,"clientjs");
+            var options = {
+              timeout: 3,
+              onSuccess: onConnect,
+              onFailure: onFailure,
+              userName:"admin",
+              password:"19930903",
+            };
+            mqtt.onMessageArrived = onMessageArrived
+
+            mqtt.connect(options); 
+          }
+
+          MQTTconnect();
     });
-  });
 });
+
+
+
+
+
+//
+// update the current data point when a new sample of data coming from mqtt
+//
+
+MINUET.updateCurPoint = function(rawData){
+  console.log("got: "+ rawData);
+  var singleDatas = rawData.split(" ");
+  console.log("singleDatas: "+ singleDatas);
+  var yaw = Number(singleDatas[3]-30);
+
+  if(yaw <0 ){
+    yaw = 360+yaw;
+  }
+  var pitch = Number(singleDatas[4]);
+  var roll = Number(singleDatas[5]);
+  var x = Number(singleDatas[0])+MINUET.armLength*Math.cos((pitch * Math.PI) / 180)*Math.sin((yaw * Math.PI) / 180);
+  var y = Number(singleDatas[1])+MINUET.armLength*Math.cos((pitch * Math.PI) / 180)*Math.cos((yaw * Math.PI) / 180);
+
+  console.log("x: "+ x);
+  console.log("y: "+ y);
+  console.log("z: "+ MINUET.hardcodedZ);
+  console.log("pitch: "+ pitch);
+  console.log("yaw: "+ yaw);
+
+
+  MINUET.dataLogs = {
+          position: new THREE.Vector3(x, MINUET.hardcodedZ, y),
+          orientation: new THREE.Vector3(
+            -Math.sin((yaw * Math.PI) / 180) *
+              Math.cos((pitch * Math.PI) / 180),
+            Math.sin((pitch * Math.PI) / 180),
+            -Math.cos(((yaw) * Math.PI) / 180) *
+              Math.cos((pitch * Math.PI) / 180)
+          )
+        }
+        console.log(MINUET.dataLogs.position);
+        console.log(MINUET.dataLogs.orientation);
+}
 
 //
 //  set up the scene for visualization
@@ -112,14 +188,14 @@ MINUET.setupScene = function(lx, ly, lz) {
     window.innerWidth / window.innerHeight,
     1,
     20000
-  );
+    );
 
   var ratioCamPos = new THREE.Vector3(0.25, 2.5, 1.5).multiplyScalar(0.8);
   XAC.posCam = new THREE.Vector3(
     lx * ratioCamPos.x,
     lz * ratioCamPos.y,
     ly * ratioCamPos.z
-  );
+    );
   XAC.camera.position.copy(XAC.posCam);
 
   XAC.lookAt = new THREE.Vector3(lx / 2, lz / 2, ly / 2);
@@ -128,7 +204,7 @@ MINUET.setupScene = function(lx, ly, lz) {
     XAC.camera,
     undefined,
     XAC.lookAt
-  );
+    );
 
   // set up mouse
   XAC.mouseCtrls.rotateSpeed = 5.0;
@@ -179,7 +255,7 @@ MINUET.setupScene = function(lx, ly, lz) {
 // recursively do animation
 //
 MINUET.animate = function() {
-  var data = MINUET.dataLogs[MINUET.idxData++];
+  var data = MINUET.dataLogs;
   MINUET.user.position.copy(data.position);
   XAC.scene.remove(MINUET.pointer);
   MINUET.pointer = addAnArrow(
@@ -188,7 +264,8 @@ MINUET.animate = function() {
     1000,
     0xff0000,
     25
-  );
+    );
   XAC.scene.add(MINUET.pointer);
-  if (MINUET.idxData < MINUET.dataLogs.length) setTimeout(MINUET.animate, 250);
 };
+
+

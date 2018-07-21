@@ -22,14 +22,14 @@ public class MusicPlayer extends VitalObject {
     @Override
     public String[] execuate(Set<String> command, String gesture) {
         String[] topicNMes = new String[2];
-        if (command.contains("volume") && gesture.equals("circleCW")) {
-            topicNMes[0] = getTopic();
-            topicNMes[1] = "3";
-        } else if (command.contains("volume") && gesture.equals("circleCCW")) {
-            topicNMes[0] = getTopic();
-            topicNMes[1] = "4";
-        }
-        return topicNMes;
+//        if (command.contains("volume") && gesture.equals("circleCW")) {
+//            topicNMes[0] = getTopic();
+//            topicNMes[1] = "3";
+//        } else if (command.contains("volume") && gesture.equals("circleCCW")) {
+//            topicNMes[0] = getTopic();
+//            topicNMes[1] = "4";
+//        }
+        return  new String[0];
     }
 
     @Override
@@ -52,7 +52,7 @@ public class MusicPlayer extends VitalObject {
     public MusicPlayer(BoundingObject boundingObject, String name, String topic) {
         super(boundingObject, name, topic);
         String[] excuWords = {"next", "start", "pause"};
-        String[] gestures = {"leftSwap", "rightSwap", "upSwap", "downSwap","circleCW","circleCCW"};
+        String[] gestures = {"rightSwap", "upSwap", "downSwap"};
         addExecuableWord(excuWords);
         supportedGestures(gestures);
     }

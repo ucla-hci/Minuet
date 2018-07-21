@@ -17,20 +17,20 @@ public class SerialComTest {
 //        VitalObject object = new VitalObject(new BoundingSphere(new Vector3D(3300,2890,1900),1000),"sonoffSwitch","cmnd/sonoff1/POWER");
 //        VitalObject object2 = new VitalObject(new BoundingSphere(new Vector3D(1900,2700,1300),1000),"tv","cmnd/sonoff3/POWER");
 //        VitalObject object3 = new VitalObject(new BoundingSphere(new Vector3D(0,3650,1000),1000),"musicPlayer","cmnd/musicPlayer");
-        Light light = new Light(new BoundingSphere(new Vector3D(3300,2890,1900),1000),"sonoffSwitch","cmnd/sonoff1/POWER");
+        Light light = new Light(new BoundingSphere(new Vector3D(3300,2890,1500),1000),"sonoffSwitch","cmnd/sonoff1/POWER");
         MusicPlayer musicPlayer = new MusicPlayer(new BoundingSphere(new Vector3D(0,3650,1000),1000),"musicPlayer","cmnd/MusicPlayer");
-//        Roomba roomba = new Roomba((new BoundingSphere(new Vector3D(1000,1000,0),1000)),"Roomba","roomba");
+        Roomba roomba = new Roomba((new BoundingSphere(new Vector3D(1300,1300,0),1000)),"Roomba","roomba");
         world.addUser(user);
         world.addObject(light);
         world.addObject(musicPlayer);
-//        world.addObject(roomba);
-
-        Artifacts monaLisa = new Artifacts(new BoundingSphere(new Vector3D(5400,3650,1200),1000),"Mona_Lisa","museum");
-        Artifacts theBurthOfVenus = new Artifacts(new BoundingSphere(new Vector3D(5400,2000,1200),1000),"The_Birth_of_Venus","museum");
-        Artifacts theStarryNight = new Artifacts(new BoundingSphere(new Vector3D(3300,0,1200),1000),"The_Starry_Night","museum");
-        world.addArtifact(monaLisa);
-        world.addArtifact(theBurthOfVenus);
-        world.addArtifact(theStarryNight);
+        world.addObject(roomba);
+//
+//        Artifacts monaLisa = new Artifacts(new BoundingSphere(new Vector3D(5400,3650,1200),1000),"Mona_Lisa","museum");
+//        Artifacts theBurthOfVenus = new Artifacts(new BoundingSphere(new Vector3D(5400,2000,1200),1000),"The_Birth_of_Venus","museum");
+//        Artifacts theStarryNight = new Artifacts(new BoundingSphere(new Vector3D(3300,0,1200),1000),"The_Starry_Night","museum");
+//        world.addArtifact(monaLisa);
+//        world.addArtifact(theBurthOfVenus);
+//        world.addArtifact(theStarryNight);
         SystemSubscriber systemSubscriber = new SystemSubscriber(world);
 
     }

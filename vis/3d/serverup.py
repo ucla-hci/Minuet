@@ -5,7 +5,7 @@ import subprocess
 
 if __name__ == "__main__":
 	if len(argv) < 2:
-		print 'usage: ./serverup.py <port_number>'
+		print ('usage: ./serverup.py <port_number>')
 		quit()
 
-	subprocess.call('nohup python -mSimpleHTTPServer ' + argv[1] + ' > /dev/null 2>&1 &', shell=True)
+	subprocess.call('nohup python -m http.server ' + argv[1] + ' > /dev/null 2>&1 &', shell=True)
