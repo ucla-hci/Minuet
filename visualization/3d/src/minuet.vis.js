@@ -102,27 +102,34 @@ $(document).ready(function() {
 
 MINUET.updateCurPoint = function(rawData){
   console.log("got: "+ rawData);
-  var singleDatas = rawData.split(" ");
-  console.log("singleDatas: "+ singleDatas);
-  var yaw = Number(singleDatas[3]-30);
+  var singleData = rawData.split(" ");
+  console.log("singleData: "+ singleData);
+  var yaw = Number(singleData[3]-30);
 
   if(yaw <0 ){
     yaw = 360+yaw;
   }
-  var pitch = Number(singleDatas[4]);
-  var roll = Number(singleDatas[5]);
-  var x = Number(singleDatas[0])+MINUET.armLength*Math.cos((pitch * Math.PI) / 180)*Math.sin((yaw * Math.PI) / 180);
-  var y = Number(singleDatas[1])+MINUET.armLength*Math.cos((pitch * Math.PI) / 180)*Math.cos((yaw * Math.PI) / 180);
-
+  var pitch = Number(singleData[4]);
+  var roll = Number(singleData[5]);
+  var x = Number(singleData[0])+MINUET.armLength*Math.cos((pitch * Math.PI) / 180)*Math.sin((yaw * Math.PI) / 180);
+  var y = Number(singleData[1])+MINUET.armLength*Math.cos((pitch * Math.PI) / 180)*Math.cos((yaw * Math.PI) / 180);
+  var proxyZ = Number(singleData[2])-Math.sin((pitch * Math.PI) / 180)*MINUET.armLength;
+  var z = 0;
+  if(Math.abs(proxyZ-MINUET.hardcodedZ)>=Math.abs(proxyZ-MINUET.hardcodedZ2)){
+    z = MINUET.hardcodedZ2;
+  }
+  else{
+    z = MINUET.hardcodedZ;
+  }
   console.log("x: "+ x);
   console.log("y: "+ y);
-  console.log("z: "+ MINUET.hardcodedZ);
+  console.log("z: "+ z);
   console.log("pitch: "+ pitch);
   console.log("yaw: "+ yaw);
 
 
   MINUET.dataLogs = {
-          position: new THREE.Vector3(x, MINUET.hardcodedZ, y),
+          position: new THREE.Vector3(x, z, y),
           orientation: new THREE.Vector3(
             -Math.sin((yaw * Math.PI) / 180) *
               Math.cos((pitch * Math.PI) / 180),

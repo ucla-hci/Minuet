@@ -5,7 +5,7 @@ import java.util.Set;
 public class Roomba extends VitalObject {
     public Roomba(BoundingObject boundingObject, String name, String topic) {
         super(boundingObject, name, topic);
-        String[]excuWords = {"clean","that","area","here","this","there","stop","go","home"};
+        String[]excuWords = {"clean","that","area","here","this","there","stop","go","home","cleaning"};
         String[]gestures={"circleCCW","upSwap"};
         addExecuableWord(excuWords);
         supportedGestures(gestures);
@@ -21,7 +21,7 @@ public class Roomba extends VitalObject {
         }
         else if (command.contains("stop")){
             topicNMes[0]=getTopic();
-            topicNMes[1]="s";
+            topicNMes[1]="c";
         }
         else if (command.contains("go")&&command.contains("home")){
             topicNMes[0]=getTopic();

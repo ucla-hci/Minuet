@@ -74,6 +74,7 @@ public abstract class VitalObject {
     }
 
     public boolean checkBePointed(Vector3D target, Vector3D pointingVec) {
+        System.out.println(this.name+": ");
         return boundingObject.calculate(target, pointingVec);
     }
 

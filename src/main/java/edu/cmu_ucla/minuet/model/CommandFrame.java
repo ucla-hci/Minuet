@@ -120,10 +120,13 @@ public class CommandFrame {
         }
         if (retirmData.length == 2) {
             try {
-                if(curObject.getClass().isInstance(Roomba.class)&&retirmData[1].equals("g")&&secLoc!=null){
 
-                    retirmData[1]=retirmData[1]+" "+secLoc.getPos().getX()+" "+secLoc.getPos().getY();
+                if(Roomba.class.isInstance(curObject)&&retirmData[1].equals("g")&&secLoc!=null){
+
+                    retirmData[1]=retirmData[1]+" "+(int)secLoc.getPos().getX()+" "+(int)secLoc.getPos().getY();
+                    System.out.println(retirmData[0]+" "+retirmData[1]);
                 }
+
                 mqtt.sendMessage(retirmData[0], retirmData[1]);
             } catch (MqttException e) {
                 e.printStackTrace();

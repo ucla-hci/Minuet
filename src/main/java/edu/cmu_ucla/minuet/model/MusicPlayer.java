@@ -12,7 +12,7 @@ public class MusicPlayer extends VitalObject {
         } else if (command.contains("start")) {
             topicNMes[0] = getTopic();
             topicNMes[1] = "0";
-        } else if (command.contains("pause")) {
+        } else if (command.contains("stop")) {
             topicNMes[0] = getTopic();
             topicNMes[1] = "1";
         }
@@ -51,7 +51,7 @@ public class MusicPlayer extends VitalObject {
 
     public MusicPlayer(BoundingObject boundingObject, String name, String topic) {
         super(boundingObject, name, topic);
-        String[] excuWords = {"next", "start", "pause"};
+        String[] excuWords = {"next", "start", "stop","music","the","song"};
         String[] gestures = {"rightSwap", "upSwap", "downSwap"};
         addExecuableWord(excuWords);
         supportedGestures(gestures);

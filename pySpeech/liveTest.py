@@ -32,9 +32,9 @@ import re
 import sys
 import paho.mqtt.client as mqtt
 
-from google.cloud import speech
-from google.cloud.speech import enums
-from google.cloud.speech import types
+from google.cloud import speech_v1p1beta1 as speech
+from google.cloud.speech_v1p1beta1 import enums
+from google.cloud.speech_v1p1beta1 import types
 import pyaudio
 from six.moves import queue
 # [END import_libraries]
@@ -176,12 +176,17 @@ def main():
     # See http://g.co/cloud/speech/docs/languages
     # for a list of supported languages.
     language_code = 'en-US'  # a BCP-47 language tag
-
+    
     client = speech.SpeechClient()
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=RATE,
-        language_code=language_code)
+        language_code=language_code,
+        model = 'command_and_search',
+        use_enhanced=True,
+        speech_contexts=[speech.types.SpeechContext(
+                        phrases=['stop','clean','next','start','clean','here','that','this','go'])]
+        )
     streaming_config = types.StreamingRecognitionConfig(
         config=config,
         interim_results=True)

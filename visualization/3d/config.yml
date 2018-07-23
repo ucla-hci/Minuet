@@ -1,4 +1,5 @@
 hardcodedZ: 1400
+hardcodedZ2: 1000
 armLength: 350
 room:
   lx: 4500
@@ -12,11 +13,11 @@ anchors:
   -
     x: 4170
     y: 0
-    z: 2050
+    z: 880
   -
     x: -240
     y: 8680
-    z: 1500
+    z: 600
   -
     x: 4520
     y: 8690
