@@ -11,7 +11,6 @@ public class VitalWorld {
     private final static double SIT_Z = 1000.0;
     private final static double L = 350.0;
     private Map<String, User> userMap = new HashMap<>();
-
     private Set<VitalObject> vitalObjects = new HashSet<>();
     private MQTT mqtt = new MQTT();
 
@@ -78,7 +77,6 @@ public class VitalWorld {
 
 
     public void revceiveData(String data) {
-//        System.out.println("received:" + data);
         String[] splitedString = data.split("\\s+");
 
         if (splitedString.length == 7) {

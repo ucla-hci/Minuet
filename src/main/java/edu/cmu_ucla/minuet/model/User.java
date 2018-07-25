@@ -1,6 +1,5 @@
 package edu.cmu_ucla.minuet.model;
 
-import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 public class User {
@@ -12,15 +11,10 @@ public class User {
 
 
     private Vector3D pointVec;
-    private Rotation rotation;
 
     private String name;
     private Vector3D pos;
 
-
-    public Rotation getRotation() {
-        return rotation;
-    }
 
     public User(String name, double pitch, double roll, double yaw, Vector3D pos) {
         this.pitch = pitch;
@@ -33,7 +27,6 @@ public class User {
         double y = -Math.cos(Math.toRadians(pitch))*Math.cos(Math.toRadians(yaw));
         double z = Math.sin(Math.toRadians(pitch));
         this.pointVec = new Vector3D(x,y,z);
-//        this.rotation = new Rotation(RotationOrder.ZYX,yaw,pitch,roll);
     }
     public Vector3D getPointVec() {
         return pointVec;
@@ -59,18 +52,4 @@ public class User {
         return pos;
     }
 
-
-
-
-    public double getPitch() {
-        return pitch;
-    }
-
-    public double getRoll() {
-        return roll;
-    }
-
-    public double getYaw() {
-        return yaw;
-    }
 }

@@ -1,34 +1,36 @@
 package edu.cmu_ucla.minuet.mqtt;
 
-import edu.cmu_ucla.minuet.$1.Point;
-import edu.cmu_ucla.minuet.$1.Recognizer;
-import edu.cmu_ucla.minuet.$1.Result;
+import edu.cmu_ucla.minuet.model.Struct;
 import org.eclipse.paho.client.mqttv3.*;
+import weka.classifiers.AbstractClassifier;
+import weka.classifiers.lazy.IBk;
+import weka.core.SerializationHelper;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Vector;
 
 public class MqttNGUI extends JFrame {
     private static Boolean isPressed = false;
-    private static Boolean isRecognizing = false;
-    private static Boolean isTraining = false;
     private static boolean isDead = false;
 
 
-    private class MQTTdataLogger extends SwingWorker<Void, Boolean> implements MqttCallback {
+    private class MQTTdataLogger extends SwingWorker<Void, String> implements MqttCallback {
         private Boolean isMoving = false;
-        private Vector<Point> dataQueue;
-        private Recognizer recognizer;
-        private List<Double> trainList;
+        private List<Struct> dataQueue;
         private MqttClient client;
+        private AbstractClassifier model;
 
         public MQTTdataLogger() throws MqttException {
+            try {
+                model = (IBk) SerializationHelper.read(new FileInputStream("weka/KNNgestures.model"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             System.out.println("Start connecting MQTT");
             this.client = new MqttClient("tcp://192.168.1.8:1883", "logger");
             MqttConnectOptions options = new MqttConnectOptions();
@@ -37,10 +39,9 @@ public class MqttNGUI extends JFrame {
             client.setCallback(this);
             client.connect(options);
             client.subscribe("data");
-            this.dataQueue = new Vector<>(15);
-            this.trainList = new ArrayList<>();
-            this.recognizer = new Recognizer(1);
+            this.dataQueue = new ArrayList<>(15);
             System.out.println("Mqtt connection finished");
+
         }
 
         @Override
@@ -48,6 +49,11 @@ public class MqttNGUI extends JFrame {
             while (!isDead) {
             }
             return null;
+        }
+
+        @Override
+        protected void process(List<String> chunks) {
+            super.process(chunks);
         }
 
         @Override
@@ -67,75 +73,28 @@ public class MqttNGUI extends JFrame {
                     double x = Double.parseDouble(splitedString[3]);
                     double y = Double.parseDouble(splitedString[4]);
                     double z = Double.parseDouble(splitedString[5]);
-                    double movingResult = Math.sqrt(Math.pow(x, 2.0) + Math.pow(y, 2.0) + Math.pow(z, 2.0));
-                    double result = y;
-                    double result0 = z;
-//                    double result = y;
-//                    double result0 = az;
-
-                    checkIsMoving(movingResult);
+                    Struct tmpStruct = new Struct(ax, ay, az, x, y, z);
                     if (dataQueue.size() == 15) {
                         this.dataQueue.remove(0);
 
                     }
-                    dataQueue.addElement(new Point(result0, result));
+                    dataQueue.add(tmpStruct);
 
-                    synchronized (isTraining) {
-                        if (isTraining) {
-                            trainList.add(result0);
-                            trainList.add(result);
-                        } else if (!trainList.isEmpty()) {
-                            System.out.println("training end");
-                            double[] arr = trainList.stream().mapToDouble(d -> d).toArray();
-                            this.recognizer.addTemplate(this.recognizer.loadTemplate("circle", arr));
-                            System.out.println(Arrays.toString(arr));
-                            trainList.clear();
-                            System.out.println("system has :" + this.recognizer.Templates.size());
+
+                    if (dataQueue.size() == 15) {
+                        String result = ClassifierUtil.Classify(model, dataQueue,0);
+                        if (!result.equals("noInteraction")) {
+
+                            dataQueue.clear();
+
                         }
+                        publish(result);
+
                     }
-                    synchronized (isRecognizing) {
-                        if (isRecognizing) {
-                            if (dataQueue.size() == 15) {
-                                Result newResult = this.recognizer.Recognize(dataQueue);
-                                if (newResult.Score >= 0.75) {
-//                                    if (newResult.Score >= 0.8) {
-
-                                    Thread pubThread = new Thread(new Runnable() {
-                                        @Override
-                                        public void run() {
-
-                                            try {
-                                                client.publish("trigger", new MqttMessage("0".getBytes()));
-                                            } catch (MqttException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    });
-                                    pubThread.start();
-
-                                    System.out.println(newResult.Name);
-                                    System.out.println(newResult.Score);
-                                    dataQueue.clear();
-
-                                }
-                            }
-                        }
-                    }
-
                 }
+
             }
 
-        }
-
-        private void checkIsMoving(double result) {
-            boolean curIsMoving = false;
-            if (result > 15) {
-                curIsMoving = true;
-            }
-            if (curIsMoving != isMoving) {
-                isMoving = curIsMoving;
-                publish(curIsMoving);
-            }
         }
 
         @Override
@@ -145,11 +104,12 @@ public class MqttNGUI extends JFrame {
     }
 
 
-    private JLabel pressedLabel = new JLabel("Is Pressed: ");
-    private JLabel movingLabel = new JLabel("Is Moving: ");
+
+
+    private JLabel pressedLabel = new JLabel("Start the Program: ");
+    private JLabel movingLabel = new JLabel("result: ");
     private JButton startButton = new JButton("Start");
-    private JButton trainButton = new JButton("Train");
-    private JButton RecogButton = new JButton("Recog");
+
 
     public MqttNGUI(String title) {
         super(title);
@@ -179,16 +139,8 @@ public class MqttNGUI extends JFrame {
         gc.weightx = 1;
         gc.weighty = 1;
         add(startButton, gc);
-        gc.gridx = 0;
-        gc.gridy = 3;
-        gc.weightx = 1;
-        gc.weighty = 1;
-        add(trainButton, gc);
-        gc.gridx = 0;
-        gc.gridy = 4;
-        gc.weightx = 1;
-        gc.weighty = 1;
-        add(RecogButton, gc);
+
+
 
 
         startButton.addActionListener(new ActionListener() {
@@ -204,43 +156,19 @@ public class MqttNGUI extends JFrame {
             }
 
         });
-        trainButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                synchronized (isTraining) {
-
-                    isTraining = !isTraining;
 
 
-                }
-            }
-
-        });
-        RecogButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                synchronized (isRecognizing) {
-
-                    isRecognizing = !isRecognizing;
-
-
-                }
-            }
-
-        });
 
 
         setSize(500, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        SwingWorker<Void, Boolean> swingWorker;
+        SwingWorker<Void, String> swingWorker;
         try {
             swingWorker = new MQTTdataLogger() {
                 @Override
-                protected void process(List<Boolean> chunks) {
-                    movingLabel.setText("Is Moving: " + chunks.get(chunks.size() - 1));
+                protected void process(List<String> chunks) {
+                    movingLabel.setText("Cur Gesture: " + chunks.get(chunks.size() - 1));
                 }
             };
             swingWorker.execute();
@@ -256,7 +184,7 @@ public class MqttNGUI extends JFrame {
 
             @Override
             public void run() {
-                new MqttNGUI("$1 Demo");
+                new MqttNGUI("recognizer demo");
             }
         });
 

@@ -130,7 +130,7 @@ public class MQTTdataGestureLogger extends JFrame {
         private Map<String,List<Vector<Struct>>> dataMap;
         public DataToFile(Map<String,List<Vector<Struct>>> dataMap) throws IOException {
             this.dataMap = dataMap;
-            FileWriter writer = new FileWriter("src/resources/train4.csv");
+            FileWriter writer = new FileWriter("src/resources/train6.csv");
             for (String s: dataMap.keySet()){
                 for(Vector<Struct> vs : dataMap.get(s)){
                    for(Struct cs : vs){
@@ -177,6 +177,7 @@ public class MQTTdataGestureLogger extends JFrame {
         model.addElement("leftArc");
         model.addElement("z");
         model.addElement("NOTHING");
+        model.addElement("pointing");
         names.setModel(model);
         names.getSelectionModel().addListSelectionListener(e -> {
                     synchronized (this) {

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ClassifierUtil {
 
-    public static String Classify(AbstractClassifier model, List<Struct> data){
+    public static String Classify(AbstractClassifier model, List<Struct> data, int type) {
         Attribute ax0 = new Attribute("ax0");
         Attribute ay0 = new Attribute("ay0");
         Attribute az0 = new Attribute("az0");
@@ -119,21 +119,21 @@ public class ClassifierUtil {
         Attribute gy14 = new Attribute("gy14");
         Attribute gz14 = new Attribute("gz14");
         ArrayList<Attribute> fvWekaAttributes = new ArrayList<>();
-        Attribute[] attributes = {ax0,ay0,az0,gx0,gy0,gz0,
-                ax1,ay1,az1,gx1,gy1,gz1,
-                ax2,ay2,az2,gx2,gy2,gz2,
-                ax3,ay3,az3,gx3,gy3,gz3,
-                ax4,ay4,az4,gx4,gy4,gz4,
-                ax5,ay5,az5,gx5,gy5,gz5,
-                ax6,ay6,az6,gx6,gy6,gz6,
-                ax7,ay7,az7,gx7,gy7,gz7,
-                ax8,ay8,az8,gx8,gy8,gz8,
-                ax9,ay9,az9,gx9,gy9,gz9,
-                ax10,ay10,az10,gx10,gy10,gz10,
-                ax11,ay11,az11,gx11,gy11,gz11,
-                ax12,ay12,az12,gx12,gy12,gz12,
-                ax13,ay13,az13,gx13,gy13,gz13,
-                ax14,ay14,az14,gx14,gy14,gz14};
+        Attribute[] attributes = {ax0, ay0, az0, gx0, gy0, gz0,
+                ax1, ay1, az1, gx1, gy1, gz1,
+                ax2, ay2, az2, gx2, gy2, gz2,
+                ax3, ay3, az3, gx3, gy3, gz3,
+                ax4, ay4, az4, gx4, gy4, gz4,
+                ax5, ay5, az5, gx5, gy5, gz5,
+                ax6, ay6, az6, gx6, gy6, gz6,
+                ax7, ay7, az7, gx7, gy7, gz7,
+                ax8, ay8, az8, gx8, gy8, gz8,
+                ax9, ay9, az9, gx9, gy9, gz9,
+                ax10, ay10, az10, gx10, gy10, gz10,
+                ax11, ay11, az11, gx11, gy11, gz11,
+                ax12, ay12, az12, gx12, gy12, gz12,
+                ax13, ay13, az13, gx13, gy13, gz13,
+                ax14, ay14, az14, gx14, gy14, gz14};
         fvWekaAttributes.addAll(Arrays.asList(attributes));
 
         List<String> fvClassVal = new ArrayList<>();
@@ -145,55 +145,68 @@ public class ClassifierUtil {
         fvClassVal.add("circleCCW");
         fvClassVal.add("noInteraction");
 
+
         Attribute label = new Attribute("label", fvClassVal);
         fvWekaAttributes.add(label);
         Instances dataset = new Instances("predictionData", fvWekaAttributes, 0);
-        double[] attValues = new double[90];
-        for(int i =0; i<data.size();i++){
+        double[] attValues = new double[91];
+        for (int i = 0; i < data.size(); i++) {
             Struct tmpStruct = data.get(i);
-            if(tmpStruct!=null){
-            attValues[i*6]=tmpStruct.ax;
-            attValues[i*6+1]=tmpStruct.ay;
-            attValues[i*6+2]=tmpStruct.az;
-            attValues[i*6+3]=tmpStruct.gx;
-            attValues[i*6+4]=tmpStruct.gy;
-            attValues[i*6+5]=tmpStruct.gz;}
+            if (tmpStruct != null) {
+                attValues[i * 6] = tmpStruct.ax;
+                attValues[i * 6 + 1] = tmpStruct.ay;
+                attValues[i * 6 + 2] = tmpStruct.az;
+                attValues[i * 6 + 3] = tmpStruct.gx;
+                attValues[i * 6 + 4] = tmpStruct.gy;
+                attValues[i * 6 + 5] = tmpStruct.gz;
+            }
         }
 
 
         Instance i1 = new DenseInstance(1.0, attValues);
         dataset.add(i1);
-        dataset.setClassIndex(dataset.numAttributes()-1);
+        dataset.setClassIndex(dataset.numAttributes() - 1);
         try {
-           double a =  model.classifyInstance(dataset.instance(0));
-
+            double a = model.classifyInstance(dataset.instance(0));
             String returnString = "";
-            switch (Double.toString(a)){
-                case "0.0":
-                    returnString = "leftSwap";
-                    break;
-                case "1.0":
-                    returnString = "rightSwap";
-                    break;
-                case "2.0":
-                    returnString = "upSwap";
-                    break;
-                case "3.0":
-                    returnString = "downSwap";
-                    break;
-                case "4.0":
-                    returnString = "circleCW";
-                    break;
-                case "5.0":
-                    returnString = "circleCCW";
-                    break;
-                case "6.0":
-                    returnString = "noInteraction";
+            if (type == 0) {
 
+                switch (Double.toString(a)) {
+                    case "0.0":
+                        returnString = "leftSwap";
+                        break;
+                    case "1.0":
+                        returnString = "rightSwap";
+                        break;
+                    case "2.0":
+                        returnString = "upSwap";
+                        break;
+                    case "3.0":
+                        returnString = "downSwap";
+                        break;
+                    case "4.0":
+                        returnString = "circleCW";
+                        break;
+                    case "5.0":
+                        returnString = "circleCCW";
+                        break;
+                    case "6.0":
+                        returnString = "noInteraction";
+
+                }
+                return returnString;
+            } else if (type == 1) {
+                switch (Double.toString(a)) {
+                    case "0.0":
+                        returnString = "pointing";
+                        break;
+                    case "1.0":
+                        returnString = "noInteraction";
+                        break;
+                }
+
+                return returnString;
             }
-//            System.out.println(returnString);
-
-           return returnString;
 
         } catch (Exception e) {
             e.printStackTrace();

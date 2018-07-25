@@ -43,7 +43,7 @@ public class CommandFrame {
                 }
             }
         };
-        scheduledExecutorService.schedule(cancellation, 10, TimeUnit.SECONDS);
+        scheduledExecutorService.schedule(cancellation, 8, TimeUnit.SECONDS);
 
     }
     public void kill(){
@@ -135,3 +135,4 @@ public class CommandFrame {
         }
     }
 }
+

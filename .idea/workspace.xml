@@ -2,24 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/resources/train4Previous.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/train4f1.0.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/MusicPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/MusicPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/edu/cmu_ucla/minute/test/SerialComTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/edu/cmu_ucla/minute/test/SerialComTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pySpeech/liveTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/pySpeech/liveTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/AttTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/AttTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$DataToFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$DataToFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$MQTTdataLogger$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$MQTTdataLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI$MQTTdataLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MqttNGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/3d/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/3d/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/3d/src/minuet.vis.js" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/3d/src/minuet.vis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/AttTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/AttTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttNGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttNGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/train4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/train4.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/train4f.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/train4f.csv" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -41,105 +61,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NoInteractionLogger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SerialComTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="21" column="77" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MQTTMusicAppliance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTMusicAppliance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MusicPlayer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Roomba.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VitalWorld.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="131" column="74" selection-start-line="131" selection-start-column="74" selection-end-line="131" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="122" selection-start-line="122" selection-end-line="122" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VitalObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="liveTest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pySpeech/liveTest.py">
+      <file leaf-file-name="MqttNGUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttNGUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="185" column="25" selection-start-line="185" selection-start-column="25" selection-end-line="185" selection-end-column="25" />
+              <caret line="29" column="92" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="92" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4940#5172#0" expanded="true" />
+                <element signature="e#5171#5172#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MQTTdataGestureLogger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java">
+      <file leaf-file-name="DenseInstance.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/core/DenseInstance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="183" column="21" selection-start-line="183" selection-start-column="21" selection-end-line="183" selection-end-column="21" />
+            <state relative-caret-position="177">
+              <caret line="346" selection-start-line="346" selection-end-line="346" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SerialCommunication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/SerialComm/SerialCommunication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SystemSubscriber.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#connectionLost#0;class#MQTTdataLogger#0;class#MQTTdataGestureLogger#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IBk.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/classifiers/lazy/IBk.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="582" selection-start-line="582" selection-end-line="582" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinearNNSearch.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/core/neighboursearch/LinearNNSearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="333" column="5" selection-start-line="333" selection-start-column="5" selection-end-line="333" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NormalizableDistance.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/core/NormalizableDistance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="670" selection-start-line="670" selection-end-line="670" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train4f.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/train4f.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="365" selection-start-line="26" selection-start-column="365" selection-end-line="26" selection-end-column="365" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassifierUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="165" column="53" lean-forward="true" selection-start-line="165" selection-start-column="53" selection-end-line="165" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractClassifier.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/classifiers/AbstractClassifier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="172" selection-start-line="172" selection-end-line="172" />
             </state>
           </provider>
         </entry>
@@ -535,8 +553,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/$1/TouchListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/$1/DollarOneTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/$1/Dollar.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/ChartTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/voice/RecordAudio.java" />
@@ -552,7 +568,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MusicAppliance.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/$1/Recognizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/$1/TemplateData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttNGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/Logger.form" />
         <option value="$PROJECT_DIR$/src/resources/train.csv" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/RandomForestModelTest.java" />
@@ -567,25 +582,28 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/VoiceMQTTSub.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/VitalWorldTest.java" />
         <option value="$PROJECT_DIR$/pySpeech/liveTest.py" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/AttTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.java" />
-        <option value="$PROJECT_DIR$/src/resources/train4f.csv" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/GlobalKeyListenerExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttRoombaGame.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTMusicAppliance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java" />
+        <option value="$PROJECT_DIR$/src/resources/train4.csv" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/AttTest.java" />
+        <option value="$PROJECT_DIR$/src/resources/train5.csv" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java" />
+        <option value="$PROJECT_DIR$/src/resources/train4f.csv" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttNGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" />
       </list>
     </option>
   </component>
@@ -662,7 +680,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1680" />
+    <option name="x" value="49" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="947" />
@@ -755,6 +773,15 @@
               <item name="Minuet" type="b2602c69:ProjectViewProjectNode" />
               <item name="Minuet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="minuet" type="462c0819:PsiDirectoryNode" />
+              <item name="SerialComm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Minuet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Minuet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -778,6 +805,11 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Minuet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Minuet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="weka" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -799,14 +831,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/visualization" />
+      <recent name="$PROJECT_DIR$/weka" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest" />
       <recent name="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/$1" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/visualization" />
-      <recent name="$PROJECT_DIR$/weka" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -821,18 +853,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SerialComTest">
-    <configuration name="AttTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.cmu_ucla.minuet.mqtt.AttTest" />
-      <module name="Minuet_main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.cmu_ucla.minuet.mqtt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="Application.MqttNGUI">
     <configuration name="GlobalKeyListenerExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.cmu_ucla.minuet.mqtt.GlobalKeyListenerExample" />
       <module name="Minuet_main" />
@@ -846,6 +867,17 @@
     </configuration>
     <configuration name="MQTTdataGestureLogger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.cmu_ucla.minuet.mqtt.MQTTdataGestureLogger" />
+      <module name="Minuet_main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.cmu_ucla.minuet.mqtt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="MqttNGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.cmu_ucla.minuet.mqtt.MqttNGUI" />
       <module name="Minuet_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -933,17 +965,17 @@
     <list>
       <item itemvalue="JUnit.SerialComTest" />
       <item itemvalue="Application.NoInteractionLogger" />
-      <item itemvalue="Application.AttTest" />
       <item itemvalue="Application.MQTTdataGestureLogger" />
       <item itemvalue="Application.GlobalKeyListenerExample" />
+      <item itemvalue="Application.MqttNGUI" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MqttNGUI" />
         <item itemvalue="JUnit.SerialComTest" />
+        <item itemvalue="Application.MQTTdataGestureLogger" />
         <item itemvalue="Application.GlobalKeyListenerExample" />
         <item itemvalue="Application.NoInteractionLogger" />
-        <item itemvalue="Application.MQTTdataGestureLogger" />
-        <item itemvalue="Application.AttTest" />
       </list>
     </recent_temporary>
   </component>
@@ -961,47 +993,47 @@
       <workItem from="1530892437109" duration="7654000" />
       <workItem from="1530906316359" duration="104031000" />
       <workItem from="1531597338449" duration="49092000" />
-      <workItem from="1532353335117" duration="10314000" />
+      <workItem from="1532353335117" duration="25581000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SerialComTest - 2018.07.23 at 15h 22m 38s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 12h 14m 46s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 15h 25m 50s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 12h 15m 37s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 15h 29m 48s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 12h 17m 28s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 15h 53m 40s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 12h 21m 22s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 15h 55m 30s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 12h 23m 11s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 16h 00m 24s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 12h 27m 46s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 16h 08m 21s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 12h 28m 59s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 16h 12m 37s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 13h 54m 04s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 16h 15m 20s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 14h 43m 00s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest - 2018.07.23 at 16h 20m 35s.xml">
+    <history-entry file="SerialComTest - 2018.07.25 at 14h 59m 03s.xml">
       <configuration name="SerialComTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253302000" />
+    <option name="totallyTimeSpent" value="268569000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1680" y="23" width="1680" height="947" extended-state="0" />
+    <frame x="49" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -1016,15 +1048,15 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32816538" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32705882" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" x="0" y="0" width="370" height="747" id="Documentation" order="10" sideWeight="0.5025126" side_tool="true" visible="true" weight="0.24969475" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29764706" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29764706" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
       <window_info id="Learn" order="2" />
       <window_info anchor="right" id="Gradle" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -1054,95 +1086,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/train4.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="540" selection-end-line="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/trainNoInteraction2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="48" selection-end-line="191" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/trainNoInteraction.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1354">
-          <caret line="691" column="41" selection-end-line="704" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/train2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/train4f.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10050">
-          <caret line="833" column="545" selection-start-line="833" selection-start-column="545" selection-end-line="833" selection-end-column="545" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandProcessor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObjectCommand.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/ProcessorReturn.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Struct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Volume.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/TranscriberDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/VolumeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/ChartTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTSubscriber.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/MonitorVolumeMqtt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/TestPythonRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/VitalObjectTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/VitalWorldTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1150,27 +1093,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-892">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/SerialComm/NewSerialCom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/SerialComm/SerialCommunication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1197,60 +1123,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#171#172#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/BoundingObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spotifyApiTest/SpotifyControl/SpotifyControl" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/BoundingSphere.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttNGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="134" column="42" selection-start-line="134" selection-start-column="42" selection-end-line="134" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/SpotifyControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1265,85 +1138,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="53" selection-start-line="53" selection-end-line="54" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/VoiceMQTTSub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="68" column="19" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/RandomForestModelTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="79" column="58" selection-start-line="79" selection-start-column="58" selection-end-line="79" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTMonitorVolumeSub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="183" column="21" selection-start-line="183" selection-start-column="21" selection-end-line="183" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#connectionLost#0;class#MQTTdataLogger#0;class#MQTTdataGestureLogger#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTMusicAppliance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1364,27 +1162,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="131" column="74" selection-start-line="131" selection-start-column="74" selection-end-line="131" selection-end-column="74" />
+        <state relative-caret-position="339">
+          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1395,10 +1176,273 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        <state relative-caret-position="271">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/BoundingSphere.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/BoundingObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-262">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/BoundingBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/train4Previous.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/trainNoInteraction.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10095" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/train.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTMusicAppliance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Struct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/RandomForestModelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="29" column="51" selection-start-line="28" selection-start-column="7" selection-end-line="29" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/AttTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="189" column="31" selection-start-line="179" selection-start-column="12" selection-end-line="189" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="53" selection-start-line="53" selection-end-line="54" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/VoiceMQTTSub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="141" column="41" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#connectionLost#0;class#MQTTdataLogger#0;class#MQTTdataGestureLogger#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/train6.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="37" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/train5.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" lean-forward="true" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/train2.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/train4f1.0.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6006" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/train4.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14983">
+          <caret line="18" column="77" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/classifiers/lazy/IBk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="582" selection-start-line="582" selection-end-line="582" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/SerialComm/SerialCommunication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/core/NormalizableDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="670" selection-start-line="670" selection-end-line="670" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/core/DenseInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="346" selection-start-line="346" selection-end-line="346" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/core/neighboursearch/LinearNNSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="333" column="5" selection-start-line="333" selection-start-column="5" selection-end-line="333" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.ac.waikato.cms.weka/weka-stable/3.8.0/fa6ebf413ea3241f6f684df3f18576e568db5555/weka-stable-3.8.0-sources.jar!/weka/classifiers/AbstractClassifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/train4f.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="365" selection-start-line="26" selection-start-column="365" selection-end-line="26" selection-end-column="365" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttNGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" column="92" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4940#5172#0" expanded="true" />
+            <element signature="e#5171#5172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/ClassifierUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="165" column="53" lean-forward="true" selection-start-line="165" selection-start-column="53" selection-end-line="165" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

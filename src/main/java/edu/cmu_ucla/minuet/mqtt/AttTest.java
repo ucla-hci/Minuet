@@ -52,7 +52,7 @@ public class AttTest {
         queue.add(struct12);
         queue.add(struct13);
         queue.add(struct14);
-        ClassifierUtil.Classify(model,queue);
+        ClassifierUtil.Classify(model,queue,0);
 
 
 

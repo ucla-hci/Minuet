@@ -4,7 +4,8 @@ import edu.cmu_ucla.minuet.model.Struct;
 import edu.cmu_ucla.minuet.model.VitalWorld;
 import org.eclipse.paho.client.mqttv3.*;
 import weka.classifiers.AbstractClassifier;
-import weka.classifiers.functions.SMO;
+import weka.classifiers.lazy.IBk;
+import weka.classifiers.trees.RandomForest;
 import weka.core.SerializationHelper;
 
 import java.io.FileInputStream;
@@ -16,14 +17,18 @@ import java.util.HashSet;
 import java.util.List;
 
 public class SystemSubscriber implements MqttCallback {
+    MqttClient client;
     private List<Struct> curIMUDatas = new ArrayList<>(15);
+    private List<Struct> curTriggerIMUDatas = new ArrayList<>(15);
     private final VitalWorld world;
     private AbstractClassifier model;
+    private AbstractClassifier triggerModel;
 
     public SystemSubscriber(VitalWorld world) throws MqttException, FileNotFoundException, Exception {
-        model = (SMO) SerializationHelper.read(new FileInputStream("weka/SVM.model"));
+        model = (IBk) SerializationHelper.read(new FileInputStream("weka/KNNgestures.model"));
+        triggerModel = (RandomForest) SerializationHelper.read(new FileInputStream("weka/RTpointing.model"));
         this.world = world;
-        MqttClient client = new MqttClient("tcp://192.168.1.8:1883", "systemSubscriber");
+        client = new MqttClient("tcp://192.168.1.8:1883", "systemSubscriber");
         MqttConnectOptions options = new MqttConnectOptions();
         options.setUserName("admin");
         options.setPassword("19930903".toCharArray());
@@ -61,6 +66,8 @@ public class SystemSubscriber implements MqttCallback {
             newData += " testUser";
 //            world.directReceiveData(newData);
             world.revceiveData(newData);
+            curTriggerIMUDatas.clear();
+            curIMUDatas.clear();
         } else if (topic.equals("speechResult")) {
             System.out.println("Speech got: " + newData);
 
@@ -84,11 +91,25 @@ public class SystemSubscriber implements MqttCallback {
                 }
                 curIMUDatas.add(curStruct);
                 if (curIMUDatas.size() == 15) {
-//                    synchronized (this) {
-                        checkGesture();
-//                    }
+                    checkGesture();
                 }
 
+            }
+            if (world.getCurFrame() == null) {
+                Struct curStruct = new Struct(Double.parseDouble(splitedString[0]),
+                        Double.parseDouble(splitedString[1]),
+                        Double.parseDouble(splitedString[2]),
+                        Double.parseDouble(splitedString[3]),
+                        Double.parseDouble(splitedString[4]),
+                        Double.parseDouble(splitedString[5]));
+                if (curTriggerIMUDatas.size() == 15) {
+                    curTriggerIMUDatas.remove(0);
+                }
+                curTriggerIMUDatas.add(curStruct);
+                if (curTriggerIMUDatas.size() == 15) {
+                    checkTriggerGesture();
+
+                }
             }
         }
     }
@@ -99,12 +120,38 @@ public class SystemSubscriber implements MqttCallback {
     }
 
     private void checkGesture() {
-        String gesture = ClassifierUtil.Classify(model, curIMUDatas);
+        String gesture = ClassifierUtil.Classify(model, curIMUDatas, 0);
 
-        if (!gesture.equals("noInteraction")) {
+        if (!gesture.equals("noInteraction")&&!gesture.equals("")) {
             System.out.println("Gesture get: " + gesture);
             world.getCurFrame().setCurGesture(gesture);
             curIMUDatas.clear();
+        }
+    }
+
+    private void checkTriggerGesture() {
+
+        String gesture = ClassifierUtil.Classify(triggerModel, curTriggerIMUDatas, 1);
+
+        if (gesture.equals("pointing")) {
+            System.out.println("Gesture get: " + gesture);
+            MqttMessage mqttMessage = new MqttMessage();
+            mqttMessage.setPayload("1".getBytes());
+
+            Thread sendThread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        client.publish("point", mqttMessage);
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            sendThread.start();
+
+
+            curTriggerIMUDatas.clear();
         }
     }
 }
