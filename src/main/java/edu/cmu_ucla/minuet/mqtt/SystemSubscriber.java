@@ -11,18 +11,16 @@ import weka.core.SerializationHelper;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class SystemSubscriber implements MqttCallback {
     MqttClient client;
-    private List<Struct> curIMUDatas = new ArrayList<>(15);
-    private List<Struct> curTriggerIMUDatas = new ArrayList<>(15);
+    private Map<String, List<Struct>> gestureDict = new HashMap<>();
+    private Map<String, List<Struct>> triggerDict = new HashMap<>();
     private final VitalWorld world;
     private AbstractClassifier model;
     private AbstractClassifier triggerModel;
+    private String tmpVoiceCommand = "";
 
     public SystemSubscriber(VitalWorld world) throws MqttException, FileNotFoundException, Exception {
         model = (IBk) SerializationHelper.read(new FileInputStream("weka/KNNgestures.model"));
@@ -34,7 +32,7 @@ public class SystemSubscriber implements MqttCallback {
         options.setPassword("19930903".toCharArray());
         client.setCallback(this);
         client.connect(options);
-        String[] strings = {"locData", "speechResult", "data"};
+        String[] strings = {"locData", "speechResult", "data", "sonoffB1", "userLoc"};
         client.subscribe(strings);
         Thread audioThread = new Thread(new Runnable() {
             @Override
@@ -63,54 +61,72 @@ public class SystemSubscriber implements MqttCallback {
 
         if (topic.equals("locData")) {
             System.out.println("loc got: " + newData);
-            newData += " testUser";
+
 //            world.directReceiveData(newData);
             world.revceiveData(newData);
-            curTriggerIMUDatas.clear();
-            curIMUDatas.clear();
+            if (world.getCurFrame() != null) {
+                world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(tmpVoiceCommand.split("\\s+"))));
+                tmpVoiceCommand = "";
+            }
+            if (triggerDict.containsKey(splitedString[splitedString.length - 1]))
+                triggerDict.get(splitedString[splitedString.length - 1]).clear();
+            if (gestureDict.containsKey(splitedString[splitedString.length - 1]))
+                gestureDict.get(splitedString[splitedString.length - 1]).clear();
         } else if (topic.equals("speechResult")) {
             System.out.println("Speech got: " + newData);
+            tmpVoiceCommand = newData;
+            if (world.getCurPlugin() == null && world.getCurFrame() == null) {
+                world.ifMeansPlugin(new HashSet<String>(Arrays.asList(splitedString)));
 
-            if (world.getCurFrame() != null && world.getCurFrame().getCurCommand().isEmpty()) {
+            } else if (world.getCurPlugin() != null && world.getCurFrame() == null) {
+                System.out.println("setting voice");
+                world.getCurPlugin().getVoiceCommand(newData);
+
+            } else if (world.getCurFrame() != null && world.getCurFrame().getCurCommand().isEmpty()) {
                 world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(splitedString)));
-
             }
 
         } else if (topic.equals("data")) {
+            Struct curStruct = new Struct(Double.parseDouble(splitedString[0]),
+                    Double.parseDouble(splitedString[1]),
+                    Double.parseDouble(splitedString[2]),
+                    Double.parseDouble(splitedString[3]),
+                    Double.parseDouble(splitedString[4]),
+                    Double.parseDouble(splitedString[5]));
+            String curUserName = splitedString[6];
 
-            if (world.getCurFrame() != null && world.getCurFrame().getCurGesture().equals("")) {
+            if (world.getCurFrame() != null && world.getCurFrame().getCurGesture().equals("") && world.getCurFrame().getUserName().equals(curUserName)) {
+                if (!gestureDict.containsKey(curUserName)) {
+                    gestureDict.put(curUserName, new ArrayList<Struct>(15));
+                }
+                if (gestureDict.get(curUserName).size() == 15) gestureDict.get(curUserName).remove(0);
+                gestureDict.get(curUserName).add(curStruct);
+                if (gestureDict.get(curUserName).size() == 15) checkGesture(gestureDict.get(curUserName), curUserName);
 
-                Struct curStruct = new Struct(Double.parseDouble(splitedString[0]),
-                        Double.parseDouble(splitedString[1]),
-                        Double.parseDouble(splitedString[2]),
-                        Double.parseDouble(splitedString[3]),
-                        Double.parseDouble(splitedString[4]),
-                        Double.parseDouble(splitedString[5]));
-                if (curIMUDatas.size() == 15) {
-                    curIMUDatas.remove(0);
-                }
-                curIMUDatas.add(curStruct);
-                if (curIMUDatas.size() == 15) {
-                    checkGesture();
-                }
 
             }
             if (world.getCurFrame() == null) {
-                Struct curStruct = new Struct(Double.parseDouble(splitedString[0]),
-                        Double.parseDouble(splitedString[1]),
-                        Double.parseDouble(splitedString[2]),
-                        Double.parseDouble(splitedString[3]),
-                        Double.parseDouble(splitedString[4]),
-                        Double.parseDouble(splitedString[5]));
-                if (curTriggerIMUDatas.size() == 15) {
-                    curTriggerIMUDatas.remove(0);
-                }
-                curTriggerIMUDatas.add(curStruct);
-                if (curTriggerIMUDatas.size() == 15) {
-                    checkTriggerGesture();
 
+
+                if (!triggerDict.containsKey(curUserName)) {
+                    triggerDict.put(curUserName, new ArrayList<Struct>(15));
                 }
+                if (triggerDict.get(curUserName).size() == 15) triggerDict.get(curUserName).remove(0);
+
+                triggerDict.get(curUserName).add(curStruct);
+                if (triggerDict.get(curUserName).size() == 15)
+                    checkTriggerGesture(triggerDict.get(curUserName), curUserName);
+
             }
+        } else if (topic.equals("sonoffB1")) {
+            System.out.println(newData);
+            world.lightData(newData);
+
+        } else if (topic.equals("userLoc")) {
+
+            world.updateUserLoc(splitedString);
+
+
         }
     }
 
@@ -119,17 +135,18 @@ public class SystemSubscriber implements MqttCallback {
 
     }
 
-    private void checkGesture() {
+    private void checkGesture(List<Struct> curIMUDatas, String userName) {
         String gesture = ClassifierUtil.Classify(model, curIMUDatas, 0);
 
-        if (!gesture.equals("noInteraction")&&!gesture.equals("")) {
+        if (!gesture.equals("noInteraction") && !gesture.equals("")) {
             System.out.println("Gesture get: " + gesture);
             world.getCurFrame().setCurGesture(gesture);
             curIMUDatas.clear();
+            gestureDict.get(userName).clear();
         }
     }
 
-    private void checkTriggerGesture() {
+    private void checkTriggerGesture(List<Struct> curTriggerIMUDatas, String userName) {
 
         String gesture = ClassifierUtil.Classify(triggerModel, curTriggerIMUDatas, 1);
 
@@ -151,7 +168,7 @@ public class SystemSubscriber implements MqttCallback {
             sendThread.start();
 
 
-            curTriggerIMUDatas.clear();
+            triggerDict.get(userName).clear();
         }
     }
 }

@@ -18,6 +18,11 @@ public class CommandFrame {
     private int execuType = 0;
     private boolean isDead = false;
 
+    public String getUserName() {
+        return userName;
+    }
+
+    private String userName;
 
     public void setSecLoc(LocData secLoc) {
         this.secLoc = secLoc;
@@ -25,9 +30,9 @@ public class CommandFrame {
 
     private LocData secLoc = null;
 
-    public CommandFrame(VitalObject object, VitalWorld world) {
+    public CommandFrame(VitalObject object, VitalWorld world,String userName) {
         this.curObject = object;
-
+        this.userName = userName;
         this.world = world;
 
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);

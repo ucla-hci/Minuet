@@ -2,8 +2,8 @@ package edu.cmu_ucla.minuet.apiTest;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class VolumeTest {
 
@@ -32,14 +32,20 @@ public class VolumeTest {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            VolumeTest test = new VolumeTest();
-            System.out.print("Enter the volume:  ");
-            String input = scanner.nextLine();
-
-            test.setMasterVolume(Float.parseFloat(input));
+        String[] commands = {"osascript","-e","display notification \"New meeting created\" with title \"Calendar\" sound name \"default\""};
+        try {
+            Runtime.getRuntime().exec(commands);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+//        Scanner scanner = new Scanner(System.in);
+//        while (true) {
+//            VolumeTest test = new VolumeTest();
+//            System.out.print("Enter the volume:  ");
+//            String input = scanner.nextLine();
+//
+//            test.setMasterVolume(Float.parseFloat(input));
+//        }
 
 
     }

@@ -13,7 +13,8 @@ public class SerialComTest {
     public void setUp() throws Exception {
 
         final VitalWorld world = new VitalWorld();
-        User user = new User("testUser",0,0,0,new Vector3D(0,0,0));
+        User user1 = new User("Tom",0,0,0,new Vector3D(0,0,0));
+        User user = new User("Richard",0,0,0,new Vector3D(0,0,0));
 //        VitalObject object = new VitalObject(new BoundingSphere(new Vector3D(3300,2890,1900),1000),"sonoffSwitch","cmnd/sonoff1/POWER");
 //        VitalObject object2 = new VitalObject(new BoundingSphere(new Vector3D(1900,2700,1300),1000),"tv","cmnd/sonoff3/POWER");
 //        VitalObject object3 = new VitalObject(new BoundingSphere(new Vector3D(0,3650,1000),1000),"musicPlayer","cmnd/musicPlayer");
@@ -21,6 +22,7 @@ public class SerialComTest {
         MusicPlayer musicPlayer = new MusicPlayer(new BoundingSphere(new Vector3D(0,3650,1000),1000),"musicPlayer","cmnd/MusicPlayer");
         Roomba roomba = new Roomba((new BoundingSphere(new Vector3D(1240,1680,0),1000)),"Roomba","roomba");
         world.addUser(user);
+        world.addUser(user1);
         world.addObject(light);
         world.addObject(musicPlayer);
         world.addObject(roomba);

@@ -14,7 +14,7 @@ public class User {
 
     private String name;
     private Vector3D pos;
-
+    private Vector3D loc= null;
 
     public User(String name, double pitch, double roll, double yaw, Vector3D pos) {
         this.pitch = pitch;
@@ -22,7 +22,6 @@ public class User {
         this.yaw = yaw;
         this.pos = pos;
         this.name = name;
-
         double x = -Math.cos(Math.toRadians(pitch))*Math.sin(Math.toRadians(yaw));
         double y = -Math.cos(Math.toRadians(pitch))*Math.cos(Math.toRadians(yaw));
         double z = Math.sin(Math.toRadians(pitch));
@@ -30,6 +29,13 @@ public class User {
     }
     public Vector3D getPointVec() {
         return pointVec;
+    }
+    public void updateLoc(Vector3D loc){
+        this.loc = loc;
+    }
+
+    public Vector3D getLoc() {
+        return loc;
     }
 
     public void updataData(double pitch, double roll, double yaw, Vector3D pos){
