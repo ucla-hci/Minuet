@@ -1,5 +1,8 @@
 package edu.cmu_ucla.minuet.model;
 
+import edu.cmu_ucla.minuet.frameWork.DisSensor;
+import edu.cmu_ucla.minuet.frameWork.Plugable;
+import edu.cmu_ucla.minuet.frameWork.PluginRemover;
 import edu.cmu_ucla.minuet.frameWork.Timer;
 import edu.cmu_ucla.minuet.mqtt.MQTT;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
@@ -11,6 +14,11 @@ public class VitalWorld {
     private final static double STAND_Z = 1400.0;
     private final static double SIT_Z = 1000.0;
     private final static double L = 350.0;
+
+    public Map<String, User> getUserMap() {
+        return userMap;
+    }
+
     private Map<String, User> userMap = new HashMap<>();
     private Set<VitalObject> vitalObjects = new HashSet<>();
     private MQTT mqtt = new MQTT();
@@ -18,13 +26,21 @@ public class VitalWorld {
     private BoundingSphere DESK = new BoundingSphere(new Vector3D(3100, 8000, 700), 1000);
     private Set<Artifacts> artifacts = new HashSet<>();
     private CommandFrame curFrame = null;
-    private edu.cmu_ucla.minuet.frameWork.Timer curPlugin = null;
-    private Set<String> supportedPluginNames = new HashSet<String>(Arrays.asList("timer"));
+    private Plugable curPlugin = null;
+    private Set<String> supportedPluginNames = new HashSet<String>(Arrays.asList("timer","sensor","remove"));
+    private Set<Plugable> workingPlugins = new HashSet<>();
 
-    public synchronized Timer getCurPlugin() {
+
+    public Set<Plugable> getWorkingPlugins() {
+        return workingPlugins;
+    }
+
+
+    public synchronized Plugable getCurPlugin() {
         return curPlugin;
     }
     public void removeCurPlugin(){
+        workingPlugins.add(this.curPlugin);
         this.curPlugin = null;
     }
 
@@ -33,7 +49,19 @@ public class VitalWorld {
         synchronized (this) {
             for(String word : words){
                 if(supportedPluginNames.contains(word)){
-                    this.curPlugin = new Timer(this.mqtt,this);
+                    switch (word){
+                        case "timer":
+                            this.curPlugin = new Timer(this.mqtt,this);
+                            break;
+                        case "sensor":
+                            this.curPlugin = new DisSensor(this.mqtt,this);
+                            break;
+
+                        case "remove":
+                            this.curPlugin = new PluginRemover(this.mqtt,this);
+                            break;
+                    }
+
                 }
 
             }
@@ -222,11 +250,13 @@ public class VitalWorld {
                 for (VitalObject object : vitalObjects) {
                     if (curFrame == null && object.checkBePointed(userMap.get(userName).getPos(), userMap.get(userName).getPointVec())&&curPlugin==null) {
                         synchronized (this) {
+                            System.out.println("currentUserName: "+userName);
                             Thread sendThread = new Thread(new Runnable() {
                                 @Override
                                 public void run() {
                                     try {
                                         mqtt.sendMessage("trigger/"+userName, "1");
+
                                     } catch (MqttException e) {
                                         e.printStackTrace();
                                     }

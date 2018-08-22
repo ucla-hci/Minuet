@@ -10,16 +10,24 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 public class Timer extends PluginTemplate implements Plugable{
     private int curStage = 0;
     private String NAME = "timer";
-    private MQTT mqtt;
+
     private Integer duration;
     private Set<String> command;
-    private VitalWorld world;
+
     private VitalObject targetObject;
+    private ScheduledFuture workHandler;
+
+    @Override
+    public void kill() {
+        super.kill();
+        workHandler.cancel(true);
+    }
 
     public void setTargetObject(VitalObject targetObject) {
         this.targetObject = targetObject;
@@ -34,6 +42,10 @@ public class Timer extends PluginTemplate implements Plugable{
         t.start();
     }
 
+    @Override
+    public VitalObject getTargetObject() {
+        return this.targetObject;
+    }
 
 
     public Timer(MQTT mqtt, VitalWorld world) {
@@ -64,6 +76,7 @@ public class Timer extends PluginTemplate implements Plugable{
                     ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
                     synchronized (world) {
                         world.removeCurPlugin();
+
                     }
                     final Runnable execution = new Runnable() {
                         @Override
@@ -72,13 +85,14 @@ public class Timer extends PluginTemplate implements Plugable{
                             String[] retirmData = targetObject.execuate(command);
                             try {
                                 mqtt.sendMessage(retirmData[0], retirmData[1]);
+
                             } catch (MqttException e) {
                                 e.printStackTrace();
                             }
                         }
 
                     };
-                    scheduledExecutorService.schedule(execution, this.duration, TimeUnit.SECONDS);
+                    workHandler = scheduledExecutorService.schedule(execution, this.duration, TimeUnit.SECONDS);
                     Thread t = new Thread(() -> {
                         try {
                             mqtt.sendMessage("connectedVoice","$timer scheduled");

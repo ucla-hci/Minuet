@@ -17,24 +17,19 @@ public class CommandFrame {
     private final VitalWorld world;
     private int execuType = 0;
     private boolean isDead = false;
+    private String userName;
+    private LocData secLoc = null;
 
     public String getUserName() {
         return userName;
     }
-
-    private String userName;
-
     public void setSecLoc(LocData secLoc) {
         this.secLoc = secLoc;
     }
-
-    private LocData secLoc = null;
-
     public CommandFrame(VitalObject object, VitalWorld world,String userName) {
         this.curObject = object;
         this.userName = userName;
         this.world = world;
-
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
         final Runnable cancellation = new Runnable() {
             @Override
@@ -97,10 +92,6 @@ public class CommandFrame {
         }
     }
 
-    public boolean isExecAble() {
-
-        return isExecAble;
-    }
 
     public Set<String> getCurCommand() {
         return curCommand;
@@ -130,6 +121,11 @@ public class CommandFrame {
 
                     retirmData[1]=retirmData[1]+" "+(int)secLoc.getPos().getX()+" "+(int)secLoc.getPos().getY();
                     System.out.println(retirmData[0]+" "+retirmData[1]);
+                }
+                if(Projector.class.isInstance(curObject)&&retirmData[1].equals("show")){
+
+                    retirmData[1]=retirmData[1]+" "+userName;
+
                 }
 
                 mqtt.sendMessage(retirmData[0], retirmData[1]);

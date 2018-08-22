@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: edu.stanford.nlp:stanford-corenlp:models:3.9.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.stanford.nlp/stanford-corenlp/3.9.1/d0ea04f401b6dfb7fdab8b8d2378bb2b80707666/stanford-corenlp-3.9.1-models.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.stanford.nlp/stanford-corenlp/3.9.1/b2b776b20d6ff98c052e4d354c473d27c8d754db/stanford-corenlp-3.9.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

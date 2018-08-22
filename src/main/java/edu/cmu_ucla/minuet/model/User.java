@@ -17,6 +17,7 @@ public class User {
     private Vector3D loc= null;
 
     public User(String name, double pitch, double roll, double yaw, Vector3D pos) {
+        this.loc = pos;
         this.pitch = pitch;
         this.roll = roll;
         this.yaw = yaw;

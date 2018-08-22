@@ -79,8 +79,9 @@ public class SystemSubscriber implements MqttCallback {
                 world.ifMeansPlugin(new HashSet<String>(Arrays.asList(splitedString)));
 
             } else if (world.getCurPlugin() != null && world.getCurFrame() == null) {
-                System.out.println("setting voice");
+
                 world.getCurPlugin().getVoiceCommand(newData);
+                tmpVoiceCommand = "";
 
             } else if (world.getCurFrame() != null && world.getCurFrame().getCurCommand().isEmpty()) {
                 world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(splitedString)));
@@ -159,7 +160,7 @@ public class SystemSubscriber implements MqttCallback {
                 @Override
                 public void run() {
                     try {
-                        client.publish("point", mqttMessage);
+                        client.publish("point/"+userName, mqttMessage);
                     } catch (MqttException e) {
                         e.printStackTrace();
                     }
