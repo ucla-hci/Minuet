@@ -1,5 +1,7 @@
 package edu.cmu_ucla.minuet.model;
 
+import edu.cmu_ucla.minuet.NLP.TokenNode;
+
 import java.util.Set;
 
 public class Roomba extends VitalObject {
@@ -7,26 +9,26 @@ public class Roomba extends VitalObject {
         super(boundingObject, name, topic);
         String[]excuWords = {"clean","that","area","here","this","there","stop","go","home","cleaning"};
         String[]gestures={"circleCCW","upSwap"};
-        addExecuableWord(excuWords);
+//        addExecuableWord(excuWords);
         supportedGestures(gestures);
 
     }
 
     @Override
-    public String[] execuate(Set<String> command) {
+    public String[] execuate(TokenNode node) {
         String[] topicNMes = new String[2];
-        if(command.contains("clean")||   (command.contains("go")&&(command.contains("here")))    ){
-            topicNMes[0]=getTopic();
-            topicNMes[1]="g";
-        }
-        else if (command.contains("stop")){
-            topicNMes[0]=getTopic();
-            topicNMes[1]="c";
-        }
-        else if (command.contains("go")&&command.contains("home")){
-            topicNMes[0]=getTopic();
-            topicNMes[1]="d";
-        }
+//        if(command.contains("clean")||   (command.contains("go")&&(command.contains("here")))    ){
+//            topicNMes[0]=getTopic();
+//            topicNMes[1]="g";
+//        }
+//        else if (command.contains("stop")){
+//            topicNMes[0]=getTopic();
+//            topicNMes[1]="c";
+//        }
+//        else if (command.contains("go")&&command.contains("home")){
+//            topicNMes[0]=getTopic();
+//            topicNMes[1]="d";
+//        }
 
         return topicNMes;
     }

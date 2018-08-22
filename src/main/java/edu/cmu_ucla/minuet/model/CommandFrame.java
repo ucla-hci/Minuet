@@ -1,8 +1,13 @@
 package edu.cmu_ucla.minuet.model;
 
+import edu.cmu_ucla.minuet.NLP.NLPHandler;
+import edu.cmu_ucla.minuet.NLP.TokenNode;
 import edu.cmu_ucla.minuet.mqtt.MQTT;
+import edu.stanford.nlp.util.ArraySet;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.Executors;
@@ -11,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class CommandFrame {
     private boolean isExecAble = false;
-    private Set<String> curCommand = new HashSet<>();
+    private TokenNode curCommand;
     private String curGesture = "";
     private VitalObject curObject;
     private final VitalWorld world;
@@ -49,12 +54,13 @@ public class CommandFrame {
     public void kill(){
         this.isDead = true;
     }
+
     private void checkExcuable() {
 
         if (curObject.canExecuCommand(curCommand)) {
             isExecAble = true;
             execuType = 1;
-        } else if (curObject.canExcuCommandWithGesture(curCommand, curGesture)) {
+        } else if (curObject.canExcuCommandWithGesture(new ArraySet<>(), curGesture)) {
             isExecAble = true;
             execuType = 2;
         } else if (curObject.canExcuGesture(curGesture)) {
@@ -70,20 +76,25 @@ public class CommandFrame {
     }
 
 
-    public void setCurCommand(Set<String> curCommand) {
+    public void setCurCommand(String text) {
 
-        if (curObject.hasCommand(curCommand) || curObject.canExecuCommand(curCommand)) {
-            System.out.println("set command entered");
-            this.curCommand = curCommand;
-            System.out.println("set command 1");
-
-
-            checkExcuable();
-            System.out.println("set command finished");
+        Set<String> mySet = new HashSet<String>(Arrays.asList(text.split("\\s+")));
+        for(String s: curObject.rootSet){
+            if(mySet.contains(s)){
+                try {
+                    TokenNode command = NLPHandler.parse(text);
+                    if(curObject.canExecuCommand(command)){
+                        this.curCommand = command;
+                        checkExcuable();
+                    }
+                    break;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-
-
     }
+
 
     public void setCurGesture(String curGesture) {
         if (curObject.canExcuGesture(curGesture)) {
@@ -93,7 +104,7 @@ public class CommandFrame {
     }
 
 
-    public Set<String> getCurCommand() {
+    public TokenNode getCurCommand() {
         return curCommand;
     }
 
@@ -108,7 +119,8 @@ public class CommandFrame {
                 retirmData = curObject.execuate(curCommand);
                 break;
             case 2:
-                retirmData = curObject.execuate(curCommand, curGesture);
+                //discard
+                retirmData = curObject.execuate(new ArraySet<>(), curGesture);
                 break;
             case 3:
                 retirmData = curObject.execuate(curGesture);

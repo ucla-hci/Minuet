@@ -1,10 +1,12 @@
 package edu.cmu_ucla.minuet.model;
 
+import edu.cmu_ucla.minuet.NLP.TokenNode;
+
 import java.util.Set;
 
 public class Artifacts extends VitalObject {
     @Override
-    public String[] execuate(Set<String> command) {
+    public String[] execuate(TokenNode node) {
         return new String[0];
     }
 

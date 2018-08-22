@@ -1,19 +1,22 @@
 package edu.cmu_ucla.minuet.model;
 
+import edu.cmu_ucla.minuet.NLP.NLPHandler;
+import edu.cmu_ucla.minuet.NLP.TokenNode;
+
 import java.util.Set;
 
 public class Light extends VitalObject {
     @Override
-    public String[] execuate(Set<String> command) {
+    public String[] execuate(TokenNode userCommand) {
         String[] topicNMes = new String[2];
-        if(command.contains("turn")&&command.contains("on")){
-            topicNMes[0]=getTopic();
-            topicNMes[1]="ON";
+        for(TokenNode node : execuableWords){
+            if(NLPHandler.isExecutable(node,userCommand)){
+                topicNMes[0]=getTopic();
+                topicNMes[1] = node.getCommand();
+                return topicNMes;
+            }
         }
-        else if (command.contains("turn")&&command.contains("off")){
-            topicNMes[0]=getTopic();
-            topicNMes[1]="OFF";
-        }
+
         return topicNMes;
     }
 
@@ -34,9 +37,22 @@ public class Light extends VitalObject {
 
     public Light(BoundingObject boundingObject, String name, String topic) {
         super(boundingObject, name, topic);
-        String[]excuWords = {"turn","on","off"};
+
+        String[][] turnOn={{"turn","on"},{"on"},{"light"}};
+        String[][] turnOff={{"turn","off"},{"off"},{"dim"}};
+
+
+
+//        String[]excuWords = {"turn","on","off"};
         String[]gestures={"upSwap"};
-        addExecuableWord(excuWords);
+        for(int i=0;i<turnOn.length;i++){
+            addExecuableWord(turnOn[i],"ON");
+        }
+        for(int j=0;j<turnOff.length;j++){
+            addExecuableWord(turnOff[j],"OFF");
+        }
+
+//        addExecuableWord({"turn","on"});
         supportedGestures(gestures);
     }
 

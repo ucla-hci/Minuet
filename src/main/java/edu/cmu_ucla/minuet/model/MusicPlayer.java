@@ -1,21 +1,23 @@
 package edu.cmu_ucla.minuet.model;
 
+import edu.cmu_ucla.minuet.NLP.TokenNode;
+
 import java.util.Set;
 
 public class MusicPlayer extends VitalObject {
     @Override
-    public String[] execuate(Set<String> command) {
+    public String[] execuate(TokenNode userCommand) {
         String[] topicNMes = new String[2];
-        if (command.contains("next")) {
-            topicNMes[0] = getTopic();
-            topicNMes[1] = "2";
-        } else if (command.contains("start")) {
-            topicNMes[0] = getTopic();
-            topicNMes[1] = "0";
-        } else if (command.contains("stop")) {
-            topicNMes[0] = getTopic();
-            topicNMes[1] = "1";
-        }
+//        if (command.contains("next")) {
+//            topicNMes[0] = getTopic();
+//            topicNMes[1] = "2";
+//        } else if (command.contains("start")) {
+//            topicNMes[0] = getTopic();
+//            topicNMes[1] = "0";
+//        } else if (command.contains("stop")) {
+//            topicNMes[0] = getTopic();
+//            topicNMes[1] = "1";
+//        }
         return topicNMes;
     }
 
@@ -53,7 +55,7 @@ public class MusicPlayer extends VitalObject {
         super(boundingObject, name, topic);
         String[] excuWords = {"next", "start", "stop","music","the","song"};
         String[] gestures = {"rightSwap", "upSwap", "downSwap"};
-        addExecuableWord(excuWords);
+//        addExecuableWord(excuWords);
         supportedGestures(gestures);
     }
 }

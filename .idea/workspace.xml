@@ -2,111 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_apple_AppleJavaExtensions_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fazecast_jSerialComm_2_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_api_common_1_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_gax_1_28_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_gax_grpc_1_28_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_grpc_proto_google_cloud_language_v1_1_17_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_grpc_proto_google_cloud_language_v1beta2_0_18_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_cloud_google_cloud_core_1_35_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_cloud_google_cloud_language_1_35_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_googlecode_efficient_java_matrix_library_ejml_0_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_io7m_xom_xom_1_2_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__de_jollyday_jollyday_0_4_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_stanford_nlp_stanford_corenlp_3_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__edu_stanford_nlp_stanford_corenlp_models_3_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_auth_1_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_context_1_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_core_1_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_netty_shaded_1_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_protobuf_1_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_protobuf_lite_1_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_stub_1_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_servlet_javax_servlet_api_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_xml_bind_jaxb_api_2_2_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__joda_time_joda_time_2_9_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_lucene_lucene_analyzers_common_4_10_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_lucene_lucene_core_4_10_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_lucene_lucene_queries_4_10_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_lucene_lucene_queryparser_4_10_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_lucene_lucene_sandbox_4_10_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_javax_json_1_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_simple_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__xalan_xalan_2_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__xerces_xercesImpl_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/NLPHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/TokenNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/QuickstartSample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/TestAppleScript.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/coreNLPtest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/DisSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/PluginRemover.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTprojectorManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/NLPutilitiesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fazecast_jSerialComm_2_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_api_common_1_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_gax_1_25_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_gax_grpc_1_25_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_cloud_google_cloud_core_1_31_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_cloud_google_cloud_core_grpc_1_31_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_cloud_google_cloud_core_grpc_1_35_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_auth_1_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_context_1_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_core_1_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_netty_shaded_1_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_protobuf_1_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_protobuf_lite_1_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_stub_1_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__joda_time_joda_time_2_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Minuet_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Minuet_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Minuet_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Minuet_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/Manager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/MinuetWorkTemp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/Timer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/Timer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/NLP/TokenNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/NLP/TokenNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/DisSensor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/DisSensor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/DisSensor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/Timer$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/frameWork/Timer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Artifacts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Artifacts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Light.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/MusicPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/MusicPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Projector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Projector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Roomba.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Roomba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/edu/cmu_ucla/minute/test/SerialComTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/edu/cmu_ucla/minute/test/SerialComTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Manager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/MinuetWorkTemp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Plugable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Plugable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/PluginTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/PluginTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/TokenNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/TokenNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/DisSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/DisSensor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" afterDir="false" />
     </list>
@@ -140,8 +62,8 @@
       <file leaf-file-name="SystemSubscriber.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="82">
+              <caret line="59" column="55" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,13 +71,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NLPHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/NLPHandler.java">
+      <file leaf-file-name="Projector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+            <state relative-caret-position="397">
+              <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#170#171#0" expanded="true" />
+                <element signature="e#206#207#0" expanded="true" />
+                <element signature="e#289#290#0" expanded="true" />
+                <element signature="e#325#326#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,17 +90,8 @@
       <file leaf-file-name="Light.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NLPutilitiesTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/NLPutilitiesTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="630">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,45 +99,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuickstartSample.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/QuickstartSample.java">
+      <file leaf-file-name="Roomba.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="450">
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VitalWorld.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="269" column="59" selection-start-line="269" selection-start-column="59" selection-end-line="269" selection-end-column="59" />
-              <folding>
-                <element signature="method#lightData#0;class#VitalWorld#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/TokenNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#347#348#0" expanded="true" />
-                <element signature="e#368#369#0" expanded="true" />
-                <element signature="e#396#397#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
-                <element signature="e#521#522#0" expanded="true" />
-                <element signature="e#548#549#0" expanded="true" />
+                <element signature="e#1506#1507#0" expanded="true" />
+                <element signature="e#1542#1543#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -229,8 +116,44 @@
       <file leaf-file-name="VitalObject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="-443">
+              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+              <folding>
+                <element signature="e#493#494#0" expanded="true" />
+                <element signature="e#523#524#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DisSensor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/DisSensor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#771#772#0" expanded="true" />
+                <element signature="e#1378#1379#0" expanded="true" />
+                <element signature="e#1418#1419#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Timer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Timer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="502">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
+                <element signature="e#1306#1307#0" expanded="true" />
+                <element signature="e#1356#1357#0" expanded="true" />
+                <element signature="e#1389#1390#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -238,8 +161,24 @@
       <file leaf-file-name="CommandFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+            <state relative-caret-position="358">
+              <caret line="89" column="26" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
+              <folding>
+                <element signature="e#2399#2407#0" expanded="true" />
+                <element signature="e#3380#3381#0" expanded="true" />
+                <element signature="e#3413#3414#0" expanded="true" />
+                <element signature="e#3450#3451#0" expanded="true" />
+                <element signature="e#3483#3484#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/util/Util.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="13" column="46" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -247,8 +186,8 @@
       <file leaf-file-name="SerialComTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -654,14 +593,9 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/VoiceMQTTSub.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/VitalWorldTest.java" />
         <option value="$PROJECT_DIR$/pySpeech/liveTest.py" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/GlobalKeyListenerExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttRoombaGame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" />
         <option value="$PROJECT_DIR$/src/resources/train4.csv" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/AttTest.java" />
         <option value="$PROJECT_DIR$/src/resources/train5.csv" />
@@ -675,26 +609,31 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Manager.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/MinuetWorkTemp.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/DisSensor.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Plugable.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/PluginTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/PluginRemover.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Timer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTMusicAppliance.java" />
         <option value="$PROJECT_DIR$/src/META-INF/services/javax.script.ScriptEngineFactory" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/TestAppleScript.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTprojectorManager.java" />
-        <option value="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/coreNLPtest.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/QuickstartSample.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/NLPHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/TokenNode.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/NLPutilitiesTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/TokenNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/DisSensor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Timer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" />
       </list>
     </option>
@@ -772,8 +711,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1639" />
-    <option name="y" value="31" />
+    <option name="x" value="49" />
+    <option name="y" value="41" />
     <option name="width" value="1680" />
     <option name="height" value="959" />
   </component>
@@ -785,9 +724,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -853,6 +790,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="minuet" type="462c0819:PsiDirectoryNode" />
+              <item name="frameWork" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Minuet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Minuet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="minuet" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -872,6 +818,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="minuet" type="462c0819:PsiDirectoryNode" />
               <item name="NLP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Minuet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Minuet" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="minuet" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Minuet" type="b2602c69:ProjectViewProjectNode" />
@@ -898,6 +853,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -934,7 +891,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.NLPutilitiesTest.build">
+  <component name="RunManager" selected="JUnit.SerialComTest.build">
     <configuration name="QuickstartSample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.cmu_ucla.minuet.apiTest.QuickstartSample" />
       <module name="Minuet_main" />
@@ -1061,11 +1018,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SerialComTest.build" />
         <item itemvalue="JUnit.NLPutilitiesTest.build" />
         <item itemvalue="Application.QuickstartSample" />
         <item itemvalue="Application.coreNLPtest" />
         <item itemvalue="Groovy.build" />
-        <item itemvalue="JUnit.SerialComTest.build" />
       </list>
     </recent_temporary>
   </component>
@@ -1100,27 +1057,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SerialComTest_build - 2018.08.13 at 13h 52m 18s.xml">
-      <configuration name="SerialComTest.build" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.13 at 14h 08m 53s.xml">
-      <configuration name="SerialComTest.build" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.14 at 15h 03m 53s.xml">
-      <configuration name="SerialComTest.build" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.15 at 15h 13m 40s.xml">
-      <configuration name="SerialComTest.build" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.15 at 15h 19m 13s.xml">
-      <configuration name="SerialComTest.build" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.15 at 15h 31m 31s.xml">
-      <configuration name="SerialComTest.build" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NLPutilitiesTest_build - 2018.08.22 at 14h 13m 13s.xml">
-      <configuration name="NLPutilitiesTest.build" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="NLPutilitiesTest_build - 2018.08.22 at 14h 13m 36s.xml">
       <configuration name="NLPutilitiesTest.build" configurationId="JUnit" />
     </history-entry>
@@ -1130,12 +1066,33 @@
     <history-entry file="NLPutilitiesTest_build - 2018.08.22 at 14h 14m 24s.xml">
       <configuration name="NLPutilitiesTest.build" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.22 at 15h 44m 34s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.22 at 15h 47m 45s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.22 at 16h 01m 07s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.22 at 16h 01m 58s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.22 at 16h 10m 02s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.22 at 16h 11m 49s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.22 at 16h 13m 18s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387953000" />
+    <option name="totallyTimeSpent" value="394042000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1639" y="31" width="1680" height="959" extended-state="0" />
+    <frame x="49" y="41" width="1680" height="959" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -1144,10 +1101,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.3259861" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.27145085" visible="true" weight="0.17582418" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.27102804" visible="true" weight="0.23626374" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39907193" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1155,21 +1111,46 @@
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" x="0" y="0" width="370" height="759" id="Documentation" order="10" sideWeight="0.7285491" side_tool="true" visible="true" weight="0.17582418" />
+      <window_info anchor="right" x="0" y="0" width="370" height="759" id="Documentation" order="10" sideWeight="0.72897196" side_tool="true" visible="true" weight="0.23626374" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2552204" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2563805" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23687424" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24236874" />
       <window_info id="Learn" order="2" />
       <window_info anchor="right" id="Gradle" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2563805" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23687424" />
+      <window_info id="Learn" order="2" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.27145085" visible="true" weight="0.17582418" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" x="0" y="0" width="370" height="759" id="Documentation" order="10" sideWeight="0.7285491" side_tool="true" visible="true" weight="0.17582418" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32941177" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32705882" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39907193" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.3259861" />
+      <window_info anchor="right" id="Gradle" order="8" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1180,7 +1161,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1188,6 +1169,32 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="269" column="59" selection-start-line="269" selection-start-column="59" selection-end-line="269" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1181#1189#0" expanded="true" />
+            <element signature="method#lightData#0;class#VitalWorld#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/TestPythonRun.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1213,7 +1220,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
+        <state relative-caret-position="660">
           <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
         </state>
       </provider>
@@ -1236,20 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/DisSensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="138" column="48" lean-forward="true" selection-start-line="138" selection-start-column="48" selection-end-line="138" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Timer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
@@ -1304,13 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/VoiceMQTTSub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="637">
@@ -1336,16 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" selection-start-line="8" selection-end-line="28" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1374,18 +1350,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/$1/Dollar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#3800#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
@@ -1393,22 +1357,10 @@
         <state relative-caret-position="-1502" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15166" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/Gradle__com_1stleg_jnativehook_2_0_2.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/Gradle__com_github_fommil_netlib_native_system_java_1_1.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -1421,9 +1373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="90" selection-start-line="11" selection-start-column="31" selection-end-line="16" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1438,50 +1387,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="95" column="5" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="95" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/TokenNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#548#549#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/NLPutilitiesTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/TokenNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/NLPHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="225">
           <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1489,27 +1426,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="269" column="59" selection-start-line="269" selection-start-column="59" selection-end-line="269" selection-end-column="59" />
+        <state relative-caret-position="357">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1181#1189#0" expanded="true" />
             <element signature="method#lightData#0;class#VitalWorld#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#168#169#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#170#171#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#289#290#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/DisSensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#1378#1379#0" expanded="true" />
+            <element signature="e#1418#1419#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/frameWork/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#1389#1390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/util/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="82">
+          <caret line="59" column="55" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1518,15 +1554,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        <state relative-caret-position="358">
+          <caret line="89" column="26" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
+          <folding>
+            <element signature="e#2399#2407#0" expanded="true" />
+            <element signature="e#3380#3381#0" expanded="true" />
+            <element signature="e#3413#3414#0" expanded="true" />
+            <element signature="e#3450#3451#0" expanded="true" />
+            <element signature="e#3483#3484#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="-443">
+          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+          <folding>
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

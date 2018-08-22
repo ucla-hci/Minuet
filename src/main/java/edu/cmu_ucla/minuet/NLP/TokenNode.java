@@ -9,6 +9,7 @@ public class TokenNode {
 
     private Map<Integer,TokenNode> sons = new HashMap<>();
     private String text;
+    private String command;
     public TokenNode(Token itself) {
         text = itself.getLemma();
     }
@@ -16,7 +17,15 @@ public class TokenNode {
         this.text = text;
     }
 
-    public void addSon(TokenNode son,int index){
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
+    }
+
+    public void addSon(TokenNode son, int index){
         sons.put(index,son);
     }
     public String getText(){return text;}

@@ -65,7 +65,8 @@ public class SystemSubscriber implements MqttCallback {
 //            world.directReceiveData(newData);
             world.revceiveData(newData);
             if (world.getCurFrame() != null) {
-                world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(tmpVoiceCommand.split("\\s+"))));
+//                world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(tmpVoiceCommand.split("\\s+"))));
+                world.getCurFrame().setCurCommand(newData);
                 tmpVoiceCommand = "";
             }
             if (triggerDict.containsKey(splitedString[splitedString.length - 1]))
@@ -83,8 +84,8 @@ public class SystemSubscriber implements MqttCallback {
                 world.getCurPlugin().getVoiceCommand(newData);
                 tmpVoiceCommand = "";
 
-            } else if (world.getCurFrame() != null && world.getCurFrame().getCurCommand().isEmpty()) {
-                world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(splitedString)));
+            } else if (world.getCurFrame() != null && world.getCurFrame().getCurCommand()==null) {
+                world.getCurFrame().setCurCommand(tmpVoiceCommand);
             }
 
         } else if (topic.equals("data")) {
