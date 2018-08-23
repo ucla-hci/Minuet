@@ -26,6 +26,21 @@ public class Artifacts extends VitalObject {
     }
 
     @Override
+    public String[] resumeObject() {
+        return new String[0];
+    }
+
+    @Override
+    public String[] enteringObject() {
+        return new String[0];
+    }
+
+    @Override
+    public String[] leavingObject() {
+        return new String[0];
+    }
+
+    @Override
     public String[] selectedObject() {
         return new String[0];
     }

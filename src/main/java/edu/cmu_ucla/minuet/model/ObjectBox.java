@@ -26,6 +26,7 @@ public class ObjectBox {
         curIndex = (curIndex+1)%box.size();
     }
     public synchronized void setPrevious(){
-        curIndex = (curIndex-1)%box.size();
+        curIndex=Math.floorMod(curIndex-1, box.size());
+
     }
 }

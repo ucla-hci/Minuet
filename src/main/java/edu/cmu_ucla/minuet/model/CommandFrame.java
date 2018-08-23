@@ -18,7 +18,7 @@ public class CommandFrame {
     private boolean isExecAble = false;
     private TokenNode curCommand;
     private String curGesture = "";
-    private VitalObject curObject;
+
     private final VitalWorld world;
     private int execuType = 0;
     private volatile boolean isDead = false;
@@ -41,26 +41,28 @@ public class CommandFrame {
         this.userName = userName;
         this.world = world;
         this.scheduledExecutorService = Executors.newScheduledThreadPool(5);
-        Thread underSelectedThread = new Thread(() -> {
-            while (!isDead) {
-                if (!box.isOne()) {
-                    world.sendMqtt(box.getCurObject().selectedObject());
-                }
+        this.world.sendMqtt(box.getCurObject().enteringObject());
+        if (!box.isOne())  {
+            Thread underSelectedThread = new Thread(() -> {
+                while (!isDead) {
 
-                try {
-                    wait(1500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                        world.sendMqtt(box.getCurObject().selectedObject());
+
+
+                    try {
+                        Thread.sleep(1500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
-        underSelectedThread.start();
-        if(box.isOne()){
-            runTimeOut(8);
-        }
-        else{
+            });
+            underSelectedThread.start();
             runTimeOut(15);
         }
+        else{
+            runTimeOut(8);
+        }
+
     }
 
     public void runTimeOut(int second) {
@@ -97,7 +99,9 @@ public class CommandFrame {
             execuType = 3;
         }
         if (isExecAble) {
+
             world.execuFrame();
+
 
         }
         System.out.println(execuType);
@@ -129,16 +133,22 @@ public class CommandFrame {
     public void setCurGesture(String curGesture) {
         if (!box.isOne()) {
             if (curGesture.equals("rightSwap")) {
+                world.sendMqtt(box.getCurObject().leavingObject());
+                world.sendMqtt(box.getCurObject().resumeObject());
                 box.setNext();
+                world.sendMqtt(box.getCurObject().enteringObject());
             } else if (curGesture.equals("leftSwap")) {
+                world.sendMqtt(box.getCurObject().leavingObject());
+                world.sendMqtt(box.getCurObject().resumeObject());
                 box.setPrevious();
+                world.sendMqtt(box.getCurObject().enteringObject());
             } else if (box.getCurObject().canExcuGesture(curGesture)) {
                 this.curGesture = curGesture;
-
+                world.sendMqtt(box.getCurObject().leavingObject());
                 checkExcuable();
             }
         } else {
-            if (curObject.canExcuGesture(curGesture)) {
+            if (box.getCurObject().canExcuGesture(curGesture)) {
                 this.curGesture = curGesture;
 
                 checkExcuable();
@@ -160,25 +170,25 @@ public class CommandFrame {
         String[] retirmData = new String[2];
         switch (execuType) {
             case 1:
-                retirmData = curObject.execuate(curCommand);
+                retirmData = box.getCurObject().execuate(curCommand);
                 break;
             case 2:
                 //discard
-                retirmData = curObject.execuate(new ArraySet<>(), curGesture);
+                retirmData = box.getCurObject().execuate(new ArraySet<>(), curGesture);
                 break;
             case 3:
-                retirmData = curObject.execuate(curGesture);
+                retirmData = box.getCurObject().execuate(curGesture);
                 break;
         }
         if (retirmData.length == 2) {
             try {
 
-                if (Roomba.class.isInstance(curObject) && retirmData[1].equals("g") && secLoc != null) {
+                if (Roomba.class.isInstance(box.getCurObject()) && retirmData[1].equals("g") && secLoc != null) {
 
                     retirmData[1] = retirmData[1] + " " + (int) secLoc.getPos().getX() + " " + (int) secLoc.getPos().getY();
                     System.out.println(retirmData[0] + " " + retirmData[1]);
                 }
-                if (Projector.class.isInstance(curObject) && retirmData[1].equals("show")) {
+                if (Projector.class.isInstance(box.getCurObject()) && retirmData[1].equals("show")) {
 
                     retirmData[1] = retirmData[1] + " " + userName;
 

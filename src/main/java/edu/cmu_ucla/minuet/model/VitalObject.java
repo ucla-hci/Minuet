@@ -64,6 +64,9 @@ public abstract class VitalObject {
 
         this.execuableWords.add(root);
     }
+    public abstract String[] enteringObject();
+    public abstract String[] leavingObject();
+    public abstract String[] resumeObject();
     public abstract String[] selectedObject();
     public void addExecuableWords(String[][]s,String command){
         for(int i = 0; i<s.length;i++){

@@ -22,6 +22,21 @@ public class MusicPlayer extends VitalObject {
     }
 
     @Override
+    public String[] resumeObject() {
+        return new String[0];
+    }
+
+    @Override
+    public String[] enteringObject() {
+        return new String[0];
+    }
+
+    @Override
+    public String[] leavingObject() {
+        return new String[0];
+    }
+
+    @Override
     public String[] execuate(Set<String> command, String gesture) {
         String[] topicNMes = new String[2];
         return  new String[0];

@@ -23,7 +23,8 @@ public class SystemSubscriber implements MqttCallback {
     private String tmpVoiceCommand = "";
 
     public SystemSubscriber(VitalWorld world) throws MqttException, FileNotFoundException, Exception {
-        model = (IBk) SerializationHelper.read(new FileInputStream("weka/KNNgestures.model"));
+        model = (IBk) SerializationHelper.read(new FileInputStream("weka/KNNgestures1_2.model"));
+//        model = (RandomForest) SerializationHelper.read(new FileInputStream("weka/RFgesture1.1.model"));
         triggerModel = (RandomForest) SerializationHelper.read(new FileInputStream("weka/RTpointing.model"));
         this.world = world;
         client = new MqttClient("tcp://192.168.1.8:1883", "systemSubscriber");
@@ -101,9 +102,9 @@ public class SystemSubscriber implements MqttCallback {
                 if (!gestureDict.containsKey(curUserName)) {
                     gestureDict.put(curUserName, new ArrayList<Struct>(15));
                 }
-                if (gestureDict.get(curUserName).size() == 15) gestureDict.get(curUserName).remove(0);
+                if (gestureDict.get(curUserName).size() == 15){ gestureDict.get(curUserName).remove(0);}
                 gestureDict.get(curUserName).add(curStruct);
-                if (gestureDict.get(curUserName).size() == 15) checkGesture(gestureDict.get(curUserName), curUserName);
+                if (gestureDict.get(curUserName).size() == 15) {checkGesture(gestureDict.get(curUserName), curUserName);}
 
 
             }
@@ -143,7 +144,7 @@ public class SystemSubscriber implements MqttCallback {
         if (!gesture.equals("noInteraction") && !gesture.equals("")) {
             System.out.println("Gesture get: " + gesture);
             world.getCurFrame().setCurGesture(gesture);
-            curIMUDatas.clear();
+
             gestureDict.get(userName).clear();
         }
     }
@@ -153,7 +154,7 @@ public class SystemSubscriber implements MqttCallback {
         String gesture = ClassifierUtil.Classify(triggerModel, curTriggerIMUDatas, 1);
 
         if (gesture.equals("pointing")) {
-            System.out.println("Gesture get: " + gesture);
+
             MqttMessage mqttMessage = new MqttMessage();
             mqttMessage.setPayload("1".getBytes());
 
