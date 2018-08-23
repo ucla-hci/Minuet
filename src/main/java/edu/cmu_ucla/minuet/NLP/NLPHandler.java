@@ -9,6 +9,7 @@ import java.util.Set;
 
 public class NLPHandler {
     public static boolean isExecutable(TokenNode command, TokenNode userSpeech){
+        if(userSpeech==null)return false;
         if(command.getText().equals(userSpeech.getText())){
             if(!command.hasSons()){return true;}
             else{

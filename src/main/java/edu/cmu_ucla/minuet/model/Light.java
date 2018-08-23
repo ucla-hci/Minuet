@@ -29,9 +29,11 @@ public class Light extends VitalObject {
     public String[] execuate(String gesture) {
         String[] topicNMes = new String[2];
         if(gesture.equals("upSwap")){
+
             topicNMes[0] = getTopic();
             topicNMes[1]="toggle";
         }
+
         return topicNMes;
     }
 

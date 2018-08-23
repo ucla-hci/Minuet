@@ -99,6 +99,7 @@ public class CommandFrame {
     public void setCurGesture(String curGesture) {
         if (curObject.canExcuGesture(curGesture)) {
             this.curGesture = curGesture;
+
             checkExcuable();
         }
     }
