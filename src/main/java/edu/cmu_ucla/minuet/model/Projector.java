@@ -1,14 +1,12 @@
 package edu.cmu_ucla.minuet.model;
 
-import edu.cmu_ucla.minuet.NLP.TokenNode;
-
 import java.util.Set;
 
 public class Projector  extends VitalObject  {
-    @Override
-    public String[] execuate(TokenNode node) {
-        return new String[0];
-    }
+//    @Override
+//    public String[] execuate(TokenNode node) {
+//        return new String[0];
+//    }
 
     @Override
     public String[] execuate(Set<String> command, String gesture) {
@@ -44,6 +42,14 @@ public class Projector  extends VitalObject  {
     public Projector(BoundingObject boundingObject, String name, String topic) {
         super(boundingObject, name, topic);
         String[]excuWords = {};
+        String[][]show={{"show"},{"display"},{"open"}};
+        String[][]close={{"turn","off"},{"off"},{"close"}};
+        String[][]next={{"next"},{"slide","next"}};
+        String[][]previous={{"previous"},{"slide","last"},{"slide","previous"}};
+        addExecuableWords(show,"show");
+        addExecuableWords(close,"quit");
+        addExecuableWords(next,"next");
+        addExecuableWords(previous,"previous");
         String[]gestures={"upSwap","downSwap","leftSwap","rightSwap"};
 //        addExecuableWord(excuWords);
         supportedGestures(gestures);

@@ -82,6 +82,7 @@ public class CommandFrame {
         for(String s: curObject.rootSet){
             if(mySet.contains(s)){
                 try {
+                    world.sendVoiceCommand("OK, working on it");
                     TokenNode command = NLPHandler.parse(text);
                     if(curObject.canExecuCommand(command)){
                         this.curCommand = command;

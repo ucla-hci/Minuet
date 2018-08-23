@@ -52,6 +52,11 @@ public abstract class VitalObject {
 
         this.execuableWords.add(root);
     }
+    public void addExecuableWords(String[][]s,String command){
+        for(int i = 0; i<s.length;i++){
+            addExecuableWord(s[i],command);
+        }
+    }
 
     public boolean canExecuCommand(TokenNode userCommand) {
         for(TokenNode command : this.execuableWords){
@@ -100,7 +105,18 @@ public abstract class VitalObject {
     public BoundingObject getBoundingObject() {
         return boundingObject;
     }
-    public abstract String[] execuate(TokenNode userCommand);
+    public  String[] execuate(TokenNode userCommand){
+        String[] topicNMes = new String[2];
+        for(TokenNode node : execuableWords){
+            if(NLPHandler.isExecutable(node,userCommand)){
+                topicNMes[0]=getTopic();
+                topicNMes[1] = node.getCommand();
+                return topicNMes;
+            }
+        }
+
+        return topicNMes;
+    };
     public abstract String[] execuate(Set<String> command,String gesture);
     public abstract String[] execuate(String gesture);
 }

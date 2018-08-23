@@ -331,7 +331,19 @@ public class VitalWorld {
         }
     }
 
-
+    public void sendVoiceCommand(String command){
+        Thread sendThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mqtt.sendMessage("connectedVoice","$"+command);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        sendThread.start();
+    }
     public void execuFrame() {
         synchronized (this) {
             final String tmpUserName = curFrame.getUserName();

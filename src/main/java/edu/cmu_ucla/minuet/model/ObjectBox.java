@@ -11,4 +11,8 @@ public class ObjectBox {
     }
     public void addToBox(VitalObject object){box.add(object);}
     public void setCurObject(int index){curObject = box.get(index);}
+    public VitalObject getCurObject(){
+        if(box.size()==1)return box.get(0);
+        else return curObject;
+    }
 }
