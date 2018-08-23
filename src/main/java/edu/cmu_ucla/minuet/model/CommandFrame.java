@@ -21,49 +21,78 @@ public class CommandFrame {
     private VitalObject curObject;
     private final VitalWorld world;
     private int execuType = 0;
-    private boolean isDead = false;
+    private volatile boolean isDead = false;
     private String userName;
     private LocData secLoc = null;
+    private ObjectBox box;
+    private ScheduledExecutorService scheduledExecutorService;
+
 
     public String getUserName() {
         return userName;
     }
+
     public void setSecLoc(LocData secLoc) {
         this.secLoc = secLoc;
     }
-    public CommandFrame(VitalObject object, VitalWorld world,String userName) {
-        this.curObject = object;
+
+    public CommandFrame(ObjectBox box, VitalWorld world, String userName) {
+        this.box = box;
         this.userName = userName;
         this.world = world;
-        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
+        this.scheduledExecutorService = Executors.newScheduledThreadPool(5);
+        Thread underSelectedThread = new Thread(() -> {
+            while (!isDead) {
+                if (!box.isOne()) {
+                    world.sendMqtt(box.getCurObject().selectedObject());
+                }
+
+                try {
+                    wait(1500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        underSelectedThread.start();
+        if(box.isOne()){
+            runTimeOut(8);
+        }
+        else{
+            runTimeOut(15);
+        }
+    }
+
+    public void runTimeOut(int second) {
+
         final Runnable cancellation = new Runnable() {
             @Override
             public void run() {
                 synchronized (this) {
 
-                    if (!isDead&&!isExecAble) {
+                    if (!isDead && !isExecAble) {
                         System.out.println("time out ");
                         world.killCurFrame();
                     }
                 }
             }
         };
-        scheduledExecutorService.schedule(cancellation, 8, TimeUnit.SECONDS);
-
+        scheduledExecutorService.schedule(cancellation, second, TimeUnit.SECONDS);
     }
-    public void kill(){
+
+    public void kill() {
         this.isDead = true;
     }
 
     private void checkExcuable() {
 
-        if (curObject.canExecuCommand(curCommand)) {
+        if (box.getCurObject().canExecuCommand(curCommand)) {
             isExecAble = true;
             execuType = 1;
-        } else if (curObject.canExcuCommandWithGesture(new ArraySet<>(), curGesture)) {
+        } else if (box.getCurObject().canExcuCommandWithGesture(new ArraySet<>(), curGesture)) {
             isExecAble = true;
             execuType = 2;
-        } else if (curObject.canExcuGesture(curGesture)) {
+        } else if (box.getCurObject().canExcuGesture(curGesture)) {
             isExecAble = true;
             execuType = 3;
         }
@@ -77,14 +106,13 @@ public class CommandFrame {
 
 
     public void setCurCommand(String text) {
-
         Set<String> mySet = new HashSet<String>(Arrays.asList(text.split("\\s+")));
-        for(String s: curObject.rootSet){
-            if(mySet.contains(s)){
+        for (String s : box.getCurObject().rootSet) {
+            if (mySet.contains(s)) {
                 try {
                     world.sendVoiceCommand("OK, working on it");
                     TokenNode command = NLPHandler.parse(text);
-                    if(curObject.canExecuCommand(command)){
+                    if (box.getCurObject().canExecuCommand(command)) {
                         this.curCommand = command;
                         checkExcuable();
                     }
@@ -94,15 +122,29 @@ public class CommandFrame {
                 }
             }
         }
+
     }
 
 
     public void setCurGesture(String curGesture) {
-        if (curObject.canExcuGesture(curGesture)) {
-            this.curGesture = curGesture;
+        if (!box.isOne()) {
+            if (curGesture.equals("rightSwap")) {
+                box.setNext();
+            } else if (curGesture.equals("leftSwap")) {
+                box.setPrevious();
+            } else if (box.getCurObject().canExcuGesture(curGesture)) {
+                this.curGesture = curGesture;
 
-            checkExcuable();
+                checkExcuable();
+            }
+        } else {
+            if (curObject.canExcuGesture(curGesture)) {
+                this.curGesture = curGesture;
+
+                checkExcuable();
+            }
         }
+
     }
 
 
@@ -131,14 +173,14 @@ public class CommandFrame {
         if (retirmData.length == 2) {
             try {
 
-                if(Roomba.class.isInstance(curObject)&&retirmData[1].equals("g")&&secLoc!=null){
+                if (Roomba.class.isInstance(curObject) && retirmData[1].equals("g") && secLoc != null) {
 
-                    retirmData[1]=retirmData[1]+" "+(int)secLoc.getPos().getX()+" "+(int)secLoc.getPos().getY();
-                    System.out.println(retirmData[0]+" "+retirmData[1]);
+                    retirmData[1] = retirmData[1] + " " + (int) secLoc.getPos().getX() + " " + (int) secLoc.getPos().getY();
+                    System.out.println(retirmData[0] + " " + retirmData[1]);
                 }
-                if(Projector.class.isInstance(curObject)&&retirmData[1].equals("show")){
+                if (Projector.class.isInstance(curObject) && retirmData[1].equals("show")) {
 
-                    retirmData[1]=retirmData[1]+" "+userName;
+                    retirmData[1] = retirmData[1] + " " + userName;
 
                 }
 

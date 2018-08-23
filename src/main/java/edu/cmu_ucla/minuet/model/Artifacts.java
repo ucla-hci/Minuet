@@ -24,4 +24,9 @@ public class Artifacts extends VitalObject {
         super(boundingObject, name, topic);
 
     }
+
+    @Override
+    public String[] selectedObject() {
+        return new String[0];
+    }
 }

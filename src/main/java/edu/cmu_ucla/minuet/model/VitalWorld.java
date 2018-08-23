@@ -27,7 +27,7 @@ public class VitalWorld {
     private Set<Artifacts> artifacts = new HashSet<>();
     private CommandFrame curFrame = null;
     private Plugable curPlugin = null;
-    private Set<String> supportedPluginNames = new HashSet<String>(Arrays.asList("timer","sensor","remove"));
+    private Set<String> supportedPluginNames = new HashSet<String>(Arrays.asList("timer", "sensor", "remove"));
     private Set<Plugable> workingPlugins = new HashSet<>();
 
 
@@ -39,7 +39,8 @@ public class VitalWorld {
     public synchronized Plugable getCurPlugin() {
         return curPlugin;
     }
-    public void removeCurPlugin(){
+
+    public void removeCurPlugin() {
         workingPlugins.add(this.curPlugin);
         this.curPlugin = null;
     }
@@ -47,18 +48,18 @@ public class VitalWorld {
 
     public void ifMeansPlugin(Set<String> words) {
         synchronized (this) {
-            for(String word : words){
-                if(supportedPluginNames.contains(word)){
-                    switch (word){
+            for (String word : words) {
+                if (supportedPluginNames.contains(word)) {
+                    switch (word) {
                         case "timer":
-                            this.curPlugin = new Timer(this.mqtt,this);
+                            this.curPlugin = new Timer(this.mqtt, this);
                             break;
                         case "sensor":
-                            this.curPlugin = new DisSensor(this.mqtt,this);
+                            this.curPlugin = new DisSensor(this.mqtt, this);
                             break;
 
                         case "remove":
-                            this.curPlugin = new PluginRemover(this.mqtt,this);
+                            this.curPlugin = new PluginRemover(this.mqtt, this);
                             break;
                     }
 
@@ -71,9 +72,11 @@ public class VitalWorld {
     public VitalWorld() throws MqttException {
 
     }
+
     public void addArtifact(Artifacts artifacts) {
         this.artifacts.add(artifacts);
     }
+
     public void addObject(VitalObject s) {
         this.vitalObjects.add(s);
     }
@@ -247,39 +250,50 @@ public class VitalWorld {
             System.out.println("user current loc is :" + x + " " + y + " yaw: " + yaw + " pitch: " + pitch);
             userMap.get(userName).updataData(pitch, roll, yaw, pos);
             if (curFrame == null) {
-                for (VitalObject object : vitalObjects) {
-                    if (curFrame == null && object.checkBePointed(userMap.get(userName).getPos(), userMap.get(userName).getPointVec())&&curPlugin==null) {
-                        synchronized (this) {
-                            System.out.println("currentUserName: "+userName);
-                            Thread sendThread = new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    try {
-                                        mqtt.sendMessage("trigger/"+userName, "1");
+                ObjectBox box = new ObjectBox();
 
-                                    } catch (MqttException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            });
-                            sendThread.start();
-                            curFrame = new CommandFrame(object, this,userName);
-                            Thread notifyVoiceThread = new Thread(() -> {
+                for (VitalObject object : vitalObjects) {
+
+                    if (object.checkBePointed(userMap.get(userName).getPos(), userMap.get(userName).getPointVec())) {
+                        if (curPlugin == null) {
+                            box.addToBox(object);
+
+                        } else {
+                            curPlugin.setTargetObject(object);
+                            break;
+                        }
+
+                    }
+                }
+                if (!box.isEmpty()) {
+                    synchronized (this) {
+                        System.out.println("currentUserName: " + userName);
+                        Thread sendThread = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
                                 try {
-                                    mqtt.sendMessage("connectedVoice", "*" + object.getName());
+                                    mqtt.sendMessage("trigger/" + userName, "1");
+
                                 } catch (MqttException e) {
                                     e.printStackTrace();
                                 }
-                            });
-                            notifyVoiceThread.start();
-                            System.out.println("connected with " + object.getName());
-                        }
-                        break;
-                    }
-                    else if (curPlugin!=null && curFrame == null && object.checkBePointed(userMap.get(userName).getPos(), userMap.get(userName).getPointVec())){
-                        curPlugin.setTargetObject(object);
+                            }
+                        });
+                        sendThread.start();
+                        curFrame = new CommandFrame(box, this, userName);
+                        Thread notifyVoiceThread = new Thread(() -> {
+                            try {
+                                if (!box.isOne()) mqtt.sendMessage("connectedVoice", "$multiple devices");
+                                else mqtt.sendMessage("connectedVoice", "*" + box.getCurObject().getName());
+                            } catch (MqttException e) {
+                                e.printStackTrace();
+                            }
+                        });
+                        notifyVoiceThread.start();
+
                     }
                 }
+
             } else {
                 synchronized (this) {
                     double tmpz = userMap.get(userName).getPos().getZ();
@@ -301,7 +315,7 @@ public class VitalWorld {
                     @Override
                     public void run() {
                         try {
-                            mqtt.sendMessage("trigger/"+tmpName, "0");
+                            mqtt.sendMessage("trigger/" + tmpName, "0");
                         } catch (MqttException e) {
                             e.printStackTrace();
                         }
@@ -331,12 +345,25 @@ public class VitalWorld {
         }
     }
 
-    public void sendVoiceCommand(String command){
+    public void sendVoiceCommand(String command) {
         Thread sendThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    mqtt.sendMessage("connectedVoice","$"+command);
+                    mqtt.sendMessage("connectedVoice", "$" + command);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        sendThread.start();
+    }
+    public void sendMqtt(String[] command){
+        Thread sendThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mqtt.sendMessage(command[0] , command[1]);
                 } catch (MqttException e) {
                     e.printStackTrace();
                 }
@@ -352,7 +379,7 @@ public class VitalWorld {
                 @Override
                 public void run() {
                     try {
-                        mqtt.sendMessage("trigger/"+tmpUserName, "0");
+                        mqtt.sendMessage("trigger/" + tmpUserName, "0");
                     } catch (MqttException e) {
                         e.printStackTrace();
                     }

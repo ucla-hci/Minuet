@@ -14,6 +14,11 @@ public class Projector  extends VitalObject  {
     }
 
     @Override
+    public String[] selectedObject() {
+        return new String[0];
+    }
+
+    @Override
     public String[] execuate(String gesture) {
         String[] topicNMes = new String[2];
         if(gesture.equals("upSwap")){

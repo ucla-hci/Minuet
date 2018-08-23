@@ -54,5 +54,17 @@ public class Light extends VitalObject {
         supportedGestures(gestures);
     }
 
+    @Override
+    public String[] selectedObject() {
+        String[] topicNMes = {getTopic(),"toggle"};
+        return topicNMes;
+    }
+
+//    @Override
+//    public String[] commandItToSelectedStatus() {
+//        String[] topicNMes = {getTopic(),"toggle"};
+//        return topicNMes;
+//    }
+
 
 }
