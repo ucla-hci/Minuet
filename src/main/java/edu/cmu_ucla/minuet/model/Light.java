@@ -63,7 +63,7 @@ public class Light extends VitalObject {
 
     @Override
     public String[] selectedObject() {
-        String[] topicNMes = {getTopic(),"on"};
+        String[] topicNMes = {"trash","on"};
         return topicNMes;
     }
 

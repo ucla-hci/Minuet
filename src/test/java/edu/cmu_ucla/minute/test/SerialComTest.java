@@ -14,7 +14,6 @@ public class SerialComTest {
 
         final VitalWorld world = new VitalWorld();
         User user1 = new User("Richard",0,0,0,new Vector3D(0,0,0));
-
         User user = new User("Tom",0,0,0,new Vector3D(0,0,0));
         User user2 = new User("Mike",0,0,0,new Vector3D(0,0,0));
 //        VitalObject object = new VitalObject(new BoundingSphere(new Vector3D(3300,2890,1900),1000),"sonoffSwitch","cmnd/sonoff1/POWER");

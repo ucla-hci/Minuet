@@ -198,6 +198,7 @@ public class VitalWorld {
         String[] splitedString = data.split("\\s+");
         if (splitedString.length == 7) {
             double yaw = (Double.parseDouble(splitedString[3]) - 30);
+
             yaw = (yaw >= 0) ? yaw : 360 + yaw;
             double pitch = Double.parseDouble(splitedString[4]);
             double roll = Double.parseDouble(splitedString[5]);

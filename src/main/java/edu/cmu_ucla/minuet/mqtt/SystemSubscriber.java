@@ -23,7 +23,7 @@ public class SystemSubscriber implements MqttCallback {
     private String tmpVoiceCommand = "";
 
     public SystemSubscriber(VitalWorld world) throws MqttException, FileNotFoundException, Exception {
-        model = (IBk) SerializationHelper.read(new FileInputStream("weka/KNNgestures1_2.model"));
+        model = (IBk) SerializationHelper.read(new FileInputStream("weka/KNNgestures.model"));
 //        model = (RandomForest) SerializationHelper.read(new FileInputStream("weka/RFgesture1.1.model"));
         triggerModel = (RandomForest) SerializationHelper.read(new FileInputStream("weka/RTpointing.model"));
         this.world = world;

@@ -99,12 +99,12 @@ public class CommandFrame {
             execuType = 3;
         }
         if (isExecAble) {
-
+//            kill();
             world.execuFrame();
 
 
         }
-        System.out.println(execuType);
+//        System.out.println(execuType);
 
     }
 
@@ -144,7 +144,7 @@ public class CommandFrame {
                 world.sendMqtt(box.getCurObject().enteringObject());
             } else if (box.getCurObject().canExcuGesture(curGesture)) {
                 this.curGesture = curGesture;
-                world.sendMqtt(box.getCurObject().leavingObject());
+//                world.sendMqtt(box.getCurObject().leavingObject());
                 checkExcuable();
             }
         } else {
@@ -193,7 +193,7 @@ public class CommandFrame {
                     retirmData[1] = retirmData[1] + " " + userName;
 
                 }
-
+                mqtt.sendMessage(box.getCurObject().leavingObject()[0],box.getCurObject().leavingObject()[1]);
                 mqtt.sendMessage(retirmData[0], retirmData[1]);
             } catch (MqttException e) {
                 e.printStackTrace();
