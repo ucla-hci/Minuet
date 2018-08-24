@@ -10,27 +10,25 @@ public class Projector  extends VitalObject  {
 
     @Override
     public String[] execuate(Set<String> command, String gesture) {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
-    public String[] resumeObject() {
-        return new String[0];
-    }
+    public String[] resumeObject() { return new String[]{"  ",""}; }
 
     @Override
     public String[] enteringObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
     public String[] leavingObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
     public String[] selectedObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override

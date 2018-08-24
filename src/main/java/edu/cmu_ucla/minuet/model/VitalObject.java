@@ -132,7 +132,7 @@ public abstract class VitalObject {
         }
 
         return topicNMes;
-    };
+    }
     public abstract String[] execuate(Set<String> command,String gesture);
     public abstract String[] execuate(String gesture);
 //    public void toggleTmpSelected(){

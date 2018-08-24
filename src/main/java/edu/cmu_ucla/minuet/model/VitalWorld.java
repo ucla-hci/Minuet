@@ -372,7 +372,7 @@ public class VitalWorld {
         });
         sendThread.start();
     }
-    public void execuFrame() {
+    public void execuFrame(int execuType) {
         synchronized (this) {
             final String tmpUserName = curFrame.getUserName();
             this.curFrame.execuate(this.mqtt);
@@ -390,14 +390,16 @@ public class VitalWorld {
             curFrame.kill();
             this.curFrame = null;
 
-            Thread notifyVoiceThread = new Thread(() -> {
-                try {
-                    mqtt.sendMessage("connectedVoice", "$command executed");
-                } catch (MqttException e) {
-                    e.printStackTrace();
-                }
-            });
-            notifyVoiceThread.start();
+            if (execuType == 3) {
+                Thread notifyVoiceThread = new Thread(() -> {
+                    try {
+                        mqtt.sendMessage("connectedVoice", "$command executed");
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
+                });
+                notifyVoiceThread.start();
+            }
         }
     }
 }

@@ -37,22 +37,22 @@ public class Roomba extends VitalObject {
 
     @Override
     public String[] selectedObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
     public String[] resumeObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
     public String[] enteringObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
     public String[] leavingObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override

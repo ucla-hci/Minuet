@@ -12,6 +12,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class SystemSubscriber implements MqttCallback {
     MqttClient client;
@@ -39,7 +40,15 @@ public class SystemSubscriber implements MqttCallback {
             @Override
             public void run() {
                 try {
-                    Process p = Runtime.getRuntime().exec("python /Users/runchangkang/Documents/Minuet/pySpeech/liveTest.py");
+                    while(true){
+                        try {
+                            Process p = Runtime.getRuntime().exec("python /Users/runchangkang/Documents/Minuet/pySpeech/liveTest.py");
+                            p.waitFor(60, TimeUnit.SECONDS);  // let the process run for 5 seconds
+                            p.destroy();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
 
                 } catch (IOException e) {
                     e.printStackTrace();

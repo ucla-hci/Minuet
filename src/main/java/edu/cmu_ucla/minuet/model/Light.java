@@ -1,5 +1,8 @@
 package edu.cmu_ucla.minuet.model;
 
+import edu.cmu_ucla.minuet.NLP.NLPHandler;
+import edu.cmu_ucla.minuet.NLP.TokenNode;
+
 import java.util.Set;
 
 public class Light extends VitalObject {
@@ -16,6 +19,21 @@ public class Light extends VitalObject {
 //
 //        return topicNMes;
 //    }
+    @Override
+    public  String[] execuate(TokenNode userCommand){
+        String[] topicNMes = new String[2];
+        for(TokenNode node : execuableWords){
+            if(NLPHandler.isExecutable(node,userCommand)){
+                topicNMes[0]=getTopic();
+                topicNMes[1] = node.getCommand();
+                if(topicNMes[1].equals("ON"))lastStatus=true;
+                else lastStatus=false;
+                return topicNMes;
+            }
+        }
+
+        return topicNMes;
+    }
     private volatile boolean lastStatus = false;
     @Override
     public String[] execuate(Set<String> command, String gesture) {

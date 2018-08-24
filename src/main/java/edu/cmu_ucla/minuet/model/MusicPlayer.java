@@ -18,29 +18,26 @@ public class MusicPlayer extends VitalObject {
 
     @Override
     public String[] selectedObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
     public String[] resumeObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
     public String[] enteringObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
     public String[] leavingObject() {
-        return new String[0];
+        return new String[]{"  ",""};
     }
 
     @Override
-    public String[] execuate(Set<String> command, String gesture) {
-        String[] topicNMes = new String[2];
-        return  new String[0];
-    }
+    public String[] execuate(Set<String> command, String gesture) { return new String[]{"",""}; }
 
     @Override
     public String[] execuate(String gesture) {
@@ -69,7 +66,7 @@ public class MusicPlayer extends VitalObject {
         super(boundingObject, name, topic);
         String[][] play={{"play","music"},{"start"},{"music"},{"play","playlist"}};
         String[][] stop={{"stop"},{"pause"}};
-        String[][] next={{"music","next"},{"song","next"},{"change"},{"play","music","different"},{"play","music","next"}};
+        String[][] next={{"music","next"},{"song","next"},{"change"},{"play","music","different"},{"play","music","next"},{"play","song","different"}};
         String[][] volumeUp ={{"volume","up"},{"loud"},{"turn","up"},{"louder"}};
         String[][] volumeDown ={{"volume","down"},{"quiet"},{"turn","down"}};
 

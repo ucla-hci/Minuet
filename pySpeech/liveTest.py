@@ -41,6 +41,7 @@ from six.moves import queue
 
 # Audio recording parameters
 RATE = 16000
+#RATE = 44100
 CHUNK = int(RATE / 10)  # 100ms
 brokerAddress = "192.168.1.8"
 mqclient = mqtt.Client("SPEECH")

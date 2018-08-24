@@ -7,17 +7,17 @@ import java.util.Set;
 public class Artifacts extends VitalObject {
     @Override
     public String[] execuate(TokenNode node) {
-        return new String[0];
+        return new String[2];
     }
 
     @Override
     public String[] execuate(Set<String> command, String gesture) {
-        return new String[0];
+        return new String[2];
     }
 
     @Override
     public String[] execuate(String gesture) {
-        return new String[0];
+        return new String[2];
     }
 
     public Artifacts(BoundingObject boundingObject, String name, String topic) {
@@ -27,21 +27,21 @@ public class Artifacts extends VitalObject {
 
     @Override
     public String[] resumeObject() {
-        return new String[0];
+        return new String[2];
     }
 
     @Override
     public String[] enteringObject() {
-        return new String[0];
+        return new String[2];
     }
 
     @Override
     public String[] leavingObject() {
-        return new String[0];
+        return new String[2];
     }
 
     @Override
     public String[] selectedObject() {
-        return new String[0];
+        return new String[2];
     }
 }

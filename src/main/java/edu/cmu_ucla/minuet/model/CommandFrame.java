@@ -100,7 +100,7 @@ public class CommandFrame {
         }
         if (isExecAble) {
 //            kill();
-            world.execuFrame();
+            world.execuFrame(execuType);
 
 
         }

@@ -1,32 +1,31 @@
 package edu.cmu_ucla.minuet.apiTest;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-
-import edu.cmu.sphinx.api.Configuration;
-import edu.cmu.sphinx.api.SpeechResult;
-import edu.cmu.sphinx.api.StreamSpeechRecognizer;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class TranscriberDemo {
 
 	public static void main(String[] args) throws Exception {
+		Thread audioThread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					while(true){
+						try {
+							Process p = Runtime.getRuntime().exec("python /Users/runchangkang/Documents/Minuet/pySpeech/liveTest.py");
+							p.waitFor(60, TimeUnit.SECONDS);  // let the process run for 5 seconds
+							p.destroy();
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
 
-		Configuration configuration = new Configuration();
-
-		configuration.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
-		configuration.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
-		configuration.setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.bin");
-
-		StreamSpeechRecognizer recognizer = new StreamSpeechRecognizer(configuration);
-		InputStream stream = new FileInputStream(new File("src/resources/recordAndTrans.wav"));
-
-		recognizer.startRecognition(stream);
-		SpeechResult result;
-		while ((result = recognizer.getResult()) != null) {
-			System.out.format("Hypothesis: %s\n", result.getHypothesis());
-		}
-		recognizer.stopRecognition();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		audioThread.start();
 
 	}
 }
