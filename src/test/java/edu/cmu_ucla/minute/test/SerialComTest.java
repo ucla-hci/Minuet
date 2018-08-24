@@ -23,14 +23,14 @@ public class SerialComTest {
         Light light = new Light(new BoundingSphere(new Vector3D(5640,3080,1500),1000),"ikea lamp","cmnd/sonoff1/POWER");
         MusicPlayer musicPlayer = new MusicPlayer(new BoundingSphere(new Vector3D(0,3650,1000),1000),"musicPlayer","cmnd/MusicPlayer");
 //        Roomba roomba = new Roomba((new BoundingSphere(new Vector3D(1240,1680,0),1000)),"Roomba","roomba");
-        Projector projector = new Projector((new BoundingSphere(new Vector3D(0,3650,2100),1000)),"projector","cmnd/Projector");
+//        Projector projector = new Projector((new BoundingSphere(new Vector3D(0,3650,2100),1000)),"projector","cmnd/Projector");
         world.addUser(user);
         world.addUser(user1);
         world.addUser(user2);
         world.addObject(light);
         world.addObject(musicPlayer);
 //        world.addObject(roomba);
-        world.addObject(projector);
+//        world.addObject(projector);
 //
 //        Artifacts monaLisa = new Artifacts(new BoundingSphere(new Vector3D(5400,3650,1200),1000),"Mona_Lisa","museum");
 //        Artifacts theBurthOfVenus = new Artifacts(new BoundingSphere(new Vector3D(5400,2000,1200),1000),"The_Birth_of_Venus","museum");
