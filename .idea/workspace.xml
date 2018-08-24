@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Artifacts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Artifacts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/CommandFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Light.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/MusicPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/MusicPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Projector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Projector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Roomba.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/Roomba.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/model/VitalObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$DataToFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger$DataToFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/edu/cmu_ucla/minute/test/SerialComTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/edu/cmu_ucla/minute/test/SerialComTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Artifacts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/ObjectBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/ObjectBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MQTTdataGestureLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/NoInteractionLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/train4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/train4Previous.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/train4f.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -118,8 +89,8 @@
       <file leaf-file-name="SerialComTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+            <state relative-caret-position="315">
+              <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -127,8 +98,8 @@
       <file leaf-file-name="ObjectBox.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/ObjectBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,15 +110,20 @@
       <file leaf-file-name="CommandFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+            <state relative-caret-position="1021">
+              <caret line="151" column="21" lean-forward="true" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
               <folding>
-                <element signature="e#2544#2545#0" expanded="true" />
-                <element signature="e#2578#2579#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+                <element signature="e#1000#1001#0" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#2432#2433#0" expanded="true" />
+                <element signature="e#2466#2467#0" expanded="true" />
+                <element signature="e#3119#3127#0" expanded="true" />
+                <element signature="e#4876#4877#0" expanded="true" />
+                <element signature="e#4909#4910#0" expanded="true" />
+                <element signature="e#4946#4947#0" expanded="true" />
                 <element signature="e#4979#4980#0" expanded="true" />
-                <element signature="e#5012#5013#0" expanded="true" />
-                <element signature="e#5049#5050#0" expanded="true" />
-                <element signature="e#5082#5083#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1072,10 +1048,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421431000" />
+    <option name="totallyTimeSpent" value="421604000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1639" y="51" width="1680" height="965" extended-state="0" />
+    <frame x="-1710" y="50" width="1680" height="965" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -1094,22 +1070,47 @@
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" x="0" y="0" width="370" height="765" id="Documentation" order="10" sideWeight="0.7306501" side_tool="true" visible="true" weight="0.17582418" />
+      <window_info active="true" anchor="right" x="0" y="0" width="370" height="765" id="Documentation" order="10" sideWeight="0.7306501" side_tool="true" visible="true" weight="0.17582418" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32941177" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25576037" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24236874" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24236874" />
       <window_info id="Learn" order="2" />
       <window_info anchor="right" id="Gradle" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.3259861" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25576037" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24236874" />
+      <window_info id="Learn" order="2" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.26934984" visible="true" weight="0.17582418" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" x="0" y="0" width="370" height="765" id="Documentation" order="10" sideWeight="0.7306501" side_tool="true" visible="true" weight="0.17582418" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32941177" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32705882" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39907193" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.3259861" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32482597" />
+      <window_info anchor="right" id="Gradle" order="8" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1128,11 +1129,49 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/test2.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/train4f1.0.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="256" column="41" lean-forward="true" selection-start-line="256" selection-start-column="41" selection-end-line="256" selection-end-column="41" />
+          <folding>
+            <element signature="method#lightData#0;class#VitalWorld#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="62" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/ObjectBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/MqttNGUI.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1413,15 +1452,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/train4f.csv" />
-    <entry file="file://$PROJECT_DIR$/src/resources/train4f1.0.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/test2.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/extractedFeatures.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/supTrian.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1455,15 +1485,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        <state relative-caret-position="315">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/ObjectBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1472,15 +1502,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        <state relative-caret-position="1021">
+          <caret line="151" column="21" lean-forward="true" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
           <folding>
-            <element signature="e#2544#2545#0" expanded="true" />
-            <element signature="e#2578#2579#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#1000#1001#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#3119#3127#0" expanded="true" />
+            <element signature="e#4876#4877#0" expanded="true" />
+            <element signature="e#4909#4910#0" expanded="true" />
+            <element signature="e#4946#4947#0" expanded="true" />
             <element signature="e#4979#4980#0" expanded="true" />
-            <element signature="e#5012#5013#0" expanded="true" />
-            <element signature="e#5049#5050#0" expanded="true" />
-            <element signature="e#5082#5083#0" expanded="true" />
           </folding>
         </state>
       </provider>
