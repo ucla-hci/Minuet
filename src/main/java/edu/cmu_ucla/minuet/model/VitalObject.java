@@ -11,7 +11,7 @@ public abstract class VitalObject {
     private String topic;
     private BoundingObject boundingObject;
     private Set<String> keyWords = new HashSet<>();
-//    volatile boolean isSelected = false;
+
     protected Set<TokenNode> execuableWords = new HashSet<>();
 
     public Set<String> getRootSet() {
@@ -27,24 +27,11 @@ public abstract class VitalObject {
         this.boundingObject = boundingObject;
         this.name = name;
         this.topic = topic;
-//        Thread underSelectedThread = new Thread(()->{
-//            while(isSelected){
-//                commandItToSelectedStatus();
-//
-//                try {
-//                    wait(500);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//        underSelectedThread.start();
     }
 
     public void addKeyWord(String[] s) {
         this.keyWords.addAll(Arrays.asList(s));
     }
-//    public abstract String[] commandItToSelectedStatus();
     public void supportedGestures(String[] s) {
         this.supportedGestures.addAll(Arrays.asList(s));
     }
