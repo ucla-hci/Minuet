@@ -11,14 +11,15 @@ public abstract class VitalObject {
     private String topic;
     private BoundingObject boundingObject;
     private Set<String> keyWords = new HashSet<>();
+    private String nickname="";
 
-    protected Set<TokenNode> execuableWords = new HashSet<>();
+     Set<TokenNode> execuableWords = new HashSet<>();
 
     public Set<String> getRootSet() {
         return rootSet;
     }
 
-    protected Set<String> rootSet = new HashSet<>();
+     Set<String> rootSet = new HashSet<>();
     private Set<String> supportedGestures = new HashSet<>();
     private Map<String, String> keywordNGesture = new HashMap<>();
 
@@ -29,14 +30,22 @@ public abstract class VitalObject {
         this.topic = topic;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     public void addKeyWord(String[] s) {
         this.keyWords.addAll(Arrays.asList(s));
     }
-    public void supportedGestures(String[] s) {
+     void supportedGestures(String[] s) {
         this.supportedGestures.addAll(Arrays.asList(s));
     }
 
-    public void addExecuableWord(String[] s,String command) {
+     void addExecuableWord(String[] s,String command) {
         TokenNode root = new TokenNode(s[0]);
         rootSet.add(root.getText());
         root.setCommand(command);
@@ -55,10 +64,11 @@ public abstract class VitalObject {
     public abstract String[] leavingObject();
     public abstract String[] resumeObject();
     public abstract String[] selectedObject();
-    public void addExecuableWords(String[][]s,String command){
-        for(int i = 0; i<s.length;i++){
-            addExecuableWord(s[i],command);
+    void addExecuableWords(String[][]s,String command){
+        for (String[] each:s) {
+            addExecuableWord(each,command);
         }
+
     }
 
     public boolean canExecuCommand(TokenNode userCommand) {

@@ -65,7 +65,7 @@ public class NLPHandler {
                     rootNode.getSons().get(tmpTokenList.get(j).getDependencyEdge().getHeadTokenIndex()).addSon(newNode, j);
                 }
             }
-
+            language.shutdown();
      return rootNode;
     }
 

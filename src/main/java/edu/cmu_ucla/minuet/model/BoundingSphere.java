@@ -26,9 +26,12 @@ public class BoundingSphere implements BoundingObject {
         if (projectoc<=0)return false;
         double oc2 = oc.dotProduct(oc);
         double distant2 = oc2 - projectoc*projectoc;
+//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println("angle= "+ Math.toDegrees(Vector3D.angle(oc,pointingVec)));
         System.out.println("distant= "+ Math.sqrt(distant2));
-        return(!(distant2 > radius*radius));
-
+//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//        return(!(distant2 > radius*radius));
+        return (Math.toDegrees(Vector3D.angle(oc,pointingVec))<=16.0);
     }
 
 

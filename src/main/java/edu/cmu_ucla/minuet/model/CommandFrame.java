@@ -115,6 +115,7 @@ public class CommandFrame {
             if (mySet.contains(s)) {
                 try {
                     world.sendVoiceCommand("OK, working on it");
+                    box.checkLeftRight(text,world.getUserMap().get(userName).getLoc());
                     TokenNode command = NLPHandler.parse(text);
                     if (box.getCurObject().canExecuCommand(command)) {
                         this.curCommand = command;

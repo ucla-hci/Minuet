@@ -29,7 +29,7 @@ public class VitalWorld {
     private Plugable curPlugin = null;
     private Set<String> supportedPluginNames = new HashSet<String>(Arrays.asList("timer", "sensor", "remove"));
     private Set<Plugable> workingPlugins = new HashSet<>();
-
+//    private Map<String, VitalObject> nicknameBook = new HashMap<>();
 
     public Set<Plugable> getWorkingPlugins() {
         return workingPlugins;
@@ -44,7 +44,18 @@ public class VitalWorld {
         workingPlugins.add(this.curPlugin);
         this.curPlugin = null;
     }
-
+//    private String checkIfNaming(String text){
+//        if(text.startsWith("this is")||text.startsWith("set name to")){
+//            String[] s = text.split("\\s+");
+//            for (String word:s
+//                 ) {
+//                if()
+//            }
+//        }
+//    }
+//    public void ifSettingNickName(Set<String> words, String userName){
+//        if()
+//    }
 
     public void ifMeansPlugin(Set<String> words) {
         synchronized (this) {
