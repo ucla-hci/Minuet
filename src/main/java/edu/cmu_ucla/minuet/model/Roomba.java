@@ -5,9 +5,9 @@ import java.util.Set;
 public class Roomba extends VitalObject {
     public Roomba(BoundingObject boundingObject, String name, String topic) {
         super(boundingObject, name, topic);
-        String[][] start = {{"Start"},{"go","clean"}};
+        String[][] start = {{"start"},{"go","clean"}};
         String[][]stop = {{"go","change"},{"go","back"},{"go","home"},{"go","get","change"},{"stop"},{"finish"}};
-        addExecuableWords(start,"c");
+        addExecuableWords(start,"g");
         addExecuableWords(stop,"d");
 //        String[]excuWords = {"clean","that","area","here","this","there","stop","go","home","cleaning"};
         String[]gestures={"circleCCW","upSwap"};

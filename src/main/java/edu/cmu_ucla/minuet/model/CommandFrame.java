@@ -113,6 +113,9 @@ public class CommandFrame {
         Set<String> mySet = new HashSet<String>(Arrays.asList(text.split("\\s+")));
         for (String s : box.getCurObject().rootSet) {
             if (mySet.contains(s)) {
+                if(Roomba.class.isInstance(box.getCurObject()) && secLoc==null){
+                    break;
+                }
                 try {
                     world.sendVoiceCommand("OK, working on it");
                     box.checkLeftRight(text,world.getUserMap().get(userName).getLoc());

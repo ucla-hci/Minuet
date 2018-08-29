@@ -117,7 +117,7 @@ public class SystemSubscriber implements MqttCallback {
 
 
             }
-            if (world.getCurFrame() == null) {
+//            if (world.getCurFrame() == null) {
 
 
                 if (!triggerDict.containsKey(curUserName)) {
@@ -129,7 +129,7 @@ public class SystemSubscriber implements MqttCallback {
                 if (triggerDict.get(curUserName).size() == 15)
                     checkTriggerGesture(triggerDict.get(curUserName), curUserName);
 
-            }
+//            }
         } else if (topic.equals("sonoffB1")) {
             System.out.println(newData);
             world.lightData(newData);
