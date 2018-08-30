@@ -34,7 +34,7 @@ public class Light extends VitalObject {
 
         return topicNMes;
     }
-    private volatile boolean lastStatus = false;
+    private volatile boolean lastStatus = true;
     @Override
     public String[] execuate(Set<String> command, String gesture) {
         return new String[0];

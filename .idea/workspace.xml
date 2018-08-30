@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -35,7 +34,7 @@
       <file leaf-file-name="CommandFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="1560">
               <caret line="125" column="21" selection-start-line="125" selection-start-column="21" selection-end-line="125" selection-end-column="21" />
               <folding>
                 <element signature="e#2432#2433#0" expanded="true" />
@@ -48,7 +47,7 @@
       <file leaf-file-name="ObjectBox.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/ObjectBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
+            <state relative-caret-position="1155">
               <caret line="84" selection-start-line="84" selection-end-line="84" />
             </state>
           </provider>
@@ -63,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VitalWorld.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VitalWorld.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="377" column="62" lean-forward="true" selection-start-line="377" selection-start-column="62" selection-end-line="377" selection-end-column="62" />
+            <state relative-caret-position="-1405">
+              <caret line="287" selection-start-line="287" selection-end-line="287" />
               <folding>
                 <element signature="e#1412#1413#0" expanded="true" />
                 <element signature="e#1449#1450#0" expanded="true" />
@@ -85,7 +84,7 @@
       <file leaf-file-name="BoundingSphere.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/BoundingSphere.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="435">
               <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
             </state>
           </provider>
@@ -94,8 +93,17 @@
       <file leaf-file-name="SerialComTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            <state relative-caret-position="30">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Light.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -116,20 +124,11 @@
       <file leaf-file-name="SystemSubscriber.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="1095">
+              <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Projector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -576,7 +575,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/apiTest/App.java" />
         <option value="$PROJECT_DIR$/pySpeech/liveTest.py" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/MusicPlayer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/NLPHandler.java" />
@@ -587,6 +585,7 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Roomba.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java" />
       </list>
     </option>
   </component>
@@ -676,6 +675,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -815,7 +815,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1013,69 +1012,69 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SerialComTest_build - 2018.08.28 at 20h 51m 47s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 03m 29s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 09h 27m 58s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 07m 37s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 17h 02m 03s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 08m 59s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 17h 02m 23s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 09m 15s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 17h 03m 22s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 10m 17s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 17h 04m 22s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 12m 14s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 17h 08m 36s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 18m 12s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 17h 12m 52s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 18m 44s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 17h 13m 23s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 19m 32s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.29 at 17h 14m 17s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.30 at 17h 20m 07s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="470121000" />
+    <option name="totallyTimeSpent" value="471599000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="955" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Database" order="14" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="2" sideWeight="0.26767677" visible="true" weight="0.17582418" />
+      <window_info anchor="right" id="Ant Build" order="3" sideWeight="0.26477024" visible="true" weight="0.17582418" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39907193" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32482597" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" x="0" y="0" width="370" height="755" id="Documentation" order="11" sideWeight="0.7323232" side_tool="true" visible="true" weight="0.17582418" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="right" x="0" y="0" width="370" height="747" id="Documentation" order="20" sideWeight="0.73522973" side_tool="true" visible="true" weight="0.17582418" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30769232" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46235293" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25152627" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25763127" />
       <window_info id="Learn" order="2" />
-      <window_info anchor="right" id="Gradle" order="9" />
+      <window_info anchor="right" id="Gradle" order="16" />
       <window_info anchor="right" id="SciView" order="0" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="18" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2552941" />
@@ -1083,32 +1082,31 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24542125" />
       <window_info id="Learn" order="2" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="2" sideWeight="0.2685624" visible="true" weight="0.17582418" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Ant Build" order="4" sideWeight="0.2685624" visible="true" weight="0.17582418" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="SciView" order="1" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Palette" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Maven Projects" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="SciView" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" x="0" y="0" width="370" height="747" id="Documentation" order="11" sideWeight="0.7314376" side_tool="true" visible="true" weight="0.17582418" />
-      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="19" />
+      <window_info anchor="right" id="Database" order="15" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32941177" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="11" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32705882" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39907193" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3259861" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32482597" />
-      <window_info anchor="right" id="Gradle" order="9" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Gradle" order="17" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info id="Designer" order="2" />
     </layout>
   </component>
@@ -1318,7 +1316,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="795">
           <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
         </state>
       </provider>
@@ -1379,13 +1377,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/NLP/NLPHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -1395,7 +1386,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/ObjectBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
+        <state relative-caret-position="1155">
           <caret line="84" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
@@ -1416,15 +1407,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/BoundingSphere.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
+        <state relative-caret-position="435">
           <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/cmu_ucla/minute/test/SerialComTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        <state relative-caret-position="30">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1437,7 +1428,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/CommandFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
+        <state relative-caret-position="1560">
           <caret line="125" column="21" selection-start-line="125" selection-start-column="21" selection-end-line="125" selection-end-column="21" />
           <folding>
             <element signature="e#2432#2433#0" expanded="true" />
@@ -1459,8 +1450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/mqtt/SystemSubscriber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="1095">
+          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1469,8 +1460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="377" column="62" lean-forward="true" selection-start-line="377" selection-start-column="62" selection-end-line="377" selection-end-column="62" />
+        <state relative-caret-position="-1405">
+          <caret line="287" selection-start-line="287" selection-end-line="287" />
           <folding>
             <element signature="e#1412#1413#0" expanded="true" />
             <element signature="e#1449#1450#0" expanded="true" />
@@ -1481,6 +1472,13 @@
             <element signature="e#2970#2971#0" expanded="true" />
             <element signature="e#3010#3011#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Light.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
         </state>
       </provider>
     </entry>
