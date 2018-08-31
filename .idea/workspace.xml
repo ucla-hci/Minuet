@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="" />
+    <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -63,8 +65,8 @@
       <file leaf-file-name="VitalWorld.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1012">
-              <caret line="311" column="53" selection-start-line="311" selection-start-column="53" selection-end-line="311" selection-end-column="53" />
+            <state relative-caret-position="471">
+              <caret line="264" column="48" lean-forward="true" selection-start-line="264" selection-start-column="48" selection-end-line="264" selection-end-column="48" />
               <folding>
                 <element signature="e#1412#1413#0" expanded="true" />
                 <element signature="e#1449#1450#0" expanded="true" />
@@ -1006,39 +1008,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 12m 33s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 58m 40s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 14m 04s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 59m 29s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 16m 49s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 15h 01m 05s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 17m 12s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 15h 01m 36s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 18m 37s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 15h 02m 39s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 20m 53s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 15h 07m 21s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 21m 24s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 15h 07m 44s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 21m 57s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 15h 08m 12s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 22m 16s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 15h 09m 51s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 14h 24m 00s.xml">
+    <history-entry file="SerialComTest_build - 2018.08.31 at 15h 11m 21s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="477265000" />
+    <option name="totallyTimeSpent" value="478757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="24" width="1680" height="947" extended-state="0" />
@@ -1458,8 +1460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/VitalWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="311" column="53" selection-start-line="311" selection-start-column="53" selection-end-line="311" selection-end-column="53" />
+        <state relative-caret-position="471">
+          <caret line="264" column="48" lean-forward="true" selection-start-line="264" selection-start-column="48" selection-end-line="264" selection-end-column="48" />
           <folding>
             <element signature="e#1412#1413#0" expanded="true" />
             <element signature="e#1449#1450#0" expanded="true" />
