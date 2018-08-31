@@ -20,11 +20,15 @@ public class SerialComTest {
 //        VitalObject object2 = new VitalObject(new BoundingSphere(new Vector3D(1900,2700,1300),1000),"tv","cmnd/sonoff3/POWER");
 //        VitalObject object3 = new VitalObject(new BoundingSphere(new Vector3D(0,3650,1000),1000),"musicPlayer","cmnd/musicPlayer");
         Light light = new Light(new BoundingSphere(new Vector3D(5080,0,2390),1000),"wall light","cmnd/sonoff1/POWER");
+//        Light light = new Light(new BoundingSphere(new Vector3D(5150,0,2650),1000),"wall light","cmnd/sonoff1/POWER");
         Light dight = new Light(new BoundingSphere(new Vector3D(1000,500,1600),1000),"dual-head lamp 1","cmnd/sonoffB1/POWER");
         Light dight2 = new Light(new BoundingSphere(new Vector3D(900,500,1600),1000),"dual-head lamp 2","cmnd/sonoffB3/POWER");
         MusicPlayer musicPlayer = new MusicPlayer(new BoundingSphere(new Vector3D(4030,6240,1000),1000),"musicPlayer","cmnd/MusicPlayer");
+//        MusicPlayer musicPlayer = new MusicPlayer(new BoundingSphere(new Vector3D(3850,6500,900),1000),"musicPlayer","cmnd/MusicPlayer");
         Roomba roomba = new Roomba((new BoundingSphere(new Vector3D(5640,3080,0),1000)),"Roomba","roomba");
+//        Roomba roomba = new Roomba((new BoundingSphere(new Vector3D(5450,3500,0),1000)),"Roomba","roomba");
         Projector projector = new Projector((new BoundingSphere(new Vector3D(-450,3880,2140),1000)),"projector","cmnd/Projector");
+//        Projector projector = new Projector((new BoundingSphere(new Vector3D(-250,3880,2750),1000)),"projector","cmnd/Projector");
 
         world.addUser(user);
         world.addUser(user1);

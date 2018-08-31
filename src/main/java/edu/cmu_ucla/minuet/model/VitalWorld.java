@@ -250,7 +250,7 @@ public class VitalWorld {
         if (splitedString.length == 7) {
             double yaw = (Double.parseDouble(splitedString[3]) - 30);
             yaw = (yaw >= 0) ? yaw : 360 + yaw;
-            double pitch = Double.parseDouble(splitedString[4]);
+            double pitch = Double.parseDouble(splitedString[4])-5;
             double roll = Double.parseDouble(splitedString[5]);
             double x = Double.parseDouble(splitedString[0]) + L * Math.cos(Math.toRadians(pitch)) * Math.sin(Math.toRadians(yaw));
             double y = Double.parseDouble(splitedString[1]) + L * Math.cos(Math.toRadians(pitch)) * Math.cos(Math.toRadians(yaw));
