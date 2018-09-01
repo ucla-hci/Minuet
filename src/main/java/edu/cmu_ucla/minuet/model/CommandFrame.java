@@ -60,7 +60,7 @@ public class CommandFrame {
             runTimeOut(15);
         }
         else{
-            runTimeOut(8);
+            runTimeOut(10);
         }
 
     }
