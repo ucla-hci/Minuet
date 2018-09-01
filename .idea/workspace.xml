@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f4e43998-27a9-4214-bb0a-cb3ffc478d6f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -78,8 +76,8 @@
       <file leaf-file-name="Projector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+            <state relative-caret-position="403">
+              <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -1023,12 +1021,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SerialComTest_build - 2018.08.31 at 19h 33m 16s.xml">
-      <configuration name="SerialComTest.build" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerialComTest_build - 2018.08.31 at 19h 35m 00s.xml">
-      <configuration name="SerialComTest.build" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SerialComTest_build - 2018.08.31 at 19h 38m 06s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
@@ -1053,13 +1045,18 @@
     <history-entry file="SerialComTest_build - 2018.08.31 at 19h 45m 44s.xml">
       <configuration name="SerialComTest.build" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.31 at 21h 23m 56s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialComTest_build - 2018.08.31 at 21h 26m 10s.xml">
+      <configuration name="SerialComTest.build" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="483436000" />
+    <option name="totallyTimeSpent" value="483731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="383" y="23" width="1680" height="947" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="9" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -1500,8 +1497,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu_ucla/minuet/model/Projector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        <state relative-caret-position="403">
+          <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
         </state>
       </provider>
     </entry>
