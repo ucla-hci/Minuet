@@ -1,8 +1,13 @@
 package edu.cmu_ucla.minuet.model;
 
+import edu.cmu_ucla.minuet.NLP.NLPHandler;
+import edu.cmu_ucla.minuet.NLP.TokenNode;
 import edu.cmu_ucla.minuet.mqtt.MQTT;
+import edu.stanford.nlp.util.ArraySet;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.Executors;
@@ -11,89 +16,161 @@ import java.util.concurrent.TimeUnit;
 
 public class CommandFrame {
     private boolean isExecAble = false;
-    private Set<String> curCommand = new HashSet<>();
+    private TokenNode curCommand;
     private String curGesture = "";
-    private VitalObject curObject;
+
     private final VitalWorld world;
     private int execuType = 0;
-    private boolean isDead = false;
+    private volatile boolean isDead = false;
     private String userName;
     private LocData secLoc = null;
+    private ObjectBox box;
+    private ScheduledExecutorService scheduledExecutorService;
+
 
     public String getUserName() {
         return userName;
     }
+
     public void setSecLoc(LocData secLoc) {
         this.secLoc = secLoc;
     }
-    public CommandFrame(VitalObject object, VitalWorld world,String userName) {
-        this.curObject = object;
+
+    public CommandFrame(ObjectBox box, VitalWorld world, String userName) {
+        this.box = box;
         this.userName = userName;
         this.world = world;
-        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
+        this.scheduledExecutorService = Executors.newScheduledThreadPool(5);
+        this.world.sendMqtt(box.getCurObject().enteringObject());
+        if (!box.isOne())  {
+            Thread underSelectedThread = new Thread(() -> {
+                while (!isDead) {
+
+                        world.sendMqtt(box.getCurObject().selectedObject());
+
+
+                    try {
+                        Thread.sleep(1500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            underSelectedThread.start();
+            runTimeOut(25);
+        }
+        else{
+            runTimeOut(15);
+        }
+
+    }
+
+    public void runTimeOut(int second) {
+
         final Runnable cancellation = new Runnable() {
             @Override
             public void run() {
                 synchronized (this) {
 
-                    if (!isDead&&!isExecAble) {
+                    if (!isDead && !isExecAble) {
                         System.out.println("time out ");
                         world.killCurFrame();
                     }
                 }
             }
         };
-        scheduledExecutorService.schedule(cancellation, 8, TimeUnit.SECONDS);
-
+        scheduledExecutorService.schedule(cancellation, second, TimeUnit.SECONDS);
     }
-    public void kill(){
+
+    public void kill() {
         this.isDead = true;
     }
+
     private void checkExcuable() {
 
-        if (curObject.canExecuCommand(curCommand)) {
+        if (box.getCurObject().canExecuCommand(curCommand)) {
             isExecAble = true;
             execuType = 1;
-        } else if (curObject.canExcuCommandWithGesture(curCommand, curGesture)) {
+        } else if (box.getCurObject().canExcuCommandWithGesture(new ArraySet<>(), curGesture)) {
             isExecAble = true;
             execuType = 2;
-        } else if (curObject.canExcuGesture(curGesture)) {
+        } else if (box.getCurObject().canExcuGesture(curGesture)) {
             isExecAble = true;
             execuType = 3;
         }
         if (isExecAble) {
-            world.execuFrame();
+//            kill();
+            world.execuFrame(execuType);
+
 
         }
-        System.out.println(execuType);
+//        System.out.println(execuType);
 
     }
 
 
-    public void setCurCommand(Set<String> curCommand) {
+    public void setCurCommand(String text) {
+        Set<String> mySet = new HashSet<String>(Arrays.asList(text.split("\\s+")));
+        for (String s : box.getCurObject().rootSet) {
+            if (mySet.contains(s)) {
+                if(Roomba.class.isInstance(box.getCurObject()) && secLoc==null){
+                    break;
+                }
+                try {
+                    world.sendVoiceCommand("OK, working on it");
+                    box.checkLeftRight(text,world.getUserMap().get(userName).getLoc());
+                    TokenNode command = NLPHandler.parse(text);
 
-        if (curObject.hasCommand(curCommand) || curObject.canExecuCommand(curCommand)) {
-            System.out.println("set command entered");
-            this.curCommand = curCommand;
-            System.out.println("set command 1");
 
 
-            checkExcuable();
-            System.out.println("set command finished");
+
+                    if (box.getCurObject().canExecuCommand(command)) {
+                        this.curCommand = command;
+                        checkExcuable();
+                        world.sendMqtt(box.getNextObject().leavingObject());
+                        world.sendMqtt(box.getNextObject().resumeObject());
+
+                    }
+
+                    break;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
-
     }
+
 
     public void setCurGesture(String curGesture) {
-        if (curObject.canExcuGesture(curGesture)) {
-            this.curGesture = curGesture;
-            checkExcuable();
+        if (!box.isOne()) {
+            if (curGesture.equals("rightSwap")) {
+                world.sendMqtt(box.getCurObject().leavingObject());
+                world.sendMqtt(box.getCurObject().resumeObject());
+                box.setNext();
+                world.sendMqtt(box.getCurObject().enteringObject());
+            } else if (curGesture.equals("leftSwap")) {
+                world.sendMqtt(box.getCurObject().leavingObject());
+                world.sendMqtt(box.getCurObject().resumeObject());
+                box.setPrevious();
+                world.sendMqtt(box.getCurObject().enteringObject());
+            } else if (box.getCurObject().canExcuGesture(curGesture)) {
+                this.curGesture = curGesture;
+//                world.sendMqtt(box.getCurObject().leavingObject());
+                checkExcuable();
+            }
+        } else {
+            if (box.getCurObject().canExcuGesture(curGesture)) {
+                this.curGesture = curGesture;
+
+                checkExcuable();
+            }
         }
+
     }
 
 
-    public Set<String> getCurCommand() {
+    public TokenNode getCurCommand() {
         return curCommand;
     }
 
@@ -105,29 +182,30 @@ public class CommandFrame {
         String[] retirmData = new String[2];
         switch (execuType) {
             case 1:
-                retirmData = curObject.execuate(curCommand);
+                retirmData = box.getCurObject().execuate(curCommand);
                 break;
             case 2:
-                retirmData = curObject.execuate(curCommand, curGesture);
+                //discard
+                retirmData = box.getCurObject().execuate(new ArraySet<>(), curGesture);
                 break;
             case 3:
-                retirmData = curObject.execuate(curGesture);
+                retirmData = box.getCurObject().execuate(curGesture);
                 break;
         }
         if (retirmData.length == 2) {
             try {
 
-                if(Roomba.class.isInstance(curObject)&&retirmData[1].equals("g")&&secLoc!=null){
+                if (Roomba.class.isInstance(box.getCurObject()) && retirmData[1].equals("g") && secLoc != null) {
 
-                    retirmData[1]=retirmData[1]+" "+(int)secLoc.getPos().getX()+" "+(int)secLoc.getPos().getY();
-                    System.out.println(retirmData[0]+" "+retirmData[1]);
+                    retirmData[1] = retirmData[1] + " " + (int) secLoc.getPos().getX() + " " + (int) secLoc.getPos().getY();
+                    System.out.println(retirmData[0] + " " + retirmData[1]);
                 }
-                if(Projector.class.isInstance(curObject)&&retirmData[1].equals("show")){
+                if (Projector.class.isInstance(box.getCurObject()) && retirmData[1].equals("show")) {
 
-                    retirmData[1]=retirmData[1]+" "+userName;
+                    retirmData[1] = retirmData[1] + " " + userName;
 
                 }
-
+                mqtt.sendMessage(box.getCurObject().leavingObject()[0],box.getCurObject().leavingObject()[1]);
                 mqtt.sendMessage(retirmData[0], retirmData[1]);
             } catch (MqttException e) {
                 e.printStackTrace();

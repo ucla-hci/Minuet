@@ -1,26 +1,23 @@
 hardcodedZ: 1400
-hardcodedZ2: 1000
+hardcodedZ2: 1400
 armLength: 350
 room:
-  lx: 4500
-  ly: 9000
+  lx: 5500
+  ly: 9500
   lz: 2500
 anchors:
   -
-    x: 0
-    y: 0
-    z: 2500
+    x: 4900
+    y: 2500
+    z: 0
   -
-    x: 4170
-    y: 0
-    z: 880
+    x: 4250
+    y: 4750
+    z: 1590
   -
-    x: -240
-    y: 8680
-    z: 600
-  -
-    x: 4520
-    y: 8690
-    z: 2500
+    x: 1100
+    y: 2720
+    z: 2230
+
 bgColor: 0xf2f0f0
 gridColor: 0x888888

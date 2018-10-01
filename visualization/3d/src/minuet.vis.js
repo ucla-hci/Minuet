@@ -45,6 +45,7 @@ $(document).ready(function() {
       var posAnchor = new THREE.Vector3(anchor.x, anchor.z, anchor.y);
       addABall(posAnchor, 0x0000ff, 150);
     }
+
           
 
 

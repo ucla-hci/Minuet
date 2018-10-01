@@ -1,16 +1,15 @@
 package edu.cmu_ucla.minuet.model;
 
-import edu.cmu_ucla.minuet.frameWork.DisSensor;
-import edu.cmu_ucla.minuet.frameWork.Plugable;
-import edu.cmu_ucla.minuet.frameWork.PluginRemover;
-import edu.cmu_ucla.minuet.frameWork.Timer;
 import edu.cmu_ucla.minuet.mqtt.MQTT;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-public class VitalWorld implements World{
+public class VitalWorldScenarioThree implements World{
     private final static double STAND_Z = 1400.0;
     private final static double SIT_Z = 1000.0;
     private final static double L = 350.0;
@@ -22,71 +21,17 @@ public class VitalWorld implements World{
     private Map<String, User> userMap = new HashMap<>();
     private Set<VitalObject> vitalObjects = new HashSet<>();
     private MQTT mqtt = new MQTT();
-    private BoundingSphere BED = new BoundingSphere(new Vector3D(2000, 5300, 500), 1000);
-    private BoundingSphere DESK = new BoundingSphere(new Vector3D(3100, 8000, 700), 1000);
-    private Set<Artifacts> artifacts = new HashSet<>();
+
+
+
     private CommandFrame curFrame = null;
-    private Plugable curPlugin = null;
-    private Set<String> supportedPluginNames = new HashSet<String>(Arrays.asList("timer", "sensor", "remove"));
-    private Set<Plugable> workingPlugins = new HashSet<>();
-//    private Map<String, VitalObject> nicknameBook = new HashMap<>();
-
-    public Set<Plugable> getWorkingPlugins() {
-        return workingPlugins;
-    }
 
 
-    public synchronized Plugable getCurPlugin() {
-        return curPlugin;
-    }
-
-    public void removeCurPlugin() {
-        workingPlugins.add(this.curPlugin);
-        this.curPlugin = null;
-    }
-//    private String checkIfNaming(String text){
-//        if(text.startsWith("this is")||text.startsWith("set name to")){
-//            String[] s = text.split("\\s+");
-//            for (String word:s
-//                 ) {
-//                if()
-//            }
-//        }
-//    }
-//    public void ifSettingNickName(Set<String> words, String userName){
-//        if()
-//    }
-
-    public void ifMeansPlugin(Set<String> words) {
-        synchronized (this) {
-            for (String word : words) {
-                if (supportedPluginNames.contains(word)) {
-                    switch (word) {
-                        case "timer":
-                            this.curPlugin = new Timer(this.mqtt, this);
-                            break;
-                        case "sensor":
-                            this.curPlugin = new DisSensor(this.mqtt, this);
-                            break;
-
-                        case "remove":
-                            this.curPlugin = new PluginRemover(this.mqtt, this);
-                            break;
-                    }
-
-                }
-
-            }
-        }
-    }
-
-    public VitalWorld() throws MqttException {
+    public VitalWorldScenarioThree() throws MqttException {
 
     }
 
-    public void addArtifact(Artifacts artifacts) {
-        this.artifacts.add(artifacts);
-    }
+
 
     public void addObject(VitalObject s) {
         this.vitalObjects.add(s);
@@ -113,135 +58,65 @@ public class VitalWorld implements World{
         }
     }
 
-    public void lightData(String data) {
+    public void monitor(String data) {
         String[] splitedString = data.split("\\s+");
         if (splitedString.length == 6) {
+            boolean isSend = false;
             double yaw = (Double.parseDouble(splitedString[3]) - 30);
             yaw = (yaw >= 0) ? yaw : 360 + yaw;
             double pitch = Double.parseDouble(splitedString[4]);
             double roll = Double.parseDouble(splitedString[5]);
             double x = Double.parseDouble(splitedString[0]);
             double y = Double.parseDouble(splitedString[1]);
-            double z = 1300;
-            Vector3D pos = new Vector3D(x, y, z);
+            double z = 1200;
+
             double px = -Math.cos(Math.toRadians(pitch)) * Math.sin(Math.toRadians(yaw));
             double py = -Math.cos(Math.toRadians(pitch)) * Math.cos(Math.toRadians(yaw));
             double pz = Math.sin(Math.toRadians(pitch));
+
             Vector3D pointVec = new Vector3D(px, py, pz);
-            if (pitch >= 0) {
-                Thread sendThread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            mqtt.sendMessage("cmnd/sonoffB1/POWER", "OFF");
-                        } catch (MqttException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-                sendThread.start();
-            } else {
-                if (BED.calculate(pos, pointVec)) {
-                    Thread sendThread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                mqtt.sendMessage("cmnd/sonoffB1/POWER", "ON");
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                    sendThread.start();
-                    Thread colorThread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                mqtt.sendMessage("cmnd/sonoffB1/CT", "500");
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                    colorThread.start();
-                } else if (DESK.calculate(pos, pointVec)) {
-                    Thread sendThread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                mqtt.sendMessage("cmnd/sonoffB1/POWER", "ON");
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                    sendThread.start();
-                    Thread colorThread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                mqtt.sendMessage("cmnd/sonoffB1/CT", "156");
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                    colorThread.start();
-                } else {
-                    Thread sendThread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                mqtt.sendMessage("cmnd/sonoffB1/POWER", "OFF");
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                    sendThread.start();
-                }
-            }
-
-        }
-    }
-
-    public void directReceiveData(String data) {
-        String[] splitedString = data.split("\\s+");
-        if (splitedString.length == 7) {
-            double yaw = (Double.parseDouble(splitedString[3]) - 30);
-
-            yaw = (yaw >= 0) ? yaw : 360 + yaw;
-            double pitch = Double.parseDouble(splitedString[4]);
-            double roll = Double.parseDouble(splitedString[5]);
-            double x = Double.parseDouble(splitedString[0]) + L * Math.cos(Math.toRadians(pitch)) * Math.sin(Math.toRadians(yaw));
-            double y = Double.parseDouble(splitedString[1]) + L * Math.cos(Math.toRadians(pitch)) * Math.cos(Math.toRadians(yaw));
-            double proxyZ = Double.parseDouble(splitedString[2]) - Math.sin(Math.toRadians(pitch)) * L;
-            double z = (Math.abs(proxyZ - STAND_Z) >= Math.abs(proxyZ - SIT_Z)) ? SIT_Z : STAND_Z;
             Vector3D pos = new Vector3D(x, y, z);
-            String userName = splitedString[6];
-            System.out.println("stand or sit?: " + z);
-            userMap.get(userName).updataData(pitch, roll, yaw, pos);
-            for (Artifacts artifact : artifacts) {
-                if (curFrame == null && artifact.checkBePointed(userMap.get(userName).getPos(), userMap.get(userName).getPointVec())) {
-                    Thread sendThread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
+            String currentCloest = "";
+            double currentAngle = 90.0;
+            for(String userName: userMap.keySet()){
 
-                                mqtt.sendMessage("museum/" + userName, artifact.getName());
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                    sendThread.start();
-                    System.out.println(artifact.getName());
+                System.out.println(userName);
+                double tmpAngle = LocationParser.calculatePoinging(pos,pointVec,userMap.get(userName).getLoc());
+                if (tmpAngle>0 && tmpAngle<90.0 && tmpAngle<currentAngle){
+                    currentCloest=userName;
+                    currentAngle = tmpAngle;
                 }
-
+//                if(LocationParser.calculatePoinging(pos,pointVec,userMap.get(userName).getLoc())){
+//                    String[] topicNMes = new String[2];
+//                    topicNMes[0] = "monitorDemo";
+//                    topicNMes[1] = userName;
+//                    sendMqtt(topicNMes);
+//                    System.out.println("change to "+userName);
+//                    isSend=true;
+//                    break;
+//                }
             }
+            if(!currentCloest.equals("")){
+                String[] topicNMes = new String[2];
+                    topicNMes[0] = "monitorDemo";
+                    topicNMes[1] = currentCloest;
+                    sendMqtt(topicNMes);
+                    System.out.println("change to "+currentCloest);
+                    isSend=true;
+            }
+            if(!isSend){
+                String[] topicNMes = new String[2];
+                topicNMes[0] = "monitorDemo";
+                topicNMes[1] = "nothing";
+                System.out.println("change to "+"nothing");
+                sendMqtt(topicNMes);
+            }
+
 
         }
     }
+
+
 
 
     public void revceiveData(String data) {
@@ -255,8 +130,7 @@ public class VitalWorld implements World{
             double x = Double.parseDouble(splitedString[0]) + L * Math.cos(Math.toRadians(pitch)) * Math.sin(Math.toRadians(yaw));
             double y = Double.parseDouble(splitedString[1]) + L * Math.cos(Math.toRadians(pitch)) * Math.cos(Math.toRadians(yaw));
             double proxyZ = Double.parseDouble(splitedString[2]) - Math.sin(Math.toRadians(pitch)) * L;
-//            double z = (Math.abs(proxyZ - STAND_Z) >= Math.abs(proxyZ - SIT_Z)) ? SIT_Z : STAND_Z;
-            double z = SIT_Z;
+            double z = (Math.abs(proxyZ - STAND_Z) >= Math.abs(proxyZ - SIT_Z)) ? SIT_Z : STAND_Z;
             Vector3D pos = new Vector3D(x, y, z);
             System.out.println((z == STAND_Z) ? "Standing" : "Siting");
             String userName = splitedString[6];
@@ -268,13 +142,13 @@ public class VitalWorld implements World{
                 for (VitalObject object : vitalObjects) {
 
                     if (object.checkBePointed(userMap.get(userName).getPos(), userMap.get(userName).getPointVec())) {
-                        if (curPlugin == null) {
+
                             box.addToBox(object);
 
-                        } else {
-                            curPlugin.setTargetObject(object);
-                            break;
-                        }
+
+
+
+
 
                     }
                 }
@@ -293,7 +167,7 @@ public class VitalWorld implements World{
                             }
                         });
                         sendThread.start();
-                        curFrame = new CommandFrame(box, this, userName);
+//                        curFrame = new CommandFrame(box, this, userName);
                         Thread notifyVoiceThread = new Thread(() -> {
                             try {
                                 if (!box.isOne()) mqtt.sendMessage("connectedVoice", "$multiple devices");

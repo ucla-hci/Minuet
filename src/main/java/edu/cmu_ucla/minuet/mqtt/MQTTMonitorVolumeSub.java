@@ -2,11 +2,21 @@ package edu.cmu_ucla.minuet.mqtt;
 
 import org.eclipse.paho.client.mqttv3.*;
 
-import java.io.File;
-
 public class MQTTMonitorVolumeSub implements MqttCallback {
     private MqttClient client;
-
+    private String curUserName = "Richard";
+    private String[] next = {"osascript","-e","tell application \"Preview\"",
+            "-e", "activate",
+            "-e","tell application \"System Events\"",
+            "-e","key code 124",
+            "-e","end tell",
+            "-e","end tell"};
+    private String[] previous = {"osascript","-e","tell application \"Preview\"",
+            "-e", "activate",
+            "-e","tell application \"System Events\"",
+            "-e","key code 123",
+            "-e","end tell",
+            "-e","end tell"};
     private MqttConnectOptions options;
     public MQTTMonitorVolumeSub()throws MqttException {
 
@@ -16,7 +26,8 @@ public class MQTTMonitorVolumeSub implements MqttCallback {
         options.setPassword("19930903".toCharArray());
         client.setCallback(this);
         client.connect(options);
-        client.subscribe("cmnd/Monitor/#");
+//        client.subscribe("cmnd/Monitor/#");
+        client.subscribe("monitorDemo");
     }
 
     @Override
@@ -32,19 +43,42 @@ public class MQTTMonitorVolumeSub implements MqttCallback {
     @Override
     public void messageArrived(String topic, MqttMessage message) throws Exception {
 
-        if(topic.equals("cmnd/Monitor/VOLUME")){
+        if(topic.equals("monitorDemo")){
             String newData = new String(message.getPayload());
-            String command = "set volume " + newData;
-            try {
-                ProcessBuilder pb = new ProcessBuilder("osascript", "-e", command);
-                pb.directory(new File("/usr/bin"));
-                System.out.println(command);
-                Process p = pb.start();
-                p.waitFor();
+            String[] split = newData.split("\\s+");
+            if(!curUserName.equals(split[0])){
+                if(curUserName.equals("Richard") && split[0].equals("Tom")){
+                    curUserName = "Tom";
+                    Runtime.getRuntime().exec(next);
+                    Runtime.getRuntime().exec(next);
+                }
+                else if(curUserName.equals("Tom")&&split[0].equals("Richard")){
+                    curUserName = "Richard";
+                    Runtime.getRuntime().exec(previous);
+                    Runtime.getRuntime().exec(previous);
+                }
+                else if(curUserName.equals("Tom")&&split[0].equals("nothing")){
+                    curUserName = "nothing";
+                    Runtime.getRuntime().exec(previous);
 
-            } catch (Exception e) {
-                e.printStackTrace();
+                }
+                else if(curUserName.equals("Richard")&&split[0].equals("nothing")){
+                    curUserName = "nothing";
+                    Runtime.getRuntime().exec(next);
+
+                }
+                else if(curUserName.equals("nothing")&&split[0].equals("Richard")){
+                    curUserName = "Richard";
+                    Runtime.getRuntime().exec(previous);
+
+                }
+                else if(curUserName.equals("nothing")&&split[0].equals("Tom")){
+                    curUserName = "Tom";
+                    Runtime.getRuntime().exec(next);
+
+                }
             }
+
         }
 
 
@@ -53,5 +87,13 @@ public class MQTTMonitorVolumeSub implements MqttCallback {
     @Override
     public void deliveryComplete(IMqttDeliveryToken token) {
 
+    }
+
+    public static void main(String[] args) {
+        try {
+            MQTTMonitorVolumeSub sub = new MQTTMonitorVolumeSub();
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
     }
 }

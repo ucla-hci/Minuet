@@ -9,6 +9,7 @@ import java.util.Set;
 
 public class NLPHandler {
     public static boolean isExecutable(TokenNode command, TokenNode userSpeech){
+        if(userSpeech==null)return false;
         if(command.getText().equals(userSpeech.getText())){
             if(!command.hasSons()){return true;}
             else{
@@ -64,7 +65,7 @@ public class NLPHandler {
                     rootNode.getSons().get(tmpTokenList.get(j).getDependencyEdge().getHeadTokenIndex()).addSon(newNode, j);
                 }
             }
-
+            language.shutdown();
      return rootNode;
     }
 

@@ -76,7 +76,7 @@ public class NoInteractionLogger implements MqttCallback {
 
     }
     private void storeTheData() throws IOException {
-        FileWriter writer = new FileWriter("src/resources/trainNoInteraction2.csv");
+        FileWriter writer = new FileWriter("src/resources/subNoInteraction.csv");
         System.out.println(data.size());
         for(int i =0;i<data.size()-15;i++){
             for(int j = 0;j<15;j++){

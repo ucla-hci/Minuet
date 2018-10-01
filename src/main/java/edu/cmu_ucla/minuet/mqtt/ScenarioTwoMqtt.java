@@ -1,7 +1,7 @@
 package edu.cmu_ucla.minuet.mqtt;
 
 import edu.cmu_ucla.minuet.model.Struct;
-import edu.cmu_ucla.minuet.model.VitalWorld;
+import edu.cmu_ucla.minuet.model.VitalWorldScenarioTwo;
 import org.eclipse.paho.client.mqttv3.*;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.lazy.IBk;
@@ -11,30 +11,33 @@ import weka.core.SerializationHelper;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class SystemSubscriber implements MqttCallback {
+public class ScenarioTwoMqtt implements MqttCallback {
     MqttClient client;
     private Map<String, List<Struct>> gestureDict = new HashMap<>();
     private Map<String, List<Struct>> triggerDict = new HashMap<>();
-    private final VitalWorld world;
+    private final VitalWorldScenarioTwo world;
     private AbstractClassifier model;
     private AbstractClassifier triggerModel;
     private String tmpVoiceCommand = "";
 
-    public SystemSubscriber(VitalWorld world) throws MqttException, FileNotFoundException, Exception {
+    public ScenarioTwoMqtt(VitalWorldScenarioTwo world) throws MqttException, FileNotFoundException, Exception {
         model = (IBk) SerializationHelper.read(new FileInputStream("weka/KNNgestures.model"));
 //        model = (RandomForest) SerializationHelper.read(new FileInputStream("weka/RFgesture1.1.model"));
         triggerModel = (RandomForest) SerializationHelper.read(new FileInputStream("weka/RTpointing.model"));
         this.world = world;
-        client = new MqttClient("tcp://192.168.1.8:1883", "systemSubscriber");
+        client = new MqttClient("tcp://192.168.1.8:1883", "ScenarioTwo");
         MqttConnectOptions options = new MqttConnectOptions();
         options.setUserName("admin");
         options.setPassword("19930903".toCharArray());
         client.setCallback(this);
         client.connect(options);
-        String[] strings = {"locData", "speechResult", "data", "sonoffB1", "userLoc"};
+        String[] strings = {"locData", "speechResult", "data", "userLoc"};
         client.subscribe(strings);
         Thread audioThread = new Thread(new Runnable() {
             @Override
@@ -70,13 +73,8 @@ public class SystemSubscriber implements MqttCallback {
         String[] splitedString = newData.split("\\s+");
 
         if (topic.equals("locData")) {
-            System.out.println("loc got: " + newData);
-
-//            world.directReceiveData(newData);
             world.revceiveData(newData);
             if (world.getCurFrame() != null) {
-//                world.getCurFrame().setCurCommand(new HashSet<>(Arrays.asList(tmpVoiceCommand.split("\\s+"))));
-                world.getCurFrame().setCurCommand(newData);
                 tmpVoiceCommand = "";
             }
             if (triggerDict.containsKey(splitedString[splitedString.length - 1]))
@@ -86,15 +84,7 @@ public class SystemSubscriber implements MqttCallback {
         } else if (topic.equals("speechResult")) {
             System.out.println("Speech got: " + newData);
             tmpVoiceCommand = newData;
-            if (world.getCurPlugin() == null && world.getCurFrame() == null) {
-                world.ifMeansPlugin(new HashSet<String>(Arrays.asList(splitedString)));
-
-            } else if (world.getCurPlugin() != null && world.getCurFrame() == null) {
-
-                world.getCurPlugin().getVoiceCommand(newData);
-                tmpVoiceCommand = "";
-
-            } else if (world.getCurFrame() != null && world.getCurFrame().getCurCommand()==null) {
+             if (world.getCurFrame() != null ) {
                 world.getCurFrame().setCurCommand(tmpVoiceCommand);
             }
 
@@ -107,32 +97,23 @@ public class SystemSubscriber implements MqttCallback {
                     Double.parseDouble(splitedString[5]));
             String curUserName = splitedString[6];
 
-            if (world.getCurFrame() != null && world.getCurFrame().getCurGesture().equals("") && world.getCurFrame().getUserName().equals(curUserName)) {
+            //check gesture
+            if (world.getCurFrame() != null  && (world.getCurFrame().getUserName().equals(curUserName)||world.getCurFrame().getUsers().contains(curUserName))) {
                 if (!gestureDict.containsKey(curUserName)) {
                     gestureDict.put(curUserName, new ArrayList<Struct>(15));
                 }
                 if (gestureDict.get(curUserName).size() == 15){ gestureDict.get(curUserName).remove(0);}
                 gestureDict.get(curUserName).add(curStruct);
                 if (gestureDict.get(curUserName).size() == 15) {checkGesture(gestureDict.get(curUserName), curUserName);}
-
-
             }
-//            if (world.getCurFrame() == null) {
+            if (!triggerDict.containsKey(curUserName)) {
+                triggerDict.put(curUserName, new ArrayList<Struct>(15));
+            }
+            if (triggerDict.get(curUserName).size() == 15) triggerDict.get(curUserName).remove(0);
 
-
-                if (!triggerDict.containsKey(curUserName)) {
-                    triggerDict.put(curUserName, new ArrayList<Struct>(15));
-                }
-                if (triggerDict.get(curUserName).size() == 15) triggerDict.get(curUserName).remove(0);
-
-                triggerDict.get(curUserName).add(curStruct);
-                if (triggerDict.get(curUserName).size() == 15)
-                    checkTriggerGesture(triggerDict.get(curUserName), curUserName);
-
-//            }
-        } else if (topic.equals("sonoffB1")) {
-            System.out.println(newData);
-            world.lightData(newData);
+            triggerDict.get(curUserName).add(curStruct);
+            if (triggerDict.get(curUserName).size() == 15)
+                checkTriggerGesture(triggerDict.get(curUserName), curUserName);
 
         } else if (topic.equals("userLoc")) {
 

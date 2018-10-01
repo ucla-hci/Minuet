@@ -58,7 +58,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
-    if (client.connect("ESP32TestUser", "admin", "19930903")) {
+    if (client.connect("ESP32visUser", "admin", "19930903")) {
 
       Serial.println("connected");
     } else {
