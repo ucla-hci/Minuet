@@ -3,6 +3,7 @@ package edu.cmu_ucla.minuet.model;
 import edu.cmu_ucla.minuet.NLP.NLPHandler;
 import edu.cmu_ucla.minuet.NLP.TokenNode;
 
+import java.util.Arrays;
 import java.util.Set;
 
 public class Light extends VitalObject {
@@ -32,6 +33,16 @@ public class Light extends VitalObject {
             }
         }
 
+        return topicNMes;
+    }
+    public  String[] execuateOne(TokenNode userCommand){
+        String[] topicNMes = new String[2];
+        topicNMes[0]=getTopic();
+        if(Arrays.asList(userCommand.getText().split("\\s+")).contains("on"))
+        topicNMes[1]="ON";
+        else if(Arrays.asList(userCommand.getText().split("\\s+")).contains("off"))
+            topicNMes[1]="OFF";
+        else topicNMes[1]=" ";
         return topicNMes;
     }
     private volatile boolean lastStatus = true;
@@ -104,6 +115,7 @@ public class Light extends VitalObject {
 
 
         String[] topicNMes = {getTopic().substring(0,getTopic().length()-5)+"dimmer","10"};
+
         return topicNMes;
     }
 
@@ -112,11 +124,7 @@ public class Light extends VitalObject {
         String[] topicNMes = {getTopic().substring(0,getTopic().length()-5)+"dimmer","100"};
         return topicNMes;
     }
-    //    @Override
-//    public String[] commandItToSelectedStatus() {
-//        String[] topicNMes = {getTopic(),"toggle"};
-//        return topicNMes;
-//    }
+
 
 
 }

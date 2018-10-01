@@ -69,7 +69,8 @@ public class MusicPlayer extends VitalObject {
         String[][] next={{"music","next"},{"song","next"},{"change"},{"play","music","different"},{"play","music","next"},{"play","song","different"}};
         String[][] volumeUp ={{"volume","up"},{"loud"},{"turn","up"},{"louder"}};
         String[][] volumeDown ={{"volume","down"},{"quiet"},{"turn","down"}};
-
+        //only for continous scenario
+//        String[][] volume = {{"volume"}};
 //        String[] excuWords = {"next", "start", "stop","music","the","song"};
         String[] gestures = {"rightSwap", "upSwap", "downSwap","circleCW","circleCCW"};
         addExecuableWords(play,"0");
@@ -77,6 +78,8 @@ public class MusicPlayer extends VitalObject {
         addExecuableWords(next,"2");
         addExecuableWords(volumeDown,"4");
         addExecuableWords(volumeUp,"3");
+        //only for continous scenario
+//        addExecuableWords(volume,"6");
         supportedGestures(gestures);
     }
 }

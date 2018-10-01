@@ -57,10 +57,10 @@ public class CommandFrame {
                 }
             });
             underSelectedThread.start();
-            runTimeOut(15);
+            runTimeOut(25);
         }
         else{
-            runTimeOut(10);
+            runTimeOut(15);
         }
 
     }
@@ -120,10 +120,18 @@ public class CommandFrame {
                     world.sendVoiceCommand("OK, working on it");
                     box.checkLeftRight(text,world.getUserMap().get(userName).getLoc());
                     TokenNode command = NLPHandler.parse(text);
+
+
+
+
                     if (box.getCurObject().canExecuCommand(command)) {
                         this.curCommand = command;
                         checkExcuable();
+                        world.sendMqtt(box.getNextObject().leavingObject());
+                        world.sendMqtt(box.getNextObject().resumeObject());
+
                     }
+
                     break;
                 } catch (IOException e) {
                     e.printStackTrace();

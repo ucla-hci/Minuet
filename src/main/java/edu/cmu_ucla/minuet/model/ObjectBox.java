@@ -16,9 +16,15 @@ public class ObjectBox {
     public boolean isEmpty(){return box.isEmpty();}
     public boolean isOne(){return box.size()==1;}
     public synchronized void addToBox(VitalObject object){box.add(object);}
+
+    public List<VitalObject> getBox() {
+        return box;
+    }
+
     public synchronized VitalObject getNextObject(){
         curIndex = (curIndex+1)%box.size();
         return box.get(curIndex);
+
 
     }
 
